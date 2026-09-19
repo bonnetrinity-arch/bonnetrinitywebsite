@@ -129,11 +129,10 @@ export default function Home() {
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
           <nav className={mobileOpen ? "nav-links open" : "nav-links"}>
-            <a href="#what-we-do" onClick={() => setMobileOpen(false)}>What we do</a>
-            <a href="#products" onClick={() => setMobileOpen(false)}>Products</a>
-            <a href="#partners" onClick={() => setMobileOpen(false)}>Who we serve</a>
-            <a href="#about" onClick={() => setMobileOpen(false)}>About us</a>
-            <a className="nav-cta" href="#enquire" onClick={() => setMobileOpen(false)}>Start a conversation <ArrowUpRight size={16} /></a>
+            <a href="/products" onClick={() => setMobileOpen(false)}>Products</a>
+            <a href="/who-we-serve" onClick={() => setMobileOpen(false)}>Who we serve</a>
+            <a href="/about" onClick={() => setMobileOpen(false)}>About us</a>
+            <a className="nav-cta" href="/enquire" onClick={() => setMobileOpen(false)}>Start a conversation <ArrowUpRight size={16} /></a>
           </nav>
         </div>
       </header>

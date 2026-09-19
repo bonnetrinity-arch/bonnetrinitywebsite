@@ -200,3 +200,77 @@
     .hero-bottomline span:first-child { display: none; }
   }
 }
+
+@layer components {
+  .inner-page-shell { background: #f4f0e9; }
+  .inner-nav { position: relative; z-index: 3; background: #173d70; color: #f4f0e9; }
+  .inner-nav .nav-inner { height: 106px; }
+  .inner-toggle { color: #f4f0e9; }
+  .page-intro { padding: 110px 0 115px; background: #173d70; color: #f4f0e9; }
+  .page-intro-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 70px; align-items: end; }
+  .page-intro h1 { max-width: 850px; margin-top: 20px; font-size: clamp(56px, 7vw, 98px); line-height: .9; }
+  .page-intro h1 i, .about-story h2 i, .history-section h2 i, .serve-note h2 i, .enquire-contact h2 i { color: #f4978f; font-style: italic; }
+  .page-intro p { max-width: 550px; margin-top: 30px; color: #d8e8ef; font-size: 15px; line-height: 1.75; }
+  .inner-products { padding: 70px 0 140px; }
+  .inner-filter-bar { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 28px; }
+  .inner-filter-bar button { border: 1px solid #cad9e1; border-radius: 99px; padding: 10px 15px; color: #2b627f; background: transparent; font: inherit; font-size: 11px; cursor: pointer; }
+  .inner-filter-bar button.active, .inner-filter-bar button:hover { background: #173d70; color: #fffdf8; border-color: #173d70; }
+  .inner-product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .about-story, .history-section, .principles-section, .audience-page, .serve-note, .enquire-page { padding: 140px 0; }
+  .about-story-grid, .history-grid, .enquire-page-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 110px; }
+  .about-story h2, .history-section h2, .enquire-contact h2 { margin-top: 24px; font-size: clamp(43px, 5vw, 70px); line-height: .98; }
+  .about-body p, .enquire-contact > p { max-width: 500px; color: #65716c; font-size: 15px; line-height: 1.75; }
+  .about-body p + p { margin-top: 24px; }
+  .about-body .text-link { margin-top: 30px; }
+  .history-section { background: #dfeee8; }
+  .history-grid { margin-top: 60px; }
+  .history-list { border-top: 1px solid #b7cec5; }
+  .history-list article { display: grid; grid-template-columns: 80px 1fr; gap: 20px; padding: 25px 0; border-bottom: 1px solid #b7cec5; }
+  .history-list article > span { color: #c7735c; font-family: "DM Serif Display", serif; font-size: 24px; }
+  .history-list h3 { color: #173d70; font-family: "DM Serif Display", serif; font-size: 29px; font-weight: 400; }
+  .history-list p { max-width: 490px; margin-top: 9px; color: #65716c; font-size: 13px; line-height: 1.6; }
+  .principles-section { background: #fffdf8; }
+  .principles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 55px; }
+  .principles-grid > div { padding: 27px 0; border-top: 1px solid #d7d1c6; }
+  .principles-grid svg { color: #d27456; }
+  .principles-grid h3 { margin-top: 24px; color: #173d70; font-family: "DM Serif Display", serif; font-size: 28px; font-weight: 400; }
+  .principles-grid p { margin-top: 10px; color: #65716c; font-size: 13px; line-height: 1.6; }
+  .audience-page { padding-bottom: 120px; }
+  .audience-page-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .audience-page-card { min-height: 390px; display: flex; flex-direction: column; justify-content: space-between; padding: 29px; color: #173d70; }
+  .audience-page-1 { background: #f7b5a9; } .audience-page-2 { background: #c8e5d7; } .audience-page-3 { background: #ffe29b; } .audience-page-4 { background: #d5e8f2; }
+  .audience-card-top { display: flex; justify-content: space-between; }
+  .audience-page-card h2 { margin-top: 12px; font-family: "DM Serif Display", serif; font-size: 43px; font-weight: 400; }
+  .audience-page-card p { max-width: 340px; margin-top: 14px; color: rgba(23,61,112,.75); font-size: 14px; line-height: 1.65; }
+  .audience-page-card .text-link { margin-top: 28px; }
+  .serve-note { background: #173d70; color: #f4f0e9; }
+  .serve-note-grid { display: grid; grid-template-columns: .7fr 1fr 1fr; gap: 55px; align-items: end; }
+  .serve-note h2 { font-size: clamp(43px, 5vw, 68px); line-height: .95; }
+  .serve-note p { max-width: 330px; color: #c7dce5; font-size: 14px; line-height: 1.7; }
+  .enquire-page { background: #f4978f; }
+  .enquire-contact h2 { color: #173d70; }
+  .enquire-contact > p { color: rgba(23,61,112,.75); margin-top: 25px; }
+  .enquire-page .contact-list a { color: #173d70; }
+  .enquire-page .form-card { min-height: 430px; }
+  .page-cta { padding: 80px 0; background: #ffd36b; color: #173d70; }
+  .page-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 35px; }
+  .page-cta h2 { margin-top: 15px; font-size: clamp(38px, 4vw, 58px); }
+  .page-cta .button-dark { background: #173d70; color: #fffdf8; }
+  .inner-footer { position: relative; }
+  @media (max-width: 800px) {
+    .inner-nav .nav-inner { height: 80px; }
+    .page-intro { padding: 75px 0 80px; }
+    .page-intro-grid, .about-story-grid, .history-grid, .enquire-page-grid, .serve-note-grid { grid-template-columns: 1fr; gap: 35px; }
+    .page-intro h1 { font-size: 57px; }
+    .inner-products, .about-story, .history-section, .principles-section, .audience-page, .serve-note, .enquire-page { padding: 85px 0; }
+    .inner-product-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .inner-product-grid .product-image { height: 205px; }
+    .inner-product-grid .product-info { padding: 14px; min-height: 155px; }
+    .inner-product-grid .product-info h3 { font-size: 20px; }
+    .inner-product-grid .product-info > a { display: none; }
+    .principles-grid, .audience-page-grid { grid-template-columns: 1fr; }
+    .audience-page-card { min-height: 300px; }
+    .page-cta-inner { align-items: flex-start; flex-direction: column; }
+  }
+  @media (max-width: 430px) { .inner-product-grid { grid-template-columns: 1fr; } .inner-product-grid .product-image { height: 260px; } }
+}
