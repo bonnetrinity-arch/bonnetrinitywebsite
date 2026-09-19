@@ -106,7 +106,7 @@ export default function Home() {
       <header className="nav-wrap">
         <div className="container nav-inner">
           <a className="brand" href="#top" aria-label="BONNE TRINITY home">
-            <span className="brand-mark"><span>BT</span></span>
+            <span className="brand-mark brand-logo"><img src="/manus-storage/bonne-logo_a8a980ea.jpeg" alt="BONNE" /></span>
             <span className="brand-name">BONNE <em>TRINITY</em></span>
           </a>
           <button className="mobile-toggle" aria-label="Toggle navigation" onClick={() => setMobileOpen(!mobileOpen)}>
@@ -141,7 +141,7 @@ export default function Home() {
               <div className="visual-card visual-card-back"><span>01</span><strong>Care is<br /><i>closer</i> than<br />you think.</strong></div>
               <div className="visual-card visual-card-front">
                 <div className="card-topline"><span>FIELD NOTE / 001</span><span>NEW DELHI</span></div>
-                <div className="bottle-shape"><div className="bottle-cap" /><div className="bottle-body"><span>bonne</span><small>everyday<br />essentials</small></div></div>
+                <div className="bottle-shape"><img src="/manus-storage/bonne-nipple_9124056e.jpeg" alt="BONNE nipple product" /></div>
                 <div className="card-bottomline"><span>FORM / FUNCTION</span><span>01—03</span></div>
               </div>
               <div className="visual-caption">A considered approach to<br /><strong>everyday essentials.</strong></div>
@@ -157,8 +157,15 @@ export default function Home() {
         <section className="intro-section" id="about">
           <div className="container intro-grid">
             <div className="section-label">01 / WHO WE ARE</div>
-            <div className="intro-copy"><h2>A grounded partner for <i>growing brands.</i></h2><p>We are BONNE TRINITY — a New Delhi-based partnership company working across baby care, personal hygiene and material solutions. We make it easier for ambitious businesses to find the right product pathway, move with confidence and grow with a partner who listens.</p><a className="text-link" href="#enquire">Meet us in a conversation <span>↗</span></a></div>
-            <div className="intro-aside"><div className="aside-number">02</div><p>Partners who value clarity, quality and responsive collaboration.</p></div>
+            <div className="intro-copy"><h2>A grounded partner for <i>growing brands.</i></h2><p>We are BONNE TRINITY — a New Delhi-based partnership company led by Gavish Aneja and Hriday Aneja. We develop, source, private-label, supply and distribute through trusted manufacturing and sourcing partners, helping ambitious businesses move with confidence.</p><a className="text-link" href="#enquire">Meet us in a conversation <span>↗</span></a></div>
+            <div className="intro-aside"><div className="aside-number">02</div><p>A newer venture, backed by a family manufacturing network and a clear view of what partners need.</p></div>
+          </div>
+        </section>
+
+        <section className="network-section" aria-labelledby="network-title">
+          <div className="container network-grid">
+            <div className="network-lead"><div className="section-label">01A / OUR BACKGROUND</div><h2>Experience<br />you can <i>build on.</i></h2><p>Backed by established family manufacturing experience since 1963.</p></div>
+            <div className="network-content"><div className="network-note"><span className="network-note-mark">✳</span><span>ASSOCIATED FAMILY BUSINESSES<br />& MANUFACTURING PARTNERS</span></div><div className="partner-business"><div className="partner-meta"><span>EST. 2001</span><span>NOIDA · UTTAR PRADESH</span></div><h3>Bonny Poly Plast <i>Pvt. Ltd.</i></h3><p>Baby feeding bottles, baby nipples and PET bottles.</p><div className="partner-line"><span>01</span><span>Established manufacturing experience</span></div></div><div className="partner-business"><div className="partner-meta"><span>EST. 1998</span><span>NOIDA · UTTAR PRADESH</span></div><h3>Bonny Baby Care <i>Pvt. Ltd.</i></h3><p>Baby feeding bottles, baby nipples, silicone soothers, baby teethers and other baby-care products.</p><div className="partner-line"><span>02</span><span>Established manufacturing experience</span></div></div><div className="network-media"><img src="/manus-storage/factory-1_6d60273a.jpeg" alt="Associated manufacturing partner factory floor" /><span>MANUFACTURING NETWORK / NOIDA</span></div><div className="network-footnote"><span>Manufacturing partners, not a BONNE TRINITY-owned factory.</span><ArrowUpRight size={16} /></div></div>
           </div>
         </section>
 
@@ -178,7 +185,7 @@ export default function Home() {
         <section className="enquiry-section" id="enquire"><div className="container enquiry-grid"><div className="enquiry-intro"><div className="section-label">05 / START A CONVERSATION</div><h2>Let’s make<br /><i>something useful.</i></h2><p>Tell us a little about what you are looking for. We’ll come back to you with the right next step.</p><div className="contact-list"><a href="mailto:care@bonnetrinity.com"><Mail size={18} /> care@bonnetrinity.com</a><a href="tel:+919811643325"><Phone size={18} /> +91 98116 43325</a><a href="https://wa.me/918588879611" target="_blank" rel="noreferrer"><MessageCircle size={18} /> WhatsApp us</a></div></div><div className="form-card">{sent ? <div className="success-state"><div className="success-icon"><Check size={24} /></div><div className="section-label">MESSAGE RECEIVED</div><h3>Thank you for reaching out.</h3><p>Our team will review your enquiry and get back to you soon.</p><button className="button button-dark" onClick={() => setSent(false)}>Send another enquiry</button></div> : <form onSubmit={handleSubmit}><input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY"} /><input type="checkbox" name="botcheck" className="hidden-field" tabIndex={-1} autoComplete="off" /><div className="form-row"><label>Full name<input required name="name" placeholder="Your name" /></label><label>Work email<input required type="email" name="email" placeholder="you@company.com" /></label></div><div className="form-row"><label>Phone number<input required type="tel" name="phone" placeholder="+91 00000 00000" /></label><label>Company / organisation<input name="company" placeholder="Company name" /></label></div><label>How can we help?<textarea required name="message" rows={4} placeholder="Tell us about your product, volume or sourcing requirement..." /></label><div className="form-foot"><span>We respect your inbox. No noise, just a thoughtful reply.</span><button className="button button-dark" type="submit" disabled={isSubmitting}>{isSubmitting ? "Sending..." : "Send enquiry"} <ArrowUpRight size={17} /></button></div></form>}</div></div></section>
       </main>
 
-      <footer className="footer"><div className="container footer-top"><div className="brand footer-brand"><span className="brand-mark"><span>BT</span></span><span className="brand-name">BONNE <em>TRINITY</em></span></div><p>Material solutions for better care.</p><a href="https://www.linkedin.com/company/bonne-trinity/" target="_blank" rel="noreferrer" aria-label="BONNE TRINITY on LinkedIn"><Linkedin size={18} /></a></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} BONNE TRINITY. All rights reserved.</span><span>53A/11 Rama Road, Kirti Nagar, New Delhi — 110015</span><span>GSTIN 07ABGFB9745E1ZB</span></div></footer>
+      <footer className="footer"><div className="container footer-top"><div className="brand footer-brand"><span className="brand-mark brand-logo"><img src="/manus-storage/bonne-logo_a8a980ea.jpeg" alt="BONNE" /></span><span className="brand-name">BONNE <em>TRINITY</em></span></div><p>Care · Comfort · Smiles.</p><a href="https://www.linkedin.com/company/bonne-trinity/" target="_blank" rel="noreferrer" aria-label="BONNE TRINITY on LinkedIn"><Linkedin size={18} /></a></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} BONNE TRINITY. All rights reserved.</span><span>53A/11 Rama Road, Kirti Nagar, New Delhi — 110015</span><span>GSTIN 07ABGFB9745E1ZB</span></div></footer>
       <a className="floating-whatsapp" href="https://wa.me/918588879611" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"><MessageCircle size={22} /></a>
     </div>
   );
