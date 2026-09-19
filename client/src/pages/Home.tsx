@@ -55,17 +55,13 @@ const products = [
   { name: "Care pad range · back", category: "Personal hygiene", meta: "Packaging and specification view", image: "/manus-storage/bonne-pad-back_45efe2ce.jpeg", tone: "sky" },
   { name: "Sipper bottle collection", category: "Material solutions", meta: "Bottle and packaging formats", image: "/manus-storage/sipper-actual-1_865198ae.jpeg", tone: "lavender" },
   { name: "Sipper box packaging", category: "Material solutions", meta: "Retail-ready presentation", image: "/manus-storage/sipper-box-2_4aeac308.jpeg", tone: "mint" },
-  { name: "Product pack study 01", category: "Material solutions", meta: "Packaging development reference", image: "/manus-storage/pack-1_db7aa8c6.jpeg", tone: "coral" },
-  { name: "Product pack study 02", category: "Material solutions", meta: "Packaging development reference", image: "/manus-storage/pack-2_cd8c043e.jpeg", tone: "yellow" },
-  { name: "Product pack study 03", category: "Material solutions", meta: "Packaging development reference", image: "/manus-storage/pack-3_78ffdf6e.jpeg", tone: "sky" },
-  { name: "Product pack study 04", category: "Material solutions", meta: "Packaging development reference", image: "/manus-storage/pack-4_79df1797.jpeg", tone: "mint" },
-  { name: "Product pack study 05", category: "Material solutions", meta: "Packaging development reference", image: "/manus-storage/pack-5_313c98dc.jpeg", tone: "lavender" },
-  { name: "Product pack study 06", category: "Material solutions", meta: "Packaging development reference", image: "/manus-storage/pack-6_93e8e95d.jpeg", tone: "coral" },
-  { name: "Product pack study 07", category: "Material solutions", meta: "Packaging development reference", image: "/manus-storage/pack-7_5939cc42.jpeg", tone: "yellow" },
-  { name: "Sipper box study", category: "Material solutions", meta: "Retail-ready presentation", image: "/manus-storage/sipper-box_2bb85957.jpeg", tone: "sky" },
-  { name: "Sipper bottle study", category: "Material solutions", meta: "Bottle format reference", image: "/manus-storage/sipper_4d1cbb99.jpeg", tone: "mint" },
-  { name: "Pad format study", category: "Personal hygiene", meta: "Product family reference", image: "/manus-storage/bonne-pad-together_e7751997.jpeg", tone: "lavender" },
 ];
+
+const productDetails = {
+  "Baby care": { spec: "Food-grade silicone / BPA-free formats", moq: "MOQ from 1,000 units", export: "India + export enquiries" },
+  "Personal hygiene": { spec: "Absorbent non-woven and hygiene formats", moq: "MOQ from 5,000 units", export: "Export documentation support" },
+  "Material solutions": { spec: "PP / PET packaging and bottle formats", moq: "MOQ from 2,000 units", export: "International supply discussions" },
+};
 
 export default function Home() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -127,7 +123,7 @@ export default function Home() {
       <header className="nav-wrap">
         <div className="container nav-inner">
           <a className="brand" href="#top" aria-label="BONNE TRINITY home">
-            <span className="brand-mark brand-logo brand-logo-wide"><img src="/manus-storage/bonne-logo_a8a980ea.jpeg" alt="BONNE TRINITY" /></span>
+            <span className="brand-mark brand-logo brand-logo-wide"><img src="/manus-storage/bonne-logo-transparent_6a9211c0.png" alt="BONNE TRINITY" /></span>
           </a>
           <button className="mobile-toggle" aria-label="Toggle navigation" onClick={() => setMobileOpen(!mobileOpen)}>
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -201,7 +197,7 @@ export default function Home() {
           <div className="container">
             <div className="section-heading showcase-heading"><div><div className="section-label">02A / PRODUCT SHOWCASE</div><h2>Made for <i>real life.</i></h2></div><p>Explore a selection of product and packaging formats from the BONNE TRINITY range. Share your brief for specifications, quantities and private-label pathways.</p></div>
             <div className="showcase-filters" role="tablist" aria-label="Filter products">{["All products", "Baby care", "Personal hygiene", "Material solutions"].map((filter) => <button key={filter} className={productFilter === filter ? "active" : ""} onClick={() => setProductFilter(filter)} role="tab" aria-selected={productFilter === filter}>{filter}</button>)}</div>
-            <div className="product-grid">{products.filter((product) => productFilter === "All products" || product.category === productFilter).map((product, index) => <article className={`product-card product-${product.tone}`} key={product.name}><div className="product-image"><img src={product.image} alt={product.name} loading={index > 2 ? "lazy" : "eager"} /><span className="product-index">0{index + 1}</span></div><div className="product-info"><div><span className="product-category">{product.category}</span><h3>{product.name}</h3><p>{product.meta}</p></div><a href="#enquire" aria-label={`Enquire about ${product.name}`}><ArrowUpRight size={18} /></a></div></article>)}</div>
+            <div className="product-grid">{products.filter((product) => productFilter === "All products" || product.category === productFilter).map((product, index) => { const details = productDetails[product.category as keyof typeof productDetails]; return <article className={`product-card product-${product.tone}`} key={product.name}><div className="product-image"><img src={product.image} alt={product.name} loading={index > 2 ? "lazy" : "eager"} /><span className="product-index">{String(index + 1).padStart(2, "0")}</span></div><div className="product-info"><div><span className="product-category">{product.category}</span><h3>{product.name}</h3><p>{product.meta}</p><div className="product-specs"><span>{details.spec}</span><span>{details.moq}</span><span>{details.export}</span></div></div><a href="#enquire" aria-label={`Enquire about ${product.name}`}><ArrowUpRight size={18} /></a></div></article>; })}</div>
             <div className="showcase-footer"><span>Need a specific format, volume or customization?</span><a className="text-link" href="#enquire">Start with your brief <span>↗</span></a></div>
           </div>
         </section>
@@ -215,7 +211,7 @@ export default function Home() {
         <section className="enquiry-section" id="enquire"><div className="container enquiry-grid"><div className="enquiry-intro"><div className="section-label">05 / START A CONVERSATION</div><h2>Let’s make<br /><i>something useful.</i></h2><p>Tell us a little about what you are looking for. We’ll come back to you with the right next step.</p><div className="contact-list"><a href="mailto:care@bonnetrinity.com"><Mail size={18} /> care@bonnetrinity.com</a><a href="tel:+919811643325"><Phone size={18} /> +91 98116 43325</a><a href="https://wa.me/918588879611" target="_blank" rel="noreferrer"><MessageCircle size={18} /> WhatsApp us</a></div></div><div className="form-card">{sent ? <div className="success-state"><div className="success-icon"><Check size={24} /></div><div className="section-label">MESSAGE RECEIVED</div><h3>Thank you for reaching out.</h3><p>Our team will review your enquiry and get back to you soon.</p><button className="button button-dark" onClick={() => setSent(false)}>Send another enquiry</button></div> : <form onSubmit={handleSubmit}><input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY"} /><input type="checkbox" name="botcheck" className="hidden-field" tabIndex={-1} autoComplete="off" /><div className="form-row"><label>Full name<input required name="name" placeholder="Your name" /></label><label>Work email<input required type="email" name="email" placeholder="you@company.com" /></label></div><div className="form-row"><label>Phone number<input required type="tel" name="phone" placeholder="+91 00000 00000" /></label><label>Company / organisation<input name="company" placeholder="Company name" /></label></div><label>How can we help?<textarea required name="message" rows={4} placeholder="Tell us about your product, volume or sourcing requirement..." /></label><div className="form-foot"><span>We respect your inbox. No noise, just a thoughtful reply.</span><button className="button button-dark" type="submit" disabled={isSubmitting}>{isSubmitting ? "Sending..." : "Send enquiry"} <ArrowUpRight size={17} /></button></div></form>}</div></div></section>
       </main>
 
-      <footer className="footer"><div className="container footer-top"><div className="brand footer-brand"><span className="brand-mark brand-logo brand-logo-wide"><img src="/manus-storage/bonne-logo_a8a980ea.jpeg" alt="BONNE TRINITY" /></span></div><p>Care · Comfort · Smiles.</p><a href="https://www.linkedin.com/company/bonne-trinity/" target="_blank" rel="noreferrer" aria-label="BONNE TRINITY on LinkedIn"><Linkedin size={18} /></a></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} BONNE TRINITY. All rights reserved.</span><span>53A/11 Rama Road, Kirti Nagar, New Delhi — 110015</span><span>GSTIN 07ABGFB9745E1ZB</span></div></footer>
+      <footer className="footer"><div className="container footer-top"><div className="brand footer-brand"><span className="brand-mark brand-logo brand-logo-wide"><img src="/manus-storage/bonne-logo-transparent_6a9211c0.png" alt="BONNE TRINITY" /></span></div><p>Care · Comfort · Smiles.</p><a href="https://www.linkedin.com/company/bonne-trinity/" target="_blank" rel="noreferrer" aria-label="BONNE TRINITY on LinkedIn"><Linkedin size={18} /></a></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} BONNE TRINITY. All rights reserved.</span><span>53A/11 Rama Road, Kirti Nagar, New Delhi — 110015</span><span>GSTIN 07ABGFB9745E1ZB</span></div></footer>
       <a className="floating-whatsapp" href="https://wa.me/918588879611" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"><MessageCircle size={22} /></a>
     </div>
   );

@@ -148,3 +148,11 @@
   .footer .brand-logo-wide { width: 122px; height: 42px; }
   @media (max-width: 800px) { .brand-logo-wide { width: 99px; height: 39px; } .footer .brand-logo-wide { width: 108px; height: 38px; } }
 }
+
+@layer components {
+  .brand-logo-wide { background: transparent; }
+  .product-specs { display: grid; gap: 4px; margin-top: 12px; color: #587384; font-size: 9px; line-height: 1.35; }
+  .product-specs span { position: relative; padding-left: 10px; }
+  .product-specs span:before { content: ""; position: absolute; left: 0; top: 5px; width: 4px; height: 4px; border-radius: 50%; background: #f4978f; }
+  @media (max-width: 800px) { .product-specs { font-size: 8px; } }
+}
