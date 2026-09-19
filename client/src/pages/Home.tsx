@@ -48,10 +48,23 @@ const categories = [
 
 const audiences = ["Brands", "Distributors", "Retailers", "Private-label / OEM"];
 
+const products = [
+  { name: "Orthodontic souther nipple", category: "Baby care", meta: "3+ months · Food-grade silicone", image: "/manus-storage/bonne-nipple_9124056e.jpeg", tone: "coral" },
+  { name: "Baby toothbrush with cover", category: "Baby care", meta: "12+ months · BPA-free", image: "/manus-storage/toothbrush_08840fc6.jpeg", tone: "mint" },
+  { name: "Adult care pad range", category: "Personal hygiene", meta: "Absorbent formats · Private label", image: "/manus-storage/bonne-pad_c54c9b7c.jpeg", tone: "yellow" },
+  { name: "Care pad range · back", category: "Personal hygiene", meta: "Packaging and specification view", image: "/manus-storage/bonne-pad-back_45efe2ce.jpeg", tone: "sky" },
+  { name: "Sipper bottle collection", category: "Material solutions", meta: "Bottle and packaging formats", image: "/manus-storage/sipper-actual-1_865198ae.jpeg", tone: "lavender" },
+  { name: "Sipper box packaging", category: "Material solutions", meta: "Retail-ready presentation", image: "/manus-storage/sipper-box-2_4aeac308.jpeg", tone: "mint" },
+  { name: "Product pack study 01", category: "Material solutions", meta: "Packaging development reference", image: "/manus-storage/pack-1_db7aa8c6.jpeg", tone: "coral" },
+  { name: "Product pack study 02", category: "Material solutions", meta: "Packaging development reference", image: "/manus-storage/pack-2_cd8c043e.jpeg", tone: "yellow" },
+  { name: "Product pack study 03", category: "Material solutions", meta: "Packaging development reference", image: "/manus-storage/pack-3_78ffdf6e.jpeg", tone: "sky" },
+];
+
 export default function Home() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
+  const [productFilter, setProductFilter] = useState("All products");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -62,6 +75,7 @@ export default function Home() {
     data.set("access_key", accessKey);
     data.set("subject", "New BONNE TRINITY website enquiry");
     data.set("from_name", "BONNE TRINITY Website");
+    data.set("to", "bonnetrinity@gmail.com");
     data.set("botcheck", "");
 
     if (accessKey === "YOUR_WEB3FORMS_ACCESS_KEY") {
@@ -114,6 +128,7 @@ export default function Home() {
           </button>
           <nav className={mobileOpen ? "nav-links open" : "nav-links"}>
             <a href="#what-we-do" onClick={() => setMobileOpen(false)}>What we do</a>
+            <a href="#products" onClick={() => setMobileOpen(false)}>Products</a>
             <a href="#partners" onClick={() => setMobileOpen(false)}>Who we serve</a>
             <a href="#about" onClick={() => setMobileOpen(false)}>About us</a>
             <a className="nav-cta" href="#enquire" onClick={() => setMobileOpen(false)}>Start a conversation <ArrowUpRight size={16} /></a>
@@ -173,6 +188,15 @@ export default function Home() {
           <div className="container">
             <div className="section-heading"><div><div className="section-label">02 / WHAT WE DO</div><h2>Three ways to<br /><i>move forward.</i></h2></div><p>From the first conversation to the final format, our role is to help you find a practical, dependable route to market.</p></div>
             <div className="category-grid">{categories.map(({ number, eyebrow, title, text, icon: Icon, tone }) => <article className={`category-card ${tone}`} key={title}><div className="category-top"><span>{number}</span><Icon size={22} strokeWidth={1.5} /></div><div className="category-bottom"><div className="category-eyebrow">{eyebrow}</div><h3>{title}</h3><p>{text}</p><a href="#enquire" aria-label={`Enquire about ${title}`}>Explore <ArrowUpRight size={16} /></a></div></article>)}</div>
+          </div>
+        </section>
+
+        <section className="showcase-section" id="products">
+          <div className="container">
+            <div className="section-heading showcase-heading"><div><div className="section-label">02A / PRODUCT SHOWCASE</div><h2>Made for <i>real life.</i></h2></div><p>Explore a selection of product and packaging formats from the BONNE TRINITY range. Share your brief for specifications, quantities and private-label pathways.</p></div>
+            <div className="showcase-filters" role="tablist" aria-label="Filter products">{["All products", "Baby care", "Personal hygiene", "Material solutions"].map((filter) => <button key={filter} className={productFilter === filter ? "active" : ""} onClick={() => setProductFilter(filter)} role="tab" aria-selected={productFilter === filter}>{filter}</button>)}</div>
+            <div className="product-grid">{products.filter((product) => productFilter === "All products" || product.category === productFilter).map((product, index) => <article className={`product-card product-${product.tone}`} key={product.name}><div className="product-image"><img src={product.image} alt={product.name} loading={index > 2 ? "lazy" : "eager"} /><span className="product-index">0{index + 1}</span></div><div className="product-info"><div><span className="product-category">{product.category}</span><h3>{product.name}</h3><p>{product.meta}</p></div><a href="#enquire" aria-label={`Enquire about ${product.name}`}><ArrowUpRight size={18} /></a></div></article>)}</div>
+            <div className="showcase-footer"><span>Need a specific format, volume or customization?</span><a className="text-link" href="#enquire">Start with your brief <span>↗</span></a></div>
           </div>
         </section>
 
