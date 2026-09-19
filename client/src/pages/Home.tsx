@@ -58,6 +58,13 @@ const products = [
   { name: "Product pack study 01", category: "Material solutions", meta: "Packaging development reference", image: "/manus-storage/pack-1_db7aa8c6.jpeg", tone: "coral" },
   { name: "Product pack study 02", category: "Material solutions", meta: "Packaging development reference", image: "/manus-storage/pack-2_cd8c043e.jpeg", tone: "yellow" },
   { name: "Product pack study 03", category: "Material solutions", meta: "Packaging development reference", image: "/manus-storage/pack-3_78ffdf6e.jpeg", tone: "sky" },
+  { name: "Product pack study 04", category: "Material solutions", meta: "Packaging development reference", image: "/manus-storage/pack-4_79df1797.jpeg", tone: "mint" },
+  { name: "Product pack study 05", category: "Material solutions", meta: "Packaging development reference", image: "/manus-storage/pack-5_313c98dc.jpeg", tone: "lavender" },
+  { name: "Product pack study 06", category: "Material solutions", meta: "Packaging development reference", image: "/manus-storage/pack-6_93e8e95d.jpeg", tone: "coral" },
+  { name: "Product pack study 07", category: "Material solutions", meta: "Packaging development reference", image: "/manus-storage/pack-7_5939cc42.jpeg", tone: "yellow" },
+  { name: "Sipper box study", category: "Material solutions", meta: "Retail-ready presentation", image: "/manus-storage/sipper-box_2bb85957.jpeg", tone: "sky" },
+  { name: "Sipper bottle study", category: "Material solutions", meta: "Bottle format reference", image: "/manus-storage/sipper_4d1cbb99.jpeg", tone: "mint" },
+  { name: "Pad format study", category: "Personal hygiene", meta: "Product family reference", image: "/manus-storage/bonne-pad-together_e7751997.jpeg", tone: "lavender" },
 ];
 
 export default function Home() {
