@@ -1,16 +1,34 @@
 import { ReactNode, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
-export default function SiteLayout({ children }: { children: ReactNode }) {
+export function SiteHeader({ home = false }: { home?: boolean }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const close = () => setMobileOpen(false);
+  const homeHref = home ? "#top" : "/";
+  return (
+    <header className="nav-wrap hero-pill-nav">
+      <div className="container nav-inner">
+        <a className="brand" href={homeHref} aria-label="BONNE TRINITY home">
+          <span className="brand-mark brand-logo brand-logo-wide"><img src="/assets/bonne-logo-transparent_6a9211c0.png" alt="BONNE TRINITY" /></span>
+        </a>
+        <button className="mobile-toggle" aria-label="Toggle navigation" onClick={() => setMobileOpen(!mobileOpen)}>
+          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
+        <nav className={mobileOpen ? "nav-links open" : "nav-links"}>
+          {home ? <a href="#what-we-do" onClick={close}>What we do</a> : null}
+          <a href="/products" onClick={close}>Products</a>
+          <a href="/who-we-serve" onClick={close}>Who we serve</a>
+          <a href="/about" onClick={close}>About us</a>
+          <span className="nav-actions"><a className="nav-call" href="tel:+919811643325">Call Now</a><a className="nav-whatsapp" href="https://wa.me/918588879611" target="_blank" rel="noreferrer">WhatsApp</a></span>
+        </nav>
+      </div>
+    </header>
+  );
+}
+
+export default function SiteLayout({ children }: { children: ReactNode }) {
   return <div className="site-shell inner-page-shell">
-    <div className="topline"><div className="container topline-inner"><span>Material solutions for better care.</span><div className="topline-contact"><a href="mailto:care@bonnetrinity.com">care@bonnetrinity.com</a><span className="topline-dot" /><a href="tel:+919811643325">+91 98116 43325</a></div></div></div>
-    <header className="inner-nav"><div className="container nav-inner">
-      <a className="brand" href="/" aria-label="BONNE TRINITY home"><span className="brand-mark brand-logo brand-logo-wide"><img src="/assets/bonne-logo-transparent_6a9211c0.png" alt="BONNE TRINITY" /></span></a>
-      <button className="mobile-toggle inner-toggle" aria-label="Toggle navigation" onClick={() => setMobileOpen(!mobileOpen)}>{mobileOpen ? <X size={22} /> : <Menu size={22} />}</button>
-      <nav className={mobileOpen ? "nav-links open" : "nav-links"}><a href="/products" onClick={close}>Products</a><a href="/who-we-serve" onClick={close}>Who we serve</a><a href="/about" onClick={close}>About us</a><a className="nav-cta" href="/enquire" onClick={close}>Start a conversation <ArrowUpRight size={16} /></a></nav>
-    </div></header>
+    <SiteHeader />
     {children}
     <footer className="footer inner-footer"><div className="container footer-top"><div className="brand footer-brand"><span className="brand-mark brand-logo brand-logo-wide"><img src="/assets/bonne-logo-transparent_6a9211c0.png" alt="BONNE TRINITY" /></span></div><p>Care · Comfort · Smiles.</p><a href="https://www.linkedin.com/company/bonne-trinity/" target="_blank" rel="noreferrer">LinkedIn <ArrowUpRight size={15} /></a></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} BONNE TRINITY. All rights reserved.</span><span>53A/11 Rama Road, Kirti Nagar, New Delhi — 110015</span><span>GSTIN 07ABGFB9745E1ZB</span></div></footer>
   </div>;

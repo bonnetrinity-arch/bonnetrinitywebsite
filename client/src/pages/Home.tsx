@@ -9,15 +9,14 @@ import {
   Leaf,
   Linkedin,
   Mail,
-  Menu,
   MessageCircle,
   PackageCheck,
   Phone,
   ShieldCheck,
   Sparkles,
-  X,
 } from "lucide-react";
 import { toast } from "sonner";
+import { SiteHeader } from "@/components/SiteLayout";
 
 const categories = [
   {
@@ -64,7 +63,6 @@ const productDetails = {
 };
 
 export default function Home() {
-  const [mobileOpen, setMobileOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
   const [productFilter, setProductFilter] = useState("All products");
@@ -109,23 +107,7 @@ export default function Home() {
 
   return (
     <div className="site-shell">
-      <header className="nav-wrap hero-pill-nav">
-        <div className="container nav-inner">
-          <a className="brand" href="#top" aria-label="BONNE TRINITY home">
-            <span className="brand-mark brand-logo brand-logo-wide"><img src="/assets/bonne-logo-transparent_6a9211c0.png" alt="BONNE TRINITY" /></span>
-          </a>
-          <button className="mobile-toggle" aria-label="Toggle navigation" onClick={() => setMobileOpen(!mobileOpen)}>
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
-          <nav className={mobileOpen ? "nav-links open" : "nav-links"}>
-            <a href="#what-we-do" onClick={() => setMobileOpen(false)}>What we do</a>
-            <a href="/products" onClick={() => setMobileOpen(false)}>Products</a>
-            <a href="/who-we-serve" onClick={() => setMobileOpen(false)}>Who we serve</a>
-            <a href="/about" onClick={() => setMobileOpen(false)}>About us</a>
-            <span className="nav-actions"><a className="nav-call" href="tel:+919811643325">Call Now</a><a className="nav-whatsapp" href="https://wa.me/918588879611" target="_blank" rel="noreferrer">WhatsApp</a></span>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader home />
 
       <main id="top">
         <section className="hero-section hero-editorial">
@@ -141,14 +123,9 @@ export default function Home() {
               <div className="hero-art-ring" />
               <div className="hero-product hero-product-main"><img src="/assets/bonne-nipple_9124056e.jpeg" alt="BONNE orthodontic souther nipple" /><span>01 / BABY CARE</span></div>
               <div className="hero-product hero-product-small"><img src="/assets/toothbrush_08840fc6.jpeg" alt="BONNE baby toothbrush" /><span>02 / DAILY CARE</span></div>
-              <div className="hero-art-note"><span>BUILT AROUND<br />YOUR BRIEF</span><ArrowUpRight size={16} /></div>
             </div>
           </div>
-          <div className="hero-bottomline container"><span>Independent B2B partner · India</span><span>Scroll to discover <ChevronDown size={15} /></span><span>New Delhi · Since 2024</span></div>
-        </section>
-
-        <section className="marquee" aria-label="Our focus areas">
-          <div className="marquee-track"><span>CARE</span><span className="marquee-dot">✳</span><span>MATERIALS</span><span className="marquee-dot">✳</span><span>PARTNERSHIPS</span><span className="marquee-dot">✳</span><span>CARE</span><span className="marquee-dot">✳</span><span>MATERIALS</span></div>
+          <div className="hero-bottomline container"><span>Scroll to discover <ChevronDown size={15} /></span></div>
         </section>
 
         <section className="intro-section" id="about">
