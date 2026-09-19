@@ -109,18 +109,7 @@ export default function Home() {
 
   return (
     <div className="site-shell">
-      <div className="topline">
-        <div className="container topline-inner">
-          <span>Material solutions for better care.</span>
-          <div className="topline-contact">
-            <a href="mailto:care@bonnetrinity.com">care@bonnetrinity.com</a>
-            <span className="topline-dot" />
-            <a href="tel:+919811643325">+91 98116 43325</a>
-          </div>
-        </div>
-      </div>
-
-      <header className="nav-wrap">
+      <header className="nav-wrap hero-pill-nav">
         <div className="container nav-inner">
           <a className="brand" href="#top" aria-label="BONNE TRINITY home">
             <span className="brand-mark brand-logo brand-logo-wide"><img src="/manus-storage/bonne-logo-transparent_6a9211c0.png" alt="BONNE TRINITY" /></span>
@@ -129,10 +118,11 @@ export default function Home() {
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
           <nav className={mobileOpen ? "nav-links open" : "nav-links"}>
+            <a href="#what-we-do" onClick={() => setMobileOpen(false)}>What we do</a>
             <a href="/products" onClick={() => setMobileOpen(false)}>Products</a>
             <a href="/who-we-serve" onClick={() => setMobileOpen(false)}>Who we serve</a>
             <a href="/about" onClick={() => setMobileOpen(false)}>About us</a>
-            <a className="nav-cta" href="/enquire" onClick={() => setMobileOpen(false)}>Start a conversation <ArrowUpRight size={16} /></a>
+            <span className="nav-actions"><a className="nav-call" href="tel:+919811643325">Call Now</a><a className="nav-whatsapp" href="https://wa.me/918588879611" target="_blank" rel="noreferrer">WhatsApp</a></span>
           </nav>
         </div>
       </header>
