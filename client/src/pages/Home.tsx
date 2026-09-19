@@ -11,7 +11,6 @@ import {
   Linkedin,
   Mail,
   MessageCircle,
-  PackageCheck,
   Phone,
   ShieldCheck,
   Sparkles,
@@ -32,17 +31,9 @@ const categories = [
     number: "02",
     eyebrow: "Made for daily life",
     title: "Personal hygiene",
-    text: "High-utility formats and materials that help partners build products people trust and reach for every day.",
+    text: "High-utility, trusted formats that help partners build products people reach for every day.",
     icon: Sparkles,
     tone: "sage",
-  },
-  {
-    number: "03",
-    eyebrow: "Built around your brief",
-    title: "Material solutions",
-    text: "Flexible sourcing and private-label pathways for brands, distributors and retailers looking for a responsive partner.",
-    icon: PackageCheck,
-    tone: "sand",
   },
 ];
 
@@ -53,14 +44,11 @@ const products = [
   { name: "Baby toothbrush with cover", category: "Baby care", meta: "12+ months · BPA-free", image: "/assets/toothbrush_08840fc6.jpeg", tone: "mint" },
   { name: "Adult care pad range", category: "Personal hygiene", meta: "Absorbent formats · Private label", image: "/assets/bonne-pad_c54c9b7c.jpeg", tone: "yellow" },
   { name: "Care pad range · back", category: "Personal hygiene", meta: "Packaging and specification view", image: "/assets/bonne-pad-back_45efe2ce.jpeg", tone: "sky" },
-  { name: "Sipper bottle collection", category: "Material solutions", meta: "Bottle and packaging formats", image: "/assets/sipper-actual-1_865198ae.jpeg", tone: "lavender" },
-  { name: "Sipper box packaging", category: "Material solutions", meta: "Retail-ready presentation", image: "/assets/sipper-box-2_4aeac308.jpeg", tone: "mint" },
 ];
 
 const productDetails = {
   "Baby care": { spec: "Food-grade silicone / BPA-free formats", moq: "MOQ from 1,000 units", export: "India + export enquiries" },
   "Personal hygiene": { spec: "Absorbent non-woven and hygiene formats", moq: "MOQ from 5,000 units", export: "Export documentation support" },
-  "Material solutions": { spec: "PP / PET packaging and bottle formats", moq: "MOQ from 2,000 units", export: "International supply discussions" },
 };
 
 export default function Home() {
@@ -117,7 +105,7 @@ export default function Home() {
             <div className="hero-editorial-copy reveal-up">
               <div className="eyebrow"><span className="eyebrow-line" /> CARE · COMFORT · SMILES</div>
               <h1>Thoughtful products.<br /><i>Better everyday care.</i></h1>
-              <p className="hero-lede">BONNE TRINITY helps brands, buyers and distributors build dependable care ranges — from baby essentials to personal hygiene and material solutions.</p>
+              <p className="hero-lede">BONNE TRINITY helps brands, buyers and distributors build dependable care ranges — from baby essentials to personal hygiene.</p>
               <div className="hero-actions"><a className="button button-dark" href="#products">Explore the range <ArrowUpRight size={17} /></a><a className="text-link" href="#enquire">Tell us what you need <span>↗</span></a></div>
             </div>
             <div className="hero-editorial-art" aria-label="BONNE TRINITY product range">
@@ -146,7 +134,7 @@ export default function Home() {
 
         <section className="categories-section" id="what-we-do">
           <div className="container">
-            <div className="section-heading"><div><div className="section-label">02 / WHAT WE DO</div><h2>Three ways to<br /><i>move forward.</i></h2></div><p>From the first conversation to the final format, our role is to help you find a practical, dependable route to market.</p></div>
+            <div className="section-heading"><div><div className="section-label">02 / WHAT WE DO</div><h2>Two ways to<br /><i>move forward.</i></h2></div><p>From the first conversation to the final format, our role is to help you find a practical, dependable route to market.</p></div>
             <div className="category-grid">{categories.map(({ number, eyebrow, title, text, icon: Icon, tone }) => <article className={`category-card ${tone}`} key={title}><div className="category-top"><span>{number}</span><Icon size={22} strokeWidth={1.5} /></div><div className="category-bottom"><div className="category-eyebrow">{eyebrow}</div><h3>{title}</h3><p>{text}</p><a href="#enquire" aria-label={`Enquire about ${title}`}>Explore <ArrowUpRight size={16} /></a></div></article>)}</div>
           </div>
         </section>
@@ -154,7 +142,7 @@ export default function Home() {
         <section className="showcase-section" id="products">
           <div className="container">
             <div className="section-heading showcase-heading"><div><div className="section-label">02A / PRODUCT SHOWCASE</div><h2>Made for <i>real life.</i></h2></div><p>Explore a selection of product and packaging formats from the BONNE TRINITY range. Share your brief for specifications, quantities and private-label pathways.</p></div>
-            <div className="showcase-filters" role="tablist" aria-label="Filter products">{["All products", "Baby care", "Personal hygiene", "Material solutions"].map((filter) => <button key={filter} className={productFilter === filter ? "active" : ""} onClick={() => setProductFilter(filter)} role="tab" aria-selected={productFilter === filter}>{filter}</button>)}</div>
+            <div className="showcase-filters" role="tablist" aria-label="Filter products">{["All products", "Baby care", "Personal hygiene"].map((filter) => <button key={filter} className={productFilter === filter ? "active" : ""} onClick={() => setProductFilter(filter)} role="tab" aria-selected={productFilter === filter}>{filter}</button>)}</div>
             <div className="product-grid">{products.filter((product) => productFilter === "All products" || product.category === productFilter).map((product, index) => { const details = productDetails[product.category as keyof typeof productDetails]; return <article className={`product-card product-${product.tone}`} key={product.name}><div className="product-image"><img src={product.image} alt={product.name} loading={index > 2 ? "lazy" : "eager"} /><span className="product-index">{String(index + 1).padStart(2, "0")}</span></div><div className="product-info"><div><span className="product-category">{product.category}</span><h3>{product.name}</h3><p>{product.meta}</p><div className="product-specs"><span>{details.spec}</span><span>{details.moq}</span><span>{details.export}</span></div></div><a href="#enquire" aria-label={`Enquire about ${product.name}`}><ArrowUpRight size={18} /></a></div></article>; })}</div>
             <div className="showcase-footer"><span>Need a specific format, volume or customization?</span><a className="text-link" href="#enquire">Start with your brief <span>↗</span></a></div>
           </div>

@@ -56,8 +56,6 @@ export const products = [
   { name: "Baby toothbrush with cover", category: "Baby care", meta: "12+ months · BPA-free", image: "/assets/toothbrush_08840fc6.jpeg", tone: "mint", spec: "Soft-touch handle / covered brush head", moq: "MOQ from 1,000 units", export: "India + export enquiries" },
   { name: "Adult care pad range", category: "Personal hygiene", meta: "Absorbent formats · Private label", image: "/assets/bonne-pad_c54c9b7c.jpeg", tone: "yellow", spec: "Absorbent non-woven and hygiene formats", moq: "MOQ from 5,000 units", export: "Export documentation support" },
   { name: "Care pad range · back", category: "Personal hygiene", meta: "Packaging and specification view", image: "/assets/bonne-pad-back_45efe2ce.jpeg", tone: "sky", spec: "Private-label pack configuration", moq: "MOQ from 5,000 units", export: "Export documentation support" },
-  { name: "Sipper bottle collection", category: "Material solutions", meta: "Bottle and packaging formats", image: "/assets/sipper-actual-1_865198ae.jpeg", tone: "lavender", spec: "PP / PET bottle formats", moq: "MOQ from 2,000 units", export: "International supply discussions" },
-  { name: "Sipper box packaging", category: "Material solutions", meta: "Retail-ready presentation", image: "/assets/sipper-box-2_4aeac308.jpeg", tone: "mint", spec: "Retail-ready packaging format", moq: "MOQ from 2,000 units", export: "International supply discussions" },
 ];
 
 export const PageIntro = ({ eyebrow, title, text }: { eyebrow: string; title: ReactNode; text: string }) => <section className="page-intro"><div className="container page-intro-grid"><div className="section-label">{eyebrow}</div><div><h1>{title}</h1><p>{text}</p></div></div></section>;
