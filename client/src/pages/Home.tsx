@@ -139,32 +139,23 @@ export default function Home() {
       </header>
 
       <main id="top">
-        <section className="hero-section">
-          <div className="hero-orbit hero-orbit-one" />
-          <div className="hero-orbit hero-orbit-two" />
-          <div className="container hero-grid">
-            <div className="hero-copy reveal-up">
-              <div className="eyebrow"><span className="eyebrow-line" /> INDEPENDENT B2B PARTNER · INDIA</div>
-              <h1>Better everyday care, <i>made possible.</i></h1>
-              <p className="hero-lede">BONNE TRINITY brings together baby care, personal hygiene and material solutions for partners building products people rely on.</p>
-              <div className="hero-actions">
-                <a className="button button-dark" href="#what-we-do">Explore our capabilities <ArrowUpRight size={17} /></a>
-                <a className="text-link" href="#enquire">Tell us what you need <span>↗</span></a>
-              </div>
-              <div className="hero-proof"><Check size={15} /> Built for brands, buyers and long-term partnerships</div>
+        <section className="hero-section hero-editorial">
+          <div className="hero-glow hero-glow-one" /><div className="hero-glow hero-glow-two" />
+          <div className="container hero-editorial-inner">
+            <div className="hero-editorial-copy reveal-up">
+              <div className="eyebrow"><span className="eyebrow-line" /> CARE · COMFORT · SMILES</div>
+              <h1>Thoughtful products.<br /><i>Better everyday care.</i></h1>
+              <p className="hero-lede">BONNE TRINITY helps brands, buyers and distributors build dependable care ranges — from baby essentials to personal hygiene and material solutions.</p>
+              <div className="hero-actions"><a className="button button-dark" href="#products">Explore the range <ArrowUpRight size={17} /></a><a className="text-link" href="#enquire">Tell us what you need <span>↗</span></a></div>
             </div>
-            <div className="hero-visual" aria-label="Abstract editorial illustration">
-              <div className="visual-stamp"><span>BT</span><small>CARE<br />MATERIALS<br />PARTNERS</small></div>
-              <div className="visual-card visual-card-back"><span>01</span><strong>Care is<br /><i>closer</i> than<br />you think.</strong></div>
-              <div className="visual-card visual-card-front">
-                <div className="card-topline"><span>FIELD NOTE / 001</span><span>NEW DELHI</span></div>
-                <div className="bottle-shape"><img src="/manus-storage/bonne-nipple_9124056e.jpeg" alt="BONNE nipple product" /></div>
-                <div className="card-bottomline"><span>FORM / FUNCTION</span><span>01—03</span></div>
-              </div>
-              <div className="visual-caption">A considered approach to<br /><strong>everyday essentials.</strong></div>
+            <div className="hero-editorial-art" aria-label="BONNE TRINITY product range">
+              <div className="hero-art-ring" />
+              <div className="hero-product hero-product-main"><img src="/manus-storage/bonne-nipple_9124056e.jpeg" alt="BONNE orthodontic souther nipple" /><span>01 / BABY CARE</span></div>
+              <div className="hero-product hero-product-small"><img src="/manus-storage/toothbrush_08840fc6.jpeg" alt="BONNE baby toothbrush" /><span>02 / DAILY CARE</span></div>
+              <div className="hero-art-note"><span>BUILT AROUND<br />YOUR BRIEF</span><ArrowUpRight size={16} /></div>
             </div>
           </div>
-          <div className="hero-scroll"><span>Scroll to discover</span><ChevronDown size={18} /></div>
+          <div className="hero-bottomline container"><span>Independent B2B partner · India</span><span>Scroll to discover <ChevronDown size={15} /></span><span>New Delhi · Since 2024</span></div>
         </section>
 
         <section className="marquee" aria-label="Our focus areas">

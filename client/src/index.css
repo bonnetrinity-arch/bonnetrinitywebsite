@@ -156,3 +156,47 @@
   .product-specs span:before { content: ""; position: absolute; left: 0; top: 5px; width: 4px; height: 4px; border-radius: 50%; background: #f4978f; }
   @media (max-width: 800px) { .product-specs { font-size: 8px; } }
 }
+
+@layer components {
+  .hero-editorial { min-height: 800px; overflow: hidden; background: #173d70; }
+  .hero-editorial:before { opacity: .08; background-size: 32px 32px; }
+  .hero-editorial:after { background: radial-gradient(circle at 78% 38%, rgba(112,196,187,.42), transparent 27%), radial-gradient(circle at 56% 72%, rgba(244,151,143,.22), transparent 25%), linear-gradient(135deg, #173d70 0%, #1e568f 58%, #173d70 100%); }
+  .hero-editorial-inner { position: relative; z-index: 1; display: grid; grid-template-columns: .95fr 1.05fr; align-items: center; gap: 55px; min-height: 680px; padding-top: 105px; }
+  .hero-editorial-copy { max-width: 575px; padding-bottom: 30px; }
+  .hero-editorial h1 { max-width: 580px; margin-top: 26px; font-size: clamp(58px, 6.8vw, 96px); line-height: .9; letter-spacing: -.055em; }
+  .hero-editorial .hero-lede { max-width: 430px; margin-top: 30px; color: #d7e8f0; font-size: 15px; line-height: 1.75; }
+  .hero-editorial .button-dark { background: #f4978f; color: #173d70; }
+  .hero-editorial .hero-actions { margin-top: 34px; }
+  .hero-editorial-art { position: relative; height: 520px; }
+  .hero-art-ring { position: absolute; top: 50%; left: 50%; width: 475px; height: 475px; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; transform: translate(-46%, -46%); }
+  .hero-art-ring:before, .hero-art-ring:after { content: ""; position: absolute; border: 1px solid rgba(255,255,255,.13); border-radius: 50%; }
+  .hero-art-ring:before { inset: 34px; } .hero-art-ring:after { inset: 80px; }
+  .hero-product { position: absolute; overflow: hidden; background: #fffdf8; box-shadow: 0 20px 50px rgba(9,32,63,.25); }
+  .hero-product img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.23,1,.32,1); }
+  .hero-product:hover img { transform: scale(1.06); }
+  .hero-product span { position: absolute; left: 16px; bottom: 14px; color: #173d70; font-size: 9px; font-weight: 700; letter-spacing: .14em; }
+  .hero-product-main { top: 48px; left: 104px; width: 290px; height: 390px; transform: rotate(-5deg); animation: editorial-float 7s ease-in-out infinite; }
+  .hero-product-main img { object-position: center; }
+  .hero-product-small { right: 15px; bottom: 33px; width: 165px; height: 225px; transform: rotate(8deg); animation: editorial-float-small 6s ease-in-out infinite; }
+  .hero-product-small img { object-position: center; }
+  .hero-art-note { position: absolute; right: 0; top: 50px; display: flex; gap: 10px; align-items: center; color: #ffd36b; font-size: 9px; font-weight: 700; letter-spacing: .13em; line-height: 1.35; }
+  .hero-bottomline { position: absolute; z-index: 2; right: 0; bottom: 31px; left: 0; display: flex; justify-content: space-between; color: #c4dce7; font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }
+  .hero-bottomline span:nth-child(2) { display: inline-flex; align-items: center; gap: 8px; color: #ffd36b; }
+  @keyframes editorial-float { 0%,100% { transform: rotate(-5deg) translateY(0); } 50% { transform: rotate(-3deg) translateY(-12px); } }
+  @keyframes editorial-float-small { 0%,100% { transform: rotate(8deg) translateY(0); } 50% { transform: rotate(5deg) translateY(-8px); } }
+  @media (prefers-reduced-motion: reduce) { .hero-product-main, .hero-product-small { animation: none; } }
+  @media (max-width: 800px) {
+    .hero-editorial { min-height: 900px; }
+    .hero-editorial-inner { display: block; min-height: 820px; padding-top: 165px; }
+    .hero-editorial-copy { padding-bottom: 0; }
+    .hero-editorial h1 { font-size: clamp(55px, 15vw, 76px); }
+    .hero-editorial .hero-lede { font-size: 14px; }
+    .hero-editorial-art { height: 350px; margin-top: 30px; }
+    .hero-art-ring { width: 320px; height: 320px; transform: translate(-45%, -47%); }
+    .hero-product-main { top: 12px; left: 40px; width: 195px; height: 260px; }
+    .hero-product-small { right: 24px; bottom: 16px; width: 120px; height: 165px; }
+    .hero-art-note { top: 4px; right: 4px; font-size: 8px; }
+    .hero-bottomline { bottom: 19px; padding: 0 20px; font-size: 8px; }
+    .hero-bottomline span:first-child { display: none; }
+  }
+}
