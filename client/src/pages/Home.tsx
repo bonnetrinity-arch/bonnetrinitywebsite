@@ -26,6 +26,14 @@ const categories = [
     text: "Thoughtfully sourced baby-care essentials designed for everyday comfort, care and convenience.",
     icon: Baby,
     tone: "terracotta",
+    back: {
+      text: "Thoughtfully sourced and developed baby-care products designed for everyday comfort, convenience and care.",
+      rangeLabel: "Our range",
+      range: ["Feeding bottles & nipples", "Orthodontic soother nipple", "Silicone teething finger brush", "Glass sippers with sleeve", "Other baby-care essentials"],
+      forLabel: "For",
+      forWhom: "Distributors · Retailers",
+      cta: "/products?category=Baby%20care",
+    },
   },
   {
     number: "02",
