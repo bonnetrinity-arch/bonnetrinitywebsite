@@ -183,7 +183,7 @@ export default function Home() {
         <section className="network-section" aria-labelledby="network-2-title">
           <div className="container network-grid">
             <div className="network-lead"><div className="section-label">06 / MANUFACTURING & SOURCING NETWORK</div><h2 id="network-2-title">Built on real<br /><i>capability.</i></h2><p>Product development, quality-focused manufacturing and dependable B2B supply, delivered through our network of associated partners.</p></div>
-            <div className="network-content"><div className="network-media"><img src="/assets/factory-1_6d60273a.jpeg" alt="Manufacturing partner factory floor" /><span>MANUFACTURING NETWORK / NOIDA</span></div><ul className="network-capability-list"><li>Sourcing and manufacturing partnerships</li><li>Product development and private-label formats</li><li>Quality checks and documentation support</li><li>Ongoing supply for distributors and retailers</li></ul></div>
+            <div className="network-content"><div className="network-media"><img src="/assets/factory-3_4f6c7b2a.jpeg" alt="Manufacturing partner factory floor" /><span>MANUFACTURING NETWORK / NOIDA</span></div><ul className="network-capability-list"><li>Sourcing and manufacturing partnerships</li><li>Product development and private-label formats</li><li>Quality checks and documentation support</li><li>Ongoing supply for distributors and retailers</li></ul></div>
           </div>
         </section>
 
