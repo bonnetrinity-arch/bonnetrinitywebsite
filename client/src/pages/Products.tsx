@@ -4,7 +4,11 @@ import { Link } from "wouter";
 import SiteLayout, { CTASection, PageIntro, products } from "@/components/SiteLayout";
 
 export default function Products() {
-  const [filter, setFilter] = useState("All products");
+  const [filter, setFilter] = useState(() => {
+    if (typeof window === "undefined") return "All products";
+    const c = new URLSearchParams(window.location.search).get("category");
+    return c && ["Baby care", "Personal hygiene"].includes(c) ? c : "All products";
+  });
   const filters = ["All products", "Baby care", "Personal hygiene"];
   const shown = products.filter((p) => filter === "All products" || p.category === filter);
   return <SiteLayout><main><PageIntro eyebrow="01 / PRODUCT RANGE" title={<>Made for <i>real life.</i></>} text="A focused range of everyday baby care and personal hygiene products, available for distribution, private label and OEM conversations." />

@@ -330,6 +330,13 @@
 .category-explore:hover, .category-explore:focus-visible { transform: translateY(-3px); background: #173d70; color: #fffdf8; outline: none; }
 .category-back .category-explore:hover, .category-back .category-explore:focus-visible { background: #fffdf8; color: #173d70; }
 .category-explore-back { margin-top: 26px; }
+.category-back .category-top { align-items: center; }
+.category-back-close { width: 26px; height: 26px; border: 1px solid rgba(255,255,255,.4); border-radius: 50%; background: transparent; color: inherit; font-size: 15px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0; transition: opacity 180ms ease; }
+.category-back-close:hover { opacity: .7; }
+.category-back-block { margin-top: 18px; }
+.category-back-label { display: block; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; opacity: .65; margin-bottom: 8px; }
+.category-back-block ul { margin-top: 0; }
+.category-back-audience { margin: 0; font-size: 14px; }
 @media (max-width: 800px) {
   .category-grid { grid-template-columns: 1fr; }
   .category-card:nth-child(3) { grid-column: auto; }

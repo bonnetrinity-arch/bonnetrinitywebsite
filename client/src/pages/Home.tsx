@@ -24,20 +24,24 @@ const categories = [
     eyebrow: "Carefully sourced",
     title: "Baby care",
     text: "Thoughtfully sourced baby-care essentials designed for everyday comfort, care and convenience.",
-    details: "Feeding bottles, nipples, soothers, teethers and toothbrush formats for baby-care brands, distributors and retailers.",
-    detailPoints: ["Food-grade and BPA-free formats", "Private-label and OEM pathways", "India and export enquiries"],
     icon: Baby,
     tone: "terracotta",
   },
   {
     number: "02",
-    eyebrow: "Made for daily life",
+    eyebrow: "Made for everyday care",
     title: "Personal hygiene",
-    text: "High-utility, trusted formats that help partners build products people reach for every day.",
-    details: "Absorbent care formats and personal-hygiene solutions developed around your market, pack and distribution brief.",
-    detailPoints: ["Adult care pad formats", "Private-label pack configurations", "Export documentation support"],
+    text: "Reliable hygiene essentials designed for everyday comfort, protection and confidence.",
     icon: Sparkles,
     tone: "sage",
+    back: {
+      text: "Reliable personal-hygiene products sourced and supplied for brands, distributors, retailers and private-label buyers.",
+      rangeLabel: "Our range",
+      range: ["Sanitary pads", "Adult diapers"],
+      forLabel: "For",
+      forWhom: "Distributors · Retailers",
+      cta: "/products?category=Personal%20hygiene",
+    },
   },
 ];
 
@@ -141,16 +145,23 @@ export default function Home() {
         <section className="categories-section" id="what-we-do">
           <div className="container">
             <div className="section-heading"><div><div className="section-label">02 / WHAT WE DO</div><h2>Two ways to<br /><i>move forward.</i></h2></div><p>From the first conversation to the final format, our role is to help you find a practical, dependable route to market.</p></div>
-            <div className="category-grid">{categories.map(({ number, eyebrow, title, text, details, detailPoints, icon: Icon, tone }) => {
-              const isFlippable = title !== "Material solutions";
+            <div className="category-grid">{categories.map(({ number, eyebrow, title, text, back, icon: Icon, tone }) => {
               const isFlipped = flippedCategory === title;
-              return <article className={`category-card ${tone} ${isFlippable ? "category-card-flippable" : ""} ${isFlipped ? "is-flipped" : ""}`} key={title}>
+              return <article className={`category-card ${tone} ${back ? "category-card-flippable" : ""} ${isFlipped ? "is-flipped" : ""}`} key={title}>
                 <div className="category-card-inner">
                   <div className="category-face category-front">
                     <div className="category-top"><span>{number}</span><Icon size={22} strokeWidth={1.5} /></div>
-                    <div className="category-bottom"><div className="category-eyebrow">{eyebrow}</div><h3>{title}</h3><p>{text}</p>{isFlippable ? <button type="button" className="category-explore" onClick={() => setFlippedCategory(isFlipped ? null : title)} aria-expanded={isFlipped}>Explore <ArrowUpRight size={19} /></button> : <a className="category-explore" href="#enquire" aria-label={`Enquire about ${title}`}>Explore <ArrowUpRight size={19} /></a>}</div>
+                    <div className="category-bottom"><div className="category-eyebrow">{eyebrow}</div><h3>{title}</h3><p>{text}</p>{back ? <button type="button" className="category-explore" onClick={() => setFlippedCategory(isFlipped ? null : title)} aria-expanded={isFlipped}>Explore <ArrowUpRight size={19} /></button> : <a className="category-explore" href="#enquire" aria-label={`Enquire about ${title}`}>Explore <ArrowUpRight size={19} /></a>}</div>
                   </div>
-                  {isFlippable && <div className="category-face category-back"><div className="category-top"><span>{number} / DETAILS</span><Icon size={22} strokeWidth={1.5} /></div><div className="category-bottom"><div className="category-eyebrow">Built around your brief</div><h3>{title}</h3><p>{details}</p><ul>{detailPoints?.map((point) => <li key={point}>{point}</li>)}</ul><button type="button" className="category-explore category-explore-back" onClick={() => setFlippedCategory(null)}>Back to overview <ArrowUpRight size={19} /></button></div></div>}
+                  {back ? <div className="category-face category-back">
+                    <div className="category-top"><span>{number} / {title.toUpperCase()}</span><button type="button" className="category-back-close" onClick={() => setFlippedCategory(null)} aria-label="Back to overview">×</button></div>
+                    <div className="category-bottom">
+                      <p>{back.text}</p>
+                      <div className="category-back-block"><span className="category-back-label">{back.rangeLabel}</span><ul>{back.range.map((item) => <li key={item}>{item}</li>)}</ul></div>
+                      <div className="category-back-block"><span className="category-back-label">{back.forLabel}</span><p className="category-back-audience">{back.forWhom}</p></div>
+                      <Link className="category-explore category-explore-back" href={back.cta}>View products <ArrowUpRight size={19} /></Link>
+                    </div>
+                  </div> : null}
                 </div>
               </article>;
             })}</div>
