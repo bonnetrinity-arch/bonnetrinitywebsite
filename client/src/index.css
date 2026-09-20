@@ -320,6 +320,10 @@
 .category-card.sand .category-front { background: #f5f0e7; }
 .category-back { transform: rotateY(180deg); background: #173d70; color: #fffdf8; }
 .category-back .category-bottom p, .category-back .category-back-audience { color: rgba(255,253,248,.85); }
+.network-capability-list { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 12px; font-size: 14px; color: #263936; }
+.network-capability-list li { display: flex; align-items: center; gap: 10px; }
+.network-capability-list li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; flex: 0 0 7px; }
+.page-cta p { margin-top: 12px; max-width: 420px; font-size: 14px; line-height: 1.6; opacity: .85; }
 .category-card.sage .category-back { background: #27705e; }
 .category-face:hover { box-shadow: 0 18px 38px rgba(23,61,112,.12); }
 .category-bottom h3 { max-width: 650px; }
