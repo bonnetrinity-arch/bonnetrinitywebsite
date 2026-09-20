@@ -26,7 +26,7 @@ export function SiteHeader({ home = false }: { home?: boolean }) {
     <header className="nav-wrap hero-pill-nav">
       <div className="container nav-inner">
         <Link href="/" className="brand" aria-label="BONNE TRINITY home">
-          <span className="brand-mark brand-logo brand-logo-wide"><img src="/assets/bonne-logo-transparent_6a9211c0.png" alt="BONNE TRINITY" /></span>
+          <span className="brand-mark brand-logo brand-logo-wide"><img src="/assets/bonne-wordmark_7f2a91c3.png" alt="BONNE TRINITY" /></span>
         </Link>
         <button className="mobile-toggle" aria-label="Toggle navigation" onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -47,7 +47,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
   return <div className="site-shell inner-page-shell page-transition">
     <SiteHeader />
     {children}
-    <footer className="footer inner-footer"><div className="container footer-top"><div className="brand footer-brand"><span className="brand-mark brand-logo brand-logo-wide"><img src="/assets/bonne-logo-transparent_6a9211c0.png" alt="BONNE TRINITY" /></span></div><p>Care · Comfort · Smiles.</p><a href="https://www.linkedin.com/company/bonne-trinity/" target="_blank" rel="noreferrer">LinkedIn <ArrowUpRight size={15} /></a></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} BONNE TRINITY. All rights reserved.</span><span>53A/11 Rama Road, Kirti Nagar, New Delhi — 110015</span><span>GSTIN 07ABGFB9745E1ZB</span></div></footer>
+    <footer className="footer inner-footer"><div className="container footer-top"><div className="brand footer-brand"><span className="brand-mark brand-logo brand-logo-wide"><img src="/assets/bonne-wordmark_7f2a91c3.png" alt="BONNE TRINITY" /></span></div><p>Care · Comfort · Smiles.</p><a href="https://www.linkedin.com/company/bonne-trinity/" target="_blank" rel="noreferrer">LinkedIn <ArrowUpRight size={15} /></a></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} BONNE TRINITY. All rights reserved.</span><span>53A/11 Rama Road, Kirti Nagar, New Delhi — 110015</span><span>GSTIN 07ABGFB9745E1ZB</span></div></footer>
   </div>;
 }
 

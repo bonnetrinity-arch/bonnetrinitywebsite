@@ -140,7 +140,7 @@
   @media (max-width: 800px) { .showcase-section { padding: 85px 0; } .product-grid { grid-template-columns: 1fr 1fr; gap: 10px; } .product-image { height: 190px; } .product-info { min-height: 130px; padding: 14px; align-items: start; } .product-info h3 { font-size: 20px; } .product-info p { font-size: 10px; } .product-info > a { display: none; } .showcase-footer { align-items: flex-start; flex-direction: column; gap: 10px; } }
   @media (max-width: 430px) { .product-grid { grid-template-columns: 1fr; } .product-image { height: 250px; } }
 
-.brand-logo-wide { width: 118px; height: auto; aspect-ratio: 983 / 495; border: 0; border-radius: 0; background: #fff; }
+.brand-logo-wide { width: 118px; height: auto; aspect-ratio: 1280 / 482; border: 0; border-radius: 0; background: #fff; }
   .brand-logo-wide img { display: block; width: 100% !important; height: 100% !important; max-width: none !important; object-fit: contain; }
   .footer .brand-logo-wide { width: 122px; height: auto; }
   @media (max-width: 800px) { .brand-logo-wide { width: 99px; height: auto; } .footer .brand-logo-wide { width: 108px; height: auto; } }
