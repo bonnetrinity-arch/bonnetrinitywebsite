@@ -21,9 +21,9 @@ import { SiteHeader } from "@/components/SiteLayout";
 const categories = [
   {
     number: "01",
-    eyebrow: "Gentle by design",
+    eyebrow: "Carefully sourced",
     title: "Baby care",
-    text: "Thoughtful, dependable solutions for everyday care — made for brands and buyers who do not compromise on comfort.",
+    text: "Thoughtfully sourced baby-care essentials designed for everyday comfort, care and convenience.",
     icon: Baby,
     tone: "terracotta",
   },
