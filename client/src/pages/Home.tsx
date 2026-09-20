@@ -24,6 +24,8 @@ const categories = [
     eyebrow: "Carefully sourced",
     title: "Baby care",
     text: "Thoughtfully sourced baby-care essentials designed for everyday comfort, care and convenience.",
+    details: "Feeding bottles, nipples, soothers, teethers and toothbrush formats for baby-care brands, distributors and retailers.",
+    detailPoints: ["Food-grade and BPA-free formats", "Private-label and OEM pathways", "India and export enquiries"],
     icon: Baby,
     tone: "terracotta",
   },
@@ -32,6 +34,8 @@ const categories = [
     eyebrow: "Made for daily life",
     title: "Personal hygiene",
     text: "High-utility, trusted formats that help partners build products people reach for every day.",
+    details: "Absorbent care formats and personal-hygiene solutions developed around your market, pack and distribution brief.",
+    detailPoints: ["Adult care pad formats", "Private-label pack configurations", "Export documentation support"],
     icon: Sparkles,
     tone: "sage",
   },
@@ -52,6 +56,8 @@ const productDetails = {
 };
 
 export default function Home() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [flippedCategory, setFlippedCategory] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
   const [productFilter, setProductFilter] = useState("All products");
@@ -135,7 +141,19 @@ export default function Home() {
         <section className="categories-section" id="what-we-do">
           <div className="container">
             <div className="section-heading"><div><div className="section-label">02 / WHAT WE DO</div><h2>Two ways to<br /><i>move forward.</i></h2></div><p>From the first conversation to the final format, our role is to help you find a practical, dependable route to market.</p></div>
-            <div className="category-grid">{categories.map(({ number, eyebrow, title, text, icon: Icon, tone }) => <article className={`category-card ${tone}`} key={title}><div className="category-top"><span>{number}</span><Icon size={22} strokeWidth={1.5} /></div><div className="category-bottom"><div className="category-eyebrow">{eyebrow}</div><h3>{title}</h3><p>{text}</p><a href="#enquire" aria-label={`Enquire about ${title}`}>Explore <ArrowUpRight size={16} /></a></div></article>)}</div>
+            <div className="category-grid">{categories.map(({ number, eyebrow, title, text, details, detailPoints, icon: Icon, tone }) => {
+              const isFlippable = title !== "Material solutions";
+              const isFlipped = flippedCategory === title;
+              return <article className={`category-card ${tone} ${isFlippable ? "category-card-flippable" : ""} ${isFlipped ? "is-flipped" : ""}`} key={title}>
+                <div className="category-card-inner">
+                  <div className="category-face category-front">
+                    <div className="category-top"><span>{number}</span><Icon size={22} strokeWidth={1.5} /></div>
+                    <div className="category-bottom"><div className="category-eyebrow">{eyebrow}</div><h3>{title}</h3><p>{text}</p>{isFlippable ? <button type="button" className="category-explore" onClick={() => setFlippedCategory(isFlipped ? null : title)} aria-expanded={isFlipped}>Explore <ArrowUpRight size={19} /></button> : <a className="category-explore" href="#enquire" aria-label={`Enquire about ${title}`}>Explore <ArrowUpRight size={19} /></a>}</div>
+                  </div>
+                  {isFlippable && <div className="category-face category-back"><div className="category-top"><span>{number} / DETAILS</span><Icon size={22} strokeWidth={1.5} /></div><div className="category-bottom"><div className="category-eyebrow">Built around your brief</div><h3>{title}</h3><p>{details}</p><ul>{detailPoints?.map((point) => <li key={point}>{point}</li>)}</ul><button type="button" className="category-explore category-explore-back" onClick={() => setFlippedCategory(null)}>Back to overview <ArrowUpRight size={19} /></button></div></div>}
+                </div>
+              </article>;
+            })}</div>
           </div>
         </section>
 
