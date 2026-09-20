@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { Link } from "wouter";
 import {
   ArrowUpRight,
@@ -13,6 +13,7 @@ import {
   Phone,
   ShieldCheck,
   Sparkles,
+  X,
 } from "lucide-react";
 import { toast } from "sonner";
 import { SiteHeader } from "@/components/SiteLayout";
@@ -69,9 +70,21 @@ const productDetails = {
 export default function Home() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [flippedCategory, setFlippedCategory] = useState<string | null>(null);
+  const [selectedFactory, setSelectedFactory] = useState<{ src: string; alt: string; caption: string } | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
   const [productFilter, setProductFilter] = useState("All products");
+
+  useEffect(() => {
+    if (!selectedFactory) return;
+    const closeOnEscape = (event: KeyboardEvent) => event.key === "Escape" && setSelectedFactory(null);
+    document.addEventListener("keydown", closeOnEscape);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", closeOnEscape);
+      document.body.style.overflow = "";
+    };
+  }, [selectedFactory]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -176,14 +189,14 @@ export default function Home() {
         <section className="network-section" aria-labelledby="network-title">
           <div className="container network-grid">
             <div className="network-lead"><div className="section-label">05 / OUR STORY</div><h2>Experience<br />you can <i>build on.</i></h2><p>Backed by established family manufacturing experience since 1963.</p></div>
-            <div className="network-content"><div className="network-note"><span className="network-note-mark">✳</span><span>ASSOCIATED FAMILY BUSINESSES<br />& MANUFACTURING PARTNERS</span></div><div className="partner-business"><div className="partner-meta"><span>EST. 2001</span><span>NOIDA · UTTAR PRADESH</span></div><h3>Bonny Poly Plast <i>Pvt. Ltd.</i></h3><p>Baby feeding bottles, baby nipples and PET bottles.</p><div className="partner-line"><span>01</span><span>Established manufacturing experience</span></div></div><div className="partner-business"><div className="partner-meta"><span>EST. 1998</span><span>NOIDA · UTTAR PRADESH</span></div><h3>Bonny Baby Care <i>Pvt. Ltd.</i></h3><p>Baby feeding bottles, baby nipples, silicone soothers, baby teethers and other baby-care products.</p><div className="partner-line"><span>02</span><span>Established manufacturing experience</span></div></div><div className="network-media"><img src="/assets/factory-1_6d60273a.jpeg" alt="Associated manufacturing partner factory floor" /><span>MANUFACTURING NETWORK / NOIDA</span></div><div className="network-footnote"><span>Manufacturing partners, not a BONNE TRINITY-owned factory.</span><ArrowUpRight size={16} /></div></div>
+            <div className="network-content"><div className="network-note"><span className="network-note-mark">✳</span><span>ASSOCIATED FAMILY BUSINESSES<br />& MANUFACTURING PARTNERS</span></div><div className="partner-business"><div className="partner-meta"><span>EST. 2001</span><span>NOIDA · UTTAR PRADESH</span></div><h3>Bonny Poly Plast <i>Pvt. Ltd.</i></h3><p>Baby feeding bottles, baby nipples and PET bottles.</p><div className="partner-line"><span>01</span><span>Established manufacturing experience</span></div></div><div className="partner-business"><div className="partner-meta"><span>EST. 1998</span><span>NOIDA · UTTAR PRADESH</span></div><h3>Bonny Baby Care <i>Pvt. Ltd.</i></h3><p>Baby feeding bottles, baby nipples, silicone soothers, baby teethers and other baby-care products.</p><div className="partner-line"><span>02</span><span>Established manufacturing experience</span></div></div><button type="button" className="network-media" onClick={() => setSelectedFactory({ src: "/assets/factory-1_6d60273a.webp", alt: "Bonny Poly Plast factory floor", caption: "Bonny Poly Plast Pvt. Ltd. · C-13, Sector-63, Phase-III, Noida, Uttar Pradesh" })} aria-label="View Bonny Poly Plast factory photo"><img src="/assets/factory-1_6d60273a.webp" alt="Bonny Poly Plast factory floor" /><span>NOIDA · BONNY POLY PLAST PVT. LTD.<small>Click to view full size</small></span></button><div className="network-footnote"><span>Manufacturing partners, not a BONNE TRINITY-owned factory.</span><ArrowUpRight size={16} /></div></div>
           </div>
         </section>
 
         <section className="network-section" aria-labelledby="network-2-title">
           <div className="container network-grid">
             <div className="network-lead"><div className="section-label">06 / MANUFACTURING & SOURCING NETWORK</div><h2 id="network-2-title">Built on real<br /><i>capability.</i></h2><p>Product development, quality-focused manufacturing and dependable B2B supply, delivered through our network of associated partners.</p></div>
-            <div className="network-content"><div className="network-media"><img src="/assets/factory-3_4f6c7b2a.jpeg" alt="Manufacturing partner factory floor" /><span>MANUFACTURING NETWORK / NOIDA</span></div><ul className="network-capability-list"><li>Sourcing and manufacturing partnerships</li><li>Product development and private-label formats</li><li>Quality checks and documentation support</li><li>Ongoing supply for distributors and retailers</li></ul></div>
+            <div className="network-content"><button type="button" className="network-media network-media-large" onClick={() => setSelectedFactory({ src: "/assets/factory-3_4f6c7b2a.webp", alt: "Bonny Baby Care factory floor", caption: "Bonny Baby Care Pvt. Ltd. · C-6, Sector-58, Phase-III, Noida, Uttar Pradesh" })} aria-label="View Bonny Baby Care factory photo"><img src="/assets/factory-3_4f6c7b2a.webp" alt="Bonny Baby Care factory floor" /><span>NOIDA · BONNY BABY CARE PVT. LTD.<small>Click to view full size</small></span></button><ul className="network-capability-list"><li>Sourcing and manufacturing partnerships</li><li>Product development and private-label formats</li><li>Quality checks and documentation support</li><li>Ongoing supply for distributors and retailers</li></ul></div>
           </div>
         </section>
 
@@ -198,6 +211,7 @@ export default function Home() {
         <section className="enquiry-section" id="enquire"><div className="container enquiry-grid"><div className="enquiry-intro"><div className="section-label">09 / CONTACT</div><h2>Let’s make<br /><i>something useful.</i></h2><p>Tell us a little about what you are looking for. We’ll come back to you with the right next step.</p><div className="contact-list"><a href="mailto:care@bonnetrinity.com"><Mail size={18} /> care@bonnetrinity.com</a><a href="tel:+919811643325"><Phone size={18} /> +91 98116 43325</a><a href="https://wa.me/918588879611" target="_blank" rel="noreferrer"><MessageCircle size={18} /> WhatsApp us</a></div></div><div className="form-card">{sent ? <div className="success-state"><div className="success-icon"><Check size={24} /></div><div className="section-label">MESSAGE RECEIVED</div><h3>Thank you for reaching out.</h3><p>Our team will review your enquiry and get back to you soon.</p><button className="button button-dark" onClick={() => setSent(false)}>Send another enquiry</button></div> : <form onSubmit={handleSubmit}><input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "f854a96c-906d-4bd4-8b33-c0be1fc5e4bc"} /><input type="checkbox" name="botcheck" className="hidden-field" tabIndex={-1} autoComplete="off" /><div className="form-row"><label>Full name<input required name="name" placeholder="Your name" /></label><label>Work email<input required type="email" name="email" placeholder="you@company.com" /></label></div><div className="form-row"><label>Phone number<input required type="tel" name="phone" placeholder="+91 00000 00000" /></label><label>Company / organisation<input name="company" placeholder="Company name" /></label></div><label>How can we help?<textarea required name="message" rows={4} placeholder="Tell us about your product, volume or sourcing requirement..." /></label><div className="form-foot"><span>We respect your inbox. No noise, just a thoughtful reply.</span><button className="button button-dark" type="submit" disabled={isSubmitting}>{isSubmitting ? "Sending..." : "Send enquiry"} <ArrowUpRight size={17} /></button></div></form>}</div></div></section>
       </main>
 
+      {selectedFactory && <div className="factory-lightbox" role="dialog" aria-modal="true" aria-label={selectedFactory.caption} onClick={() => setSelectedFactory(null)}><div className="factory-lightbox-panel" onClick={(event) => event.stopPropagation()}><button type="button" className="factory-lightbox-close" onClick={() => setSelectedFactory(null)} aria-label="Close factory photo"><X size={22} /></button><img src={selectedFactory.src} alt={selectedFactory.alt} /><p>{selectedFactory.caption}</p></div></div>}
 
       <footer className="footer"><div className="container footer-top"><div className="brand footer-brand"><span className="brand-mark brand-logo brand-logo-wide"><img src="/assets/bonne-wordmark_7f2a91c3.png" alt="BONNE TRINITY" /></span></div><p>Care · Comfort · Smiles.</p><a href="https://www.linkedin.com/company/bonne-trinity/" target="_blank" rel="noreferrer" aria-label="BONNE TRINITY on LinkedIn"><Linkedin size={18} /></a></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} BONNE TRINITY. All rights reserved.</span><span>53A/11 Rama Road, Kirti Nagar, New Delhi — 110015</span><span>GSTIN 07ABGFB9745E1ZB</span></div></footer>
       <a className="floating-whatsapp" href="https://wa.me/918588879611" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"><MessageCircle size={22} /></a>

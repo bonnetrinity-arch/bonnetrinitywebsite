@@ -348,3 +348,18 @@
   .category-card, .category-card-inner { min-height: 390px; }
   .category-face { padding: 22px; }
 }
+
+
+/* Factory gallery and full-size lightbox */
+.network-media { display: block; width: 100%; padding: 0; border: 0; background: transparent; color: inherit; text-align: left; cursor: zoom-in; }
+.network-media span { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; }
+.network-media span small { font-size: 9px; font-weight: 500; letter-spacing: .08em; opacity: .9; text-transform: none; }
+.network-media-large { min-height: 280px; height: 280px; }
+.factory-lightbox { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 28px; background: rgba(8, 25, 51, .88); backdrop-filter: blur(14px); animation: factory-lightbox-in 180ms ease-out both; }
+.factory-lightbox-panel { position: relative; width: min(100%, 1080px); max-height: calc(100vh - 56px); padding: 14px; background: #fffdf8; box-shadow: 0 24px 80px rgba(0,0,0,.35); }
+.factory-lightbox-panel img { display: block; width: 100%; max-height: calc(100vh - 150px); object-fit: contain; background: #edf4fb; }
+.factory-lightbox-panel p { margin: 14px 48px 4px 4px; color: #173d70; font-size: 13px; font-weight: 700; letter-spacing: .04em; }
+.factory-lightbox-close { position: absolute; top: 22px; right: 22px; z-index: 2; display: grid; place-items: center; width: 42px; height: 42px; border: 0; border-radius: 50%; color: #fffdf8; background: #173d70; cursor: pointer; transition: transform 160ms ease, background 160ms ease; }
+.factory-lightbox-close:hover, .factory-lightbox-close:focus-visible { transform: scale(1.06); background: #f4978f; outline: none; }
+@keyframes factory-lightbox-in { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 800px) { .factory-lightbox { padding: 14px; } .factory-lightbox-panel { padding: 8px; } .factory-lightbox-panel img { max-height: calc(100vh - 118px); } .factory-lightbox-panel p { margin: 10px 42px 4px 2px; font-size: 11px; } .factory-lightbox-close { top: 14px; right: 14px; width: 36px; height: 36px; } }
