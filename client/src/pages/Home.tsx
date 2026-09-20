@@ -78,12 +78,6 @@ export default function Home() {
     data.set("to", "bonnetrinity@gmail.com");
     data.set("botcheck", "");
 
-    if (accessKey === "f854a96c-906d-4bd4-8b33-c0be1fc5e4bc") {
-      toast.error("Add your Web3Forms access key to activate submissions.");
-      setIsSubmitting(false);
-      return;
-    }
-
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
