@@ -7,6 +7,15 @@ export function SiteHeader({ home = false }: { home?: boolean }) {
   const [location, navigate] = useLocation();
   const close = () => setMobileOpen(false);
 
+  const goHome = (e: React.MouseEvent) => {
+    close();
+    if (location === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
+    // else: let the Link navigate normally to "/", App.tsx's ScrollToTop handles landing at top
+  };
+
   const goToWhatWeDo = (e: React.MouseEvent) => {
     close();
     if (location === "/") {
@@ -25,7 +34,7 @@ export function SiteHeader({ home = false }: { home?: boolean }) {
   return (
     <header className="nav-wrap hero-pill-nav">
       <div className="container nav-inner">
-        <Link href="/" className="brand" aria-label="BONNE TRINITY home">
+        <Link href="/" className="brand" onClick={goHome} aria-label="BONNE TRINITY home">
           <span className="brand-mark brand-logo brand-logo-wide"><img src="/assets/bonne-wordmark_7f2a91c3.png" alt="BONNE TRINITY" /></span>
         </Link>
         <button className="mobile-toggle" aria-label="Toggle navigation" onClick={() => setMobileOpen(!mobileOpen)}>
