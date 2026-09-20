@@ -319,6 +319,7 @@
 .category-card.sage .category-front { background: #c8d8c8; }
 .category-card.sand .category-front { background: #f5f0e7; }
 .category-back { transform: rotateY(180deg); background: #173d70; color: #fffdf8; }
+.category-back .category-bottom p, .category-back .category-back-audience { color: rgba(255,253,248,.85); }
 .category-card.sage .category-back { background: #27705e; }
 .category-face:hover { box-shadow: 0 18px 38px rgba(23,61,112,.12); }
 .category-bottom h3 { max-width: 650px; }
