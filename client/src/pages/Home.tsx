@@ -123,19 +123,18 @@ export default function Home() {
       <SiteHeader home />
 
       <main id="top">
-        <section className="hero-section hero-editorial">
-          <div className="hero-glow hero-glow-one" /><div className="hero-glow hero-glow-two" />
-          <div className="container hero-editorial-inner">
-            <div className="hero-editorial-copy reveal-up">
-              <div className="eyebrow"><span className="eyebrow-line" /> CARE · COMFORT · SMILES</div>
-              <h1>Thoughtful products.<br /><i>Better everyday care.</i></h1>
-              <p className="hero-lede">BONNE TRINITY helps brands, buyers and distributors build dependable care ranges — from baby essentials to personal hygiene.</p>
+        <section className="hero-section hero-premium">
+          <div className="container hero-premium-inner">
+            <div className="hero-premium-copy reveal-up">
+              <div className="eyebrow"><span className="eyebrow-line" /> CARE · COMFORT · CREDIBILITY</div>
+              <h1>Care.<br /><i>Comfort.</i><br />Made for<br /><i>everyday life.</i></h1>
+              <p className="hero-lede">BONNE TRINITY provides B2B baby-care and personal-hygiene products through trusted sourcing and supply partnerships.</p>
               <div className="hero-actions"><a className="button button-dark" href="#products">Explore products <ArrowUpRight size={17} /></a><a className="text-link" href="#enquire">Enquire now <span>↗</span></a></div>
             </div>
-            <div className="hero-editorial-art" aria-label="BONNE TRINITY product range">
-              <div className="hero-art-ring" />
-              <div className="hero-product hero-product-main"><img src="/assets/bonne-nipple_9124056e.jpeg" alt="BONNE orthodontic souther nipple" /><span>01 / BABY CARE</span></div>
-              <div className="hero-product hero-product-small"><img src="/assets/toothbrush_08840fc6.jpeg" alt="BONNE baby toothbrush" /><span>02 / DAILY CARE</span></div>
+            <div className="hero-premium-product" aria-label="BONNE flagship product render placeholder">
+              <div className="hero-premium-shadow" />
+              <div className="hero-premium-render"><img src="/assets/bonne-nipple_9124056e.jpeg" alt="BONNE flagship baby-care product" /></div>
+              <span className="hero-premium-label">FLAGSHIP RANGE / BABY CARE</span>
             </div>
           </div>
           <div className="hero-bottomline container"><span>Scroll to discover <ChevronDown size={15} /></span></div>

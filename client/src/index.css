@@ -363,3 +363,41 @@
 .factory-lightbox-close:hover, .factory-lightbox-close:focus-visible { transform: scale(1.06); background: #dcebfa; outline: none; }
 @keyframes factory-lightbox-in { from { opacity: 0; } to { opacity: 1; } }
 @media (max-width: 800px) { .factory-lightbox { padding: 14px; } .factory-lightbox-panel { padding: 8px; } .factory-lightbox-panel img { max-height: calc(100vh - 118px); } .factory-lightbox-panel p { margin: 10px 42px 4px 2px; font-size: 11px; } .factory-lightbox-close { top: 14px; right: 14px; width: 36px; height: 36px; } }
+
+
+/* Premium 3D product hero */
+.hero-premium { min-height: calc(100vh - 28px); overflow: hidden; background: #fbfaf5 !important; color: #173d70; }
+.hero-premium:before, .hero-premium:after { display: none; }
+.hero-premium-inner { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, .9fr) minmax(420px, 1.1fr); align-items: center; gap: 42px; min-height: calc(100vh - 110px); padding-top: 108px; padding-bottom: 72px; }
+.hero-premium-copy { position: relative; z-index: 2; max-width: 620px; }
+.hero-premium .eyebrow { color: #b96b55; }
+.hero-premium .eyebrow-line { background: #f4978f; }
+.hero-premium h1 { max-width: 610px; margin-top: 24px; color: #173d70; font-size: clamp(58px, 7vw, 108px); line-height: .88; letter-spacing: -.06em; }
+.hero-premium h1 i { color: #e88778; font-style: italic; }
+.hero-premium .hero-lede { max-width: 430px; margin-top: 32px; color: #526d7f; font-size: 15px; line-height: 1.75; }
+.hero-premium .hero-actions { display: flex; align-items: center; gap: 27px; margin-top: 34px; }
+.hero-premium .button-dark { background: #173d70; color: #fffdf8; }
+.hero-premium .button-dark:hover { background: #e88778; color: #173d70; }
+.hero-premium .text-link { color: #173d70; }
+.hero-premium-product { position: relative; min-height: 610px; isolation: isolate; }
+.hero-premium-render { position: absolute; z-index: 2; top: 50%; left: 50%; width: min(72%, 540px); height: min(82%, 560px); overflow: hidden; border-radius: 44% 56% 48% 52% / 42% 45% 55% 58%; background: #e9f0ed; box-shadow: 30px 35px 70px rgba(23,61,112,.13); transform: translate(-46%, -48%) rotate(-5deg); animation: premium-product-float 8s ease-in-out infinite; }
+.hero-premium-render img { width: 100%; height: 100%; object-fit: cover; object-position: center; mix-blend-mode: multiply; filter: saturate(.82) contrast(.96); }
+.hero-premium-shadow { position: absolute; z-index: 1; bottom: 84px; left: 50%; width: 55%; height: 42px; border-radius: 50%; background: rgba(23,61,112,.16); filter: blur(22px); transform: translateX(-48%); animation: premium-shadow 8s ease-in-out infinite; }
+.hero-premium-label { position: absolute; z-index: 3; right: 6%; bottom: 92px; color: #173d70; font-size: 9px; font-weight: 700; letter-spacing: .16em; writing-mode: vertical-rl; transform: rotate(180deg); }
+.hero-premium .hero-bottomline { bottom: 24px; color: #6f8790; }
+.hero-premium .hero-bottomline svg { color: #e88778; }
+@keyframes premium-product-float { 0%,100% { transform: translate(-46%, -48%) rotate(-5deg); } 50% { transform: translate(-46%, -51%) rotate(-2deg); } }
+@keyframes premium-shadow { 0%,100% { opacity: .65; transform: translateX(-48%) scaleX(1); } 50% { opacity: .38; transform: translateX(-48%) scaleX(.82); } }
+@media (prefers-reduced-motion: reduce) { .hero-premium-render, .hero-premium-shadow { animation: none; } }
+@media (max-width: 800px) {
+  .hero-premium { min-height: 850px; }
+  .hero-premium-inner { display: block; min-height: 780px; padding-top: 160px; }
+  .hero-premium h1 { font-size: clamp(55px, 15vw, 82px); }
+  .hero-premium .hero-lede { max-width: 365px; margin-top: 24px; font-size: 14px; }
+  .hero-premium .hero-actions { gap: 18px; margin-top: 27px; }
+  .hero-premium-product { min-height: 360px; margin-top: 14px; }
+  .hero-premium-render { width: 245px; height: 315px; transform: translate(-50%, -46%) rotate(-4deg); }
+  .hero-premium-shadow { bottom: 23px; width: 220px; }
+  .hero-premium-label { right: 8px; bottom: 37px; font-size: 8px; }
+  @keyframes premium-product-float { 0%,100% { transform: translate(-50%, -46%) rotate(-4deg); } 50% { transform: translate(-50%, -50%) rotate(-1deg); } }
+}
