@@ -129,7 +129,7 @@ export default function Home() {
               <div className="eyebrow"><span className="eyebrow-line" /> CARE · COMFORT · CREDIBILITY</div>
               <h1>Care.<br /><i>Comfort.</i><br />Made for<br /><i>everyday life.</i></h1>
               <p className="hero-lede">BONNE TRINITY provides B2B baby-care and personal-hygiene products through trusted sourcing and supply partnerships.</p>
-              <div className="hero-actions"><a className="button button-dark" href="#products">Explore products <ArrowUpRight size={17} /></a><a className="text-link" href="#enquire">Enquire now <span>↗</span></a></div>
+              <div className="hero-actions"><a className="button button-dark" href="#products">Explore Products <ArrowUpRight size={17} /></a><a className="text-link" href="#enquire">Enquire Now <span>↗</span></a></div>
             </div>
             <div className="hero-premium-product" aria-label="BONNE flagship product render placeholder">
               <div className="hero-premium-shadow" />
@@ -137,7 +137,7 @@ export default function Home() {
               <span className="hero-premium-label">FLAGSHIP RANGE / BABY CARE</span>
             </div>
           </div>
-          <div className="hero-bottomline container"><span>Scroll to discover <ChevronDown size={15} /></span></div>
+          <div className="hero-bottomline container"><span className="hero-scroll-indicator"><b>Scroll to discover</b><ChevronDown size={15} /></span></div>
         </section>
 
         <section className="intro-section" id="about">
