@@ -5,6 +5,8 @@ import {
   Baby,
   Brush,
   Check,
+  ChevronLeft,
+  ChevronRight,
   CupSoda,
   Globe2,
   Handshake,
@@ -149,8 +151,10 @@ export default function Home() {
             ))}
           </div>
           <div className="hero-carousel-overlay" />
+          <button type="button" className="hero-carousel-arrow hero-carousel-arrow-prev" onClick={() => setActiveHeroSlide((current) => (current - 1 + heroSlides.length) % heroSlides.length)} aria-label="Previous hero image"><ChevronLeft size={22} /></button>
+          <button type="button" className="hero-carousel-arrow hero-carousel-arrow-next" onClick={() => setActiveHeroSlide((current) => (current + 1) % heroSlides.length)} aria-label="Next hero image"><ChevronRight size={22} /></button>
           <div className="hero-carousel-controls" role="tablist" aria-label="Choose hero slide">
-            {heroSlides.map((slide, index) => <button key={slide.image} type="button" className={index === activeHeroSlide ? "is-active" : ""} onClick={() => setActiveHeroSlide(index)} aria-label={`Show hero image ${index + 1}`} aria-selected={index === activeHeroSlide} role="tab"><span /></button>)}
+            {heroSlides.map((slide, index) => <button key={slide.image} type="button" className={index === activeHeroSlide ? "is-active" : ""} onClick={() => setActiveHeroSlide(index)} aria-label={`Show hero image ${index + 1} of ${heroSlides.length}`} aria-selected={index === activeHeroSlide} role="tab"><span /></button>)}
           </div>
         </section>
 

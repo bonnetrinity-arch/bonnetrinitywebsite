@@ -468,6 +468,10 @@
 .hero-carousel .text-link { color: #fffdf8; }
 .hero-carousel .text-link:hover, .hero-carousel .text-link:focus-visible { color: #f4978f; }
 .hero-carousel .text-link span { color: #f4978f !important; }
+.hero-carousel-arrow { position: absolute; z-index: 3; top: 50%; display: grid; place-items: center; width: 44px; height: 44px; border: 0; border-radius: 50%; background: rgba(11,38,71,.35); color: #fffdf8; cursor: pointer; transform: translateY(-50%); transition: background 180ms ease, transform 180ms ease; }
+.hero-carousel-arrow:hover, .hero-carousel-arrow:focus-visible { background: rgba(11,38,71,.6); outline: none; }
+.hero-carousel-arrow-prev { left: 22px; }
+.hero-carousel-arrow-next { right: 22px; }
 .hero-carousel-controls { position: absolute; z-index: 3; left: 50%; bottom: 34px; display: flex; flex-direction: row; gap: 10px; transform: translateX(-50%); }
 .hero-carousel-controls button { display: grid; place-items: center; width: 25px; height: 25px; padding: 0; border: 0; background: transparent; cursor: pointer; }
 .hero-carousel-controls button span { display: block; width: 7px; height: 7px; border: 1px solid rgba(255,253,248,.75); border-radius: 50%; transition: transform 180ms ease, background 180ms ease, border-color 180ms ease; }
@@ -486,6 +490,9 @@
   .hero-carousel .hero-lede { max-width: 355px; font-size: 14px; }
   .hero-carousel-controls { bottom: 14px; gap: 8px; }
   .hero-carousel-controls button { width: 23px; height: 23px; }
+  .hero-carousel-arrow { width: 36px; height: 36px; }
+  .hero-carousel-arrow-prev { left: 12px; }
+  .hero-carousel-arrow-next { right: 12px; }
   .hero-carousel .hero-bottomline { bottom: 21px; }
 }
 
