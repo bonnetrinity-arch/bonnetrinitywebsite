@@ -1,9 +1,11 @@
 import { FormEvent, useEffect, useState } from "react";
 import { Link } from "wouter";
 import {
+  ArrowRight,
   ArrowUpRight,
   Baby,
   Brush,
+  Building2,
   Check,
   ChevronLeft,
   ChevronRight,
@@ -16,9 +18,10 @@ import {
   Mail,
   MessageCircle,
   Milk,
+  Package,
   Phone,
+  Settings,
   ShieldCheck,
-  Sparkles,
   TrendingUp,
   Truck,
   Users,
@@ -217,7 +220,27 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="trust-section"><div className="container trust-grid"><div className="trust-lead"><div className="section-label">04 / OUR APPROACH</div><h2>How we<br />operate.</h2></div><div className="trust-points"><div className="trust-point"><Globe2 size={24} /><div><h3>Sourcing</h3><p>We identify and work with dependable manufacturing and sourcing partners suited to each product line.</p></div></div><div className="trust-point"><Sparkles size={24} /><div><h3>Product development</h3><p>From formats to private-label packaging, we help shape products around your brief.</p></div></div><div className="trust-point"><ShieldCheck size={24} /><div><h3>Quality-focused supply</h3><p>Consistent quality checks and documentation support across every batch and partner.</p></div></div><div className="trust-point"><Handshake size={24} /><div><h3>B2B distribution</h3><p>Structured supply for distributors, retailers and private-label partners.</p></div></div></div></div></section>
+        <section className="partner-why-section" id="why-partner">
+          <div className="container partner-why-heading">
+            <div className="about-hero-label"><span /> WHY PARTNER WITH BONNE TRINITY <span /></div>
+            <h2>More Than Products.<br /><i>A Partner for Growth.</i></h2>
+            <p>From quality sourcing to reliable supply, we support your business with products people trust and partnerships built for the long term.</p>
+          </div>
+          <div className="container partner-why-grid">
+            <div className="partner-why-card tone-pink"><span className="partner-why-icon"><Package size={26} strokeWidth={1.75} /></span><h3>Product Sourcing</h3><p>Carefully selected products to meet your market needs.</p><Link className="partner-why-arrow" href="/enquire" aria-label="Enquire about product sourcing"><ArrowRight size={18} /></Link></div>
+            <div className="partner-why-card tone-blue"><span className="partner-why-icon"><Settings size={26} strokeWidth={1.75} /></span><h3>Product Development</h3><p>Developed around market requirements and consumer trends.</p><Link className="partner-why-arrow" href="/enquire" aria-label="Enquire about product development"><ArrowRight size={18} /></Link></div>
+            <div className="partner-why-card tone-mint"><span className="partner-why-icon"><Truck size={26} strokeWidth={1.75} /></span><h3>Reliable Supply</h3><p>Consistent quality and on-time supply you can count on.</p><Link className="partner-why-arrow" href="/enquire" aria-label="Enquire about reliable supply"><ArrowRight size={18} /></Link></div>
+            <div className="partner-why-card tone-peach"><span className="partner-why-icon"><Handshake size={26} strokeWidth={1.75} /></span><h3>Long-term Partnerships</h3><p>Focused on your growth, with ongoing support at every step.</p><Link className="partner-why-arrow" href="/enquire" aria-label="Enquire about long-term partnerships"><ArrowRight size={18} /></Link></div>
+          </div>
+          <div className="container">
+            <div className="partner-why-stats">
+              <div className="partner-why-stat"><span className="partner-why-stat-icon tone-pink"><Building2 size={22} strokeWidth={1.75} /></span><div><h4>1963</h4><p>Family manufacturing experience since 1963</p></div></div>
+              <div className="partner-why-stat"><span className="partner-why-stat-icon tone-blue"><Globe2 size={22} strokeWidth={1.75} /></span><div><h4>Pan-Asia Network</h4><p>Supplying to distributors and retailers across Asia and beyond</p></div></div>
+              <div className="partner-why-stat"><span className="partner-why-stat-icon tone-mint"><ShieldCheck size={22} strokeWidth={1.75} /></span><div><h4>Quality You Can Trust</h4><p>Safe, durable and market-ready products</p></div></div>
+              <div className="partner-why-stat"><span className="partner-why-stat-icon tone-peach"><Users size={22} strokeWidth={1.75} /></span><div><h4>Growing Together</h4><p>Long-term partnerships for a healthier, happier tomorrow</p></div></div>
+            </div>
+          </div>
+        </section>
 
         <section className="network-section" aria-labelledby="network-title">
           <div className="container network-grid">
