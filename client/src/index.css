@@ -470,7 +470,7 @@
 .hero-carousel .text-link { color: #fffdf8; }
 .hero-carousel .text-link:hover, .hero-carousel .text-link:focus-visible { color: #f4978f; }
 .hero-carousel .text-link span { color: #f4978f !important; }
-.hero-carousel-controls { position: absolute; z-index: 3; right: 34px; bottom: 50%; display: flex; flex-direction: column; gap: 10px; transform: translateY(50%); }
+.hero-carousel-controls { position: absolute; z-index: 3; left: 50%; bottom: 34px; display: flex; flex-direction: row; gap: 10px; transform: translateX(-50%); }
 .hero-carousel-controls button { display: grid; place-items: center; width: 25px; height: 25px; padding: 0; border: 0; background: transparent; cursor: pointer; }
 .hero-carousel-controls button span { display: block; width: 7px; height: 7px; border: 1px solid rgba(255,253,248,.75); border-radius: 50%; transition: transform 180ms ease, background 180ms ease, border-color 180ms ease; }
 .hero-carousel-controls button:hover span, .hero-carousel-controls button:focus-visible span { transform: scale(1.35); border-color: #f4978f; outline: none; }
@@ -486,7 +486,7 @@
   .hero-carousel-kicker { margin-top: 17px; }
   .hero-carousel h1 { font-size: clamp(54px, 15vw, 82px); }
   .hero-carousel .hero-lede { max-width: 355px; font-size: 14px; }
-  .hero-carousel-controls { right: auto; left: 50%; top: auto; bottom: 14px; transform: translateX(-50%); flex-direction: row; gap: 8px; }
+  .hero-carousel-controls { bottom: 14px; gap: 8px; }
   .hero-carousel-controls button { width: 23px; height: 23px; }
   .hero-carousel .hero-bottomline { bottom: 21px; }
 }
@@ -494,5 +494,4 @@
 
 /* Two-image hero mode: imagery only, with navigation dots retained */
 .hero-carousel-overlay { background: linear-gradient(90deg, rgba(11,38,71,.22), rgba(11,38,71,.04) 58%, rgba(11,38,71,.12)); }
-.hero-carousel-controls { right: 34px; }
-@media (max-width: 800px) { .hero-carousel-overlay { background: linear-gradient(0deg, rgba(11,38,71,.18), rgba(11,38,71,.03) 62%, rgba(11,38,71,.08)); } .hero-carousel-controls { right: 17px; } }
+@media (max-width: 800px) { .hero-carousel-overlay { background: linear-gradient(0deg, rgba(11,38,71,.18), rgba(11,38,71,.03) 62%, rgba(11,38,71,.08)); } }
