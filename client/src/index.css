@@ -447,3 +447,46 @@
 .footer-bottom { color: #d8e9f4; }
 
 .hero-premium .text-link span { color: #e88778 !important; }
+
+
+/* Hero image carousel */
+.hero-carousel { min-height: calc(100vh - 28px); overflow: hidden; isolation: isolate; background: #173d70 !important; color: #fffdf8; }
+.hero-carousel-slides, .hero-carousel-slide, .hero-carousel-slide img, .hero-carousel-overlay { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero-carousel-slides { z-index: 0; }
+.hero-carousel-slide { opacity: 0; transition: opacity 900ms cubic-bezier(.23,1,.32,1); }
+.hero-carousel-slide.is-active { opacity: 1; }
+.hero-carousel-slide img { object-fit: cover; object-position: center; filter: saturate(.92); }
+.hero-carousel-overlay { z-index: 1; background: linear-gradient(90deg, rgba(11,38,71,.9) 0%, rgba(11,38,71,.68) 35%, rgba(11,38,71,.18) 67%, rgba(11,38,71,.12) 100%), linear-gradient(0deg, rgba(11,38,71,.3), transparent 45%); }
+.hero-carousel-content { position: relative; z-index: 2; display: flex; align-items: center; min-height: calc(100vh - 28px); padding-top: 115px; padding-bottom: 105px; }
+.hero-carousel-copy { max-width: 620px; }
+.hero-carousel .eyebrow { color: #f6c2b7; }
+.hero-carousel .eyebrow-line { background: #f6c2b7; }
+.hero-carousel-kicker { margin-top: 22px; color: #f6c2b7; font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+.hero-carousel h1 { margin-top: 18px; color: #fffdf8; font-size: clamp(58px, 7vw, 108px); line-height: .88; letter-spacing: -.06em; }
+.hero-carousel h1 i { color: #f4978f; }
+.hero-carousel .hero-lede { max-width: 430px; color: rgba(255,253,248,.88); }
+.hero-carousel .button-dark { background: #fffdf8; color: #173d70; }
+.hero-carousel .button-dark:hover, .hero-carousel .button-dark:focus-visible { background: #f4978f; color: #173d70; }
+.hero-carousel .text-link { color: #fffdf8; }
+.hero-carousel .text-link:hover, .hero-carousel .text-link:focus-visible { color: #f4978f; }
+.hero-carousel .text-link span { color: #f4978f !important; }
+.hero-carousel-controls { position: absolute; z-index: 3; right: 34px; bottom: 50%; display: flex; flex-direction: column; gap: 10px; transform: translateY(50%); }
+.hero-carousel-controls button { display: grid; place-items: center; width: 25px; height: 25px; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.hero-carousel-controls button span { display: block; width: 7px; height: 7px; border: 1px solid rgba(255,253,248,.75); border-radius: 50%; transition: transform 180ms ease, background 180ms ease, border-color 180ms ease; }
+.hero-carousel-controls button:hover span, .hero-carousel-controls button:focus-visible span { transform: scale(1.35); border-color: #f4978f; outline: none; }
+.hero-carousel-controls button.is-active span { width: 9px; height: 9px; border-color: #f4978f; background: #f4978f; box-shadow: 0 0 0 4px rgba(244,151,143,.22); }
+.hero-carousel .hero-bottomline { bottom: 24px; color: rgba(255,253,248,.8); }
+.hero-carousel .hero-scroll-indicator svg { color: #f4978f; }
+@media (prefers-reduced-motion: reduce) { .hero-carousel-slide { transition: none; } }
+@media (max-width: 800px) {
+  .hero-carousel { min-height: 820px; }
+  .hero-carousel-content { min-height: 820px; align-items: flex-end; padding-top: 150px; padding-bottom: 142px; }
+  .hero-carousel-slide img { object-position: center; }
+  .hero-carousel-overlay { background: linear-gradient(0deg, rgba(11,38,71,.92) 0%, rgba(11,38,71,.62) 53%, rgba(11,38,71,.12) 100%); }
+  .hero-carousel-kicker { margin-top: 17px; }
+  .hero-carousel h1 { font-size: clamp(54px, 15vw, 82px); }
+  .hero-carousel .hero-lede { max-width: 355px; font-size: 14px; }
+  .hero-carousel-controls { right: 17px; bottom: 50%; gap: 5px; }
+  .hero-carousel-controls button { width: 23px; height: 23px; }
+  .hero-carousel .hero-bottomline { bottom: 21px; }
+}

@@ -67,6 +67,17 @@ const productDetails = {
   "Personal hygiene": { spec: "Absorbent non-woven and hygiene formats", moq: "MOQ from 5,000 units", export: "Export documentation support" },
 };
 
+const heroSlides = [
+  { image: "/assets/hero-carousel/01-final-base-with-sipper.webp", alt: "Parent and baby enjoying everyday care", label: "CARE FOR EVERYDAY LIFE" },
+  { image: "/assets/hero-carousel/02-chatgpt-hero.webp", alt: "BONNE baby-care product range", label: "A COMPLETE BABY-CARE RANGE" },
+  { image: "/assets/hero-carousel/03-whatsapp-01.webp", alt: "BONNE easy sip steel sipper", label: "DESIGNED FOR GROWING FAMILIES" },
+  { image: "/assets/hero-carousel/04-whatsapp-02.webp", alt: "BONNE baby toothbrush range", label: "SMALL DETAILS. REAL CARE." },
+  { image: "/assets/hero-carousel/05-whatsapp-03.webp", alt: "BONNE silicone teething finger brush", label: "SOFT, SAFE, HYGIENIC" },
+  { image: "/assets/hero-carousel/06-whatsapp-04.webp", alt: "BONNE orthodontic soother nipple", label: "GENTLE COMFORT FOR BABIES" },
+  { image: "/assets/hero-carousel/07-whatsapp-05.webp", alt: "BONNE baby feeding bottles", label: "MADE FOR EVERYDAY CARE" },
+  { image: "/assets/hero-carousel/08-whatsapp-06.webp", alt: "BONNE glass sipper with sleeve", label: "TRUSTED PRODUCT SOLUTIONS" },
+];
+
 export default function Home() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [flippedCategory, setFlippedCategory] = useState<string | null>(null);
@@ -74,6 +85,14 @@ export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
   const [productFilter, setProductFilter] = useState("All products");
+  const [activeHeroSlide, setActiveHeroSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveHeroSlide((current) => (current + 1) % heroSlides.length);
+    }, 3000);
+    return () => window.clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     if (!selectedFactory) return;
@@ -123,19 +142,26 @@ export default function Home() {
       <SiteHeader home />
 
       <main id="top">
-        <section className="hero-section hero-premium">
-          <div className="container hero-premium-inner">
-            <div className="hero-premium-copy reveal-up">
+        <section className="hero-section hero-carousel" aria-label="BONNE TRINITY product highlights">
+          <div className="hero-carousel-slides" aria-live="polite">
+            {heroSlides.map((slide, index) => (
+              <div className={`hero-carousel-slide ${index === activeHeroSlide ? "is-active" : ""}`} key={slide.image} aria-hidden={index !== activeHeroSlide}>
+                <img src={slide.image} alt={slide.alt} />
+              </div>
+            ))}
+          </div>
+          <div className="hero-carousel-overlay" />
+          <div className="container hero-carousel-content">
+            <div className="hero-carousel-copy reveal-up">
               <div className="eyebrow"><span className="eyebrow-line" /> CARE · COMFORT · CREDIBILITY</div>
+              <p className="hero-carousel-kicker">{heroSlides[activeHeroSlide].label}</p>
               <h1>Care.<br /><i>Comfort.</i><br />Made for<br /><i>everyday life.</i></h1>
               <p className="hero-lede">BONNE TRINITY provides B2B baby-care and personal-hygiene products through trusted sourcing and supply partnerships.</p>
               <div className="hero-actions"><a className="button button-dark" href="#products">Explore Products <ArrowUpRight size={17} /></a><a className="text-link" href="#enquire">Enquire Now <span>↗</span></a></div>
             </div>
-            <div className="hero-premium-product" aria-label="BONNE flagship product render placeholder">
-              <div className="hero-premium-shadow" />
-              <div className="hero-premium-render"><img src="/assets/bonne-nipple_9124056e.jpeg" alt="BONNE flagship baby-care product" /></div>
-              <span className="hero-premium-label">FLAGSHIP RANGE / BABY CARE</span>
-            </div>
+          </div>
+          <div className="hero-carousel-controls" role="tablist" aria-label="Choose hero slide">
+            {heroSlides.map((slide, index) => <button key={slide.image} type="button" className={index === activeHeroSlide ? "is-active" : ""} onClick={() => setActiveHeroSlide(index)} aria-label={`Show slide ${index + 1}: ${slide.label}`} aria-selected={index === activeHeroSlide} role="tab"><span /></button>)}
           </div>
           <div className="hero-bottomline container"><span className="hero-scroll-indicator"><b>Scroll to discover</b><ChevronDown size={15} /></span></div>
         </section>
