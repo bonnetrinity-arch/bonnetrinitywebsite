@@ -490,3 +490,9 @@
   .hero-carousel-controls button { width: 23px; height: 23px; }
   .hero-carousel .hero-bottomline { bottom: 21px; }
 }
+
+
+/* Two-image hero mode: imagery only, with navigation dots retained */
+.hero-carousel-overlay { background: linear-gradient(90deg, rgba(11,38,71,.22), rgba(11,38,71,.04) 58%, rgba(11,38,71,.12)); }
+.hero-carousel-controls { right: 34px; }
+@media (max-width: 800px) { .hero-carousel-overlay { background: linear-gradient(0deg, rgba(11,38,71,.18), rgba(11,38,71,.03) 62%, rgba(11,38,71,.08)); } .hero-carousel-controls { right: 17px; } }

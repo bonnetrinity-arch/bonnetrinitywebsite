@@ -4,7 +4,6 @@ import {
   ArrowUpRight,
   Baby,
   Check,
-  ChevronDown,
   Globe2,
   Handshake,
   Linkedin,
@@ -68,14 +67,8 @@ const productDetails = {
 };
 
 const heroSlides = [
-  { image: "/assets/hero-carousel/01-final-base-with-sipper.webp", alt: "Parent and baby enjoying everyday care", label: "CARE FOR EVERYDAY LIFE" },
-  { image: "/assets/hero-carousel/02-chatgpt-hero.webp", alt: "BONNE baby-care product range", label: "A COMPLETE BABY-CARE RANGE" },
-  { image: "/assets/hero-carousel/03-whatsapp-01.webp", alt: "BONNE easy sip steel sipper", label: "DESIGNED FOR GROWING FAMILIES" },
-  { image: "/assets/hero-carousel/04-whatsapp-02.webp", alt: "BONNE baby toothbrush range", label: "SMALL DETAILS. REAL CARE." },
-  { image: "/assets/hero-carousel/05-whatsapp-03.webp", alt: "BONNE silicone teething finger brush", label: "SOFT, SAFE, HYGIENIC" },
-  { image: "/assets/hero-carousel/06-whatsapp-04.webp", alt: "BONNE orthodontic soother nipple", label: "GENTLE COMFORT FOR BABIES" },
-  { image: "/assets/hero-carousel/07-whatsapp-05.webp", alt: "BONNE baby feeding bottles", label: "MADE FOR EVERYDAY CARE" },
-  { image: "/assets/hero-carousel/08-whatsapp-06.webp", alt: "BONNE glass sipper with sleeve", label: "TRUSTED PRODUCT SOLUTIONS" },
+  { image: "/assets/hero-carousel/hero-1.webp", alt: "BONNE TRINITY hero image one" },
+  { image: "/assets/hero-carousel/hero-2.webp", alt: "BONNE TRINITY hero image two" },
 ];
 
 export default function Home() {
@@ -151,19 +144,9 @@ export default function Home() {
             ))}
           </div>
           <div className="hero-carousel-overlay" />
-          <div className="container hero-carousel-content">
-            <div className="hero-carousel-copy reveal-up">
-              <div className="eyebrow"><span className="eyebrow-line" /> CARE · COMFORT · CREDIBILITY</div>
-              <p className="hero-carousel-kicker">{heroSlides[activeHeroSlide].label}</p>
-              <h1>Care.<br /><i>Comfort.</i><br />Made for<br /><i>everyday life.</i></h1>
-              <p className="hero-lede">BONNE TRINITY provides B2B baby-care and personal-hygiene products through trusted sourcing and supply partnerships.</p>
-              <div className="hero-actions"><a className="button button-dark" href="#products">Explore Products <ArrowUpRight size={17} /></a><a className="text-link" href="#enquire">Enquire Now <span>↗</span></a></div>
-            </div>
-          </div>
           <div className="hero-carousel-controls" role="tablist" aria-label="Choose hero slide">
-            {heroSlides.map((slide, index) => <button key={slide.image} type="button" className={index === activeHeroSlide ? "is-active" : ""} onClick={() => setActiveHeroSlide(index)} aria-label={`Show slide ${index + 1}: ${slide.label}`} aria-selected={index === activeHeroSlide} role="tab"><span /></button>)}
+            {heroSlides.map((slide, index) => <button key={slide.image} type="button" className={index === activeHeroSlide ? "is-active" : ""} onClick={() => setActiveHeroSlide(index)} aria-label={`Show hero image ${index + 1}`} aria-selected={index === activeHeroSlide} role="tab"><span /></button>)}
           </div>
-          <div className="hero-bottomline container"><span className="hero-scroll-indicator"><b>Scroll to discover</b><ChevronDown size={15} /></span></div>
         </section>
 
         <section className="intro-section" id="about">
