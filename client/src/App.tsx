@@ -14,9 +14,12 @@ function ScrollToTop() {
   const [location] = useLocation();
   useEffect(() => {
     // don't fight an in-page hash scroll (e.g. #what-we-do, #products)
-    if (!location.includes("#")) {
-      window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
-    }
+    if (location.includes("#")) return;
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
+    // re-assert after the new page's images/layout settle, in case they shift scroll position
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior }));
+    });
   }, [location]);
   return null;
 }
