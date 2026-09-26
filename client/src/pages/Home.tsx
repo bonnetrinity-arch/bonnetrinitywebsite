@@ -3,12 +3,17 @@ import { Link } from "wouter";
 import {
   ArrowUpRight,
   Baby,
+  Brush,
   Check,
+  CupSoda,
   Globe2,
   Handshake,
+  Heart,
+  Leaf,
   Linkedin,
   Mail,
   MessageCircle,
+  Milk,
   Phone,
   ShieldCheck,
   Sparkles,
@@ -23,35 +28,35 @@ import { SiteHeader } from "@/components/SiteLayout";
 const categories = [
   {
     number: "01",
-    eyebrow: "Carefully sourced",
-    title: "Baby care",
-    text: "Thoughtfully sourced baby-care essentials designed for everyday comfort, care and convenience.",
+    title: "Baby Care",
+    subtitle: "Everyday essentials for little ones.",
     icon: Baby,
-    tone: "terracotta",
-    back: {
-      text: "Thoughtfully sourced and developed baby-care products designed for everyday comfort, convenience and care.",
-      rangeLabel: "Our range",
-      range: ["Feeding bottles & nipples", "Orthodontic soother nipple", "Silicone teething finger brush", "Glass sippers with sleeve", "Other baby-care essentials"],
-      forLabel: "For",
-      forWhom: "Distributors · Retailers",
-      cta: "/products?category=Baby%20care",
-    },
+    tone: "pink",
+    image: "/assets/baby-care-lineup_5e91c2af.webp",
+    imagePosition: "center",
+    items: [
+      { label: "Soothers & Nipples", icon: Baby },
+      { label: "Feeding Bottles", icon: Milk },
+      { label: "Sippers", icon: CupSoda },
+      { label: "Baby Toothbrush", icon: Brush },
+    ],
+    cta: "Explore Baby Care Products",
+    href: "/products?category=Baby%20care",
   },
   {
     number: "02",
-    eyebrow: "Made for everyday care",
-    title: "Personal hygiene",
-    text: "Reliable hygiene essentials designed for everyday comfort, protection and confidence.",
-    icon: Sparkles,
-    tone: "sage",
-    back: {
-      text: "Reliable personal-hygiene products sourced and supplied for brands, distributors, retailers and private-label buyers.",
-      rangeLabel: "Our range",
-      range: ["Sanitary pads", "Adult diapers"],
-      forLabel: "For",
-      forWhom: "Distributors · Retailers",
-      cta: "/products?category=Personal%20hygiene",
-    },
+    title: "Personal Hygiene",
+    subtitle: "Comfort and confidence for everyday life.",
+    icon: Leaf,
+    tone: "blue",
+    image: "/assets/bonne-pad_c54c9b7c.jpeg",
+    imagePosition: "center",
+    items: [
+      { label: "Sanitary Pads", icon: Heart },
+      { label: "Adult Diapers", icon: ShieldCheck },
+    ],
+    cta: "Explore Personal Hygiene Products",
+    href: "/products?category=Personal%20hygiene",
   },
 ];
 
@@ -74,7 +79,6 @@ const heroSlides = [
 
 export default function Home() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [flippedCategory, setFlippedCategory] = useState<string | null>(null);
   const [selectedFactory, setSelectedFactory] = useState<{ src: string; alt: string; caption: string } | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
@@ -178,29 +182,25 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="categories-section" id="what-we-do">
+        <section className="product-panels-section" id="what-we-do">
           <div className="container">
-            <div className="section-heading"><div><div className="section-label">02 / WHAT WE DO</div><h2>Two ways to<br /><i>move forward.</i></h2></div><p>From the first conversation to the final format, our role is to help you find a practical, dependable route to market.</p></div>
-            <div className="category-grid">{categories.map(({ number, eyebrow, title, text, back, icon: Icon, tone }) => {
-              const isFlipped = flippedCategory === title;
-              return <article className={`category-card ${tone} ${back ? "category-card-flippable" : ""} ${isFlipped ? "is-flipped" : ""}`} key={title}>
-                <div className="category-card-inner">
-                  <div className="category-face category-front">
-                    <div className="category-top"><span>{number}</span><Icon size={22} strokeWidth={1.5} /></div>
-                    <div className="category-bottom"><div className="category-eyebrow">{eyebrow}</div><h3>{title}</h3><p>{text}</p>{back ? <button type="button" className="category-explore" onClick={() => setFlippedCategory(isFlipped ? null : title)} aria-expanded={isFlipped}>Explore <ArrowUpRight size={19} /></button> : <a className="category-explore" href="#enquire" aria-label={`Enquire about ${title}`}>Explore <ArrowUpRight size={19} /></a>}</div>
-                  </div>
-                  {back ? <div className="category-face category-back">
-                    <div className="category-top"><span>{number} / {title.toUpperCase()}</span><button type="button" className="category-back-close" onClick={() => setFlippedCategory(null)} aria-label="Back to overview">×</button></div>
-                    <div className="category-bottom">
-                      <p>{back.text}</p>
-                      <div className="category-back-block"><span className="category-back-label">{back.rangeLabel}</span><ul>{back.range.map((item) => <li key={item}>{item}</li>)}</ul></div>
-                      <div className="category-back-block"><span className="category-back-label">{back.forLabel}</span><p className="category-back-audience">{back.forWhom}</p></div>
-                      <Link className="category-explore category-explore-back" href={back.cta}>View products <ArrowUpRight size={19} /></Link>
-                    </div>
-                  </div> : null}
+            <div className="product-panels-heading">
+              <div className="about-hero-label"><span /> OUR PRODUCTS <span /></div>
+              <h2>Essential Products. <i>Growing Opportunities.</i></h2>
+              <p>A focused range of Baby Care and Personal Hygiene products, selected and developed for today’s market needs.</p>
+            </div>
+            <div className="product-panels-grid">{categories.map(({ number, title, subtitle, icon: Icon, tone, image, imagePosition, items, cta, href }) => (
+              <article className={`product-panel tone-${tone}`} key={title}>
+                <div className="product-panel-head">
+                  <span className="product-panel-number">{number}</span>
+                  <span className="product-panel-icon"><Icon size={24} strokeWidth={1.75} /></span>
+                  <div><h3>{title}</h3><p>{subtitle}</p></div>
                 </div>
-              </article>;
-            })}</div>
+                <div className="product-panel-image"><img src={image} alt={title} style={{ objectPosition: imagePosition }} /></div>
+                <div className="product-panel-chips">{items.map(({ label, icon: ItemIcon }) => <div className="product-panel-chip" key={label}><ItemIcon size={20} strokeWidth={1.75} /><span>{label}</span></div>)}</div>
+                <Link className="button button-dark product-panel-cta" href={href}>{cta} <ArrowUpRight size={17} /></Link>
+              </article>
+            ))}</div>
           </div>
         </section>
 
