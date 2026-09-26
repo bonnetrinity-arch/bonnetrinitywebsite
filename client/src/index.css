@@ -479,14 +479,14 @@
 .hero-carousel .hero-scroll-indicator svg { color: #f4978f; }
 @media (prefers-reduced-motion: reduce) { .hero-carousel-slide { transition: none; } }
 @media (max-width: 800px) {
-  .hero-carousel { min-height: 0; aspect-ratio: 3 / 2; }
+  .hero-carousel { min-height: 0; aspect-ratio: 3 / 2; margin-top: 92px; }
   .hero-carousel-content { min-height: 0; align-items: flex-end; padding-top: 100px; padding-bottom: 60px; }
   .hero-carousel-slide img { object-position: center; }
   .hero-carousel-overlay { background: linear-gradient(0deg, rgba(11,38,71,.92) 0%, rgba(11,38,71,.62) 53%, rgba(11,38,71,.12) 100%); }
   .hero-carousel-kicker { margin-top: 17px; }
   .hero-carousel h1 { font-size: clamp(54px, 15vw, 82px); }
   .hero-carousel .hero-lede { max-width: 355px; font-size: 14px; }
-  .hero-carousel-controls { right: 17px; bottom: 50%; gap: 5px; }
+  .hero-carousel-controls { right: auto; left: 50%; top: auto; bottom: 14px; transform: translateX(-50%); flex-direction: row; gap: 8px; }
   .hero-carousel-controls button { width: 23px; height: 23px; }
   .hero-carousel .hero-bottomline { bottom: 21px; }
 }
