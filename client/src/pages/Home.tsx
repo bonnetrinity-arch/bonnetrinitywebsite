@@ -32,7 +32,7 @@ const categories = [
     subtitle: "Everyday essentials for little ones.",
     icon: Baby,
     tone: "pink",
-    image: "/assets/baby-care-lineup_5e91c2af.webp",
+    image: "/assets/baby-care-lineup-2_c9f1e6a3.webp",
     imagePosition: "center",
     items: [
       { label: "Soothers & Nipples", icon: Baby },
@@ -49,7 +49,7 @@ const categories = [
     subtitle: "Comfort and confidence for everyday life.",
     icon: Leaf,
     tone: "blue",
-    image: "/assets/bonne-pad_c54c9b7c.jpeg",
+    image: null,
     imagePosition: "center",
     items: [
       { label: "Sanitary Pads", icon: Heart },
@@ -196,7 +196,7 @@ export default function Home() {
                   <span className="product-panel-icon"><Icon size={24} strokeWidth={1.75} /></span>
                   <div><h3>{title}</h3><p>{subtitle}</p></div>
                 </div>
-                <div className="product-panel-image"><img src={image} alt={title} style={{ objectPosition: imagePosition }} /></div>
+                <div className="product-panel-image">{image ? <img src={image} alt={title} style={{ objectPosition: imagePosition }} /> : <span className="product-panel-image-placeholder">Product photo coming soon</span>}</div>
                 <div className="product-panel-chips">{items.map(({ label, icon: ItemIcon }) => <div className="product-panel-chip" key={label}><ItemIcon size={20} strokeWidth={1.75} /><span>{label}</span></div>)}</div>
                 <Link className="button button-dark product-panel-cta" href={href}>{cta} <ArrowUpRight size={17} /></Link>
               </article>
