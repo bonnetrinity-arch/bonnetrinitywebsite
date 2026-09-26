@@ -447,7 +447,7 @@
 
 
 /* Hero image carousel */
-.hero-carousel { width: 100%; min-height: min(78vh, 640px); overflow: hidden; isolation: isolate; background: #173d70 !important; color: #fffdf8; }
+.hero-carousel { width: 100%; min-height: 0; aspect-ratio: 2.25 / 1; overflow: hidden; isolation: isolate; background: #173d70 !important; color: #fffdf8; }
 .hero-carousel-slides, .hero-carousel-slide, .hero-carousel-slide img, .hero-carousel-overlay { position: absolute; inset: 0; width: 100%; height: 100%; }
 .hero-carousel-slides { z-index: 0; }
 .hero-carousel-slide { opacity: 0; transition: opacity 1000ms ease-in-out; }
