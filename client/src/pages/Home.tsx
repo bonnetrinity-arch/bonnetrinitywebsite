@@ -12,6 +12,9 @@ import {
   Phone,
   ShieldCheck,
   Sparkles,
+  TrendingUp,
+  Truck,
+  Users,
   X,
 } from "lucide-react";
 import { toast } from "sonner";
@@ -147,11 +150,31 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="intro-section" id="about">
-          <div className="container intro-grid">
-            <div className="section-label">01 / WHO WE ARE</div>
-            <div className="intro-copy"><h2>A grounded partner for <i>growing brands.</i></h2><p>We are BONNE TRINITY — a New Delhi-based partnership company led by Gavish Aneja and Hriday Aneja. We develop, source, private-label, supply and distribute through trusted manufacturing and sourcing partners, helping ambitious businesses move with confidence.</p><a className="text-link" href="#enquire">Meet us in a conversation <span>↗</span></a></div>
-            <div className="intro-aside"><div className="aside-number">02</div><p>A newer venture, backed by a family manufacturing network and a clear view of what partners need.</p></div>
+        <section className="about-hero-section" id="about">
+          <div className="container about-hero-grid">
+            <div className="about-hero-copy">
+              <div className="about-hero-label"><span /> WHO WE ARE <span /></div>
+              <h2>Grow Your Business<br />with <strong>BONNE TRINITY</strong></h2>
+              <p className="about-hero-subhead">Quality Baby Care &amp; Personal Hygiene Products for Distributors &amp; Retailers</p>
+              <p>BONNE TRINITY is a B2B company focused on sourcing, developing and supplying thoughtfully selected Baby Care and Personal Hygiene products for distributors and retailers.</p>
+              <p>Backed by established family manufacturing experience since 1963, we combine product understanding, reliable sourcing and quality-focused supply to bring practical products to market.</p>
+              <div className="about-hero-actions">
+                <a className="button button-dark" href="#enquire">Enquire for Business <ArrowUpRight size={17} /></a>
+                <a className="button button-whatsapp" href="https://wa.me/918588879611" target="_blank" rel="noreferrer"><MessageCircle size={18} /> Connect on WhatsApp</a>
+              </div>
+            </div>
+            <div className="about-hero-visual">
+              <div className="about-hero-blob" aria-hidden="true" />
+              <img src="/assets/who-we-are-machine_a1b2c3d4.jpg" alt="BONNE TRINITY manufacturing equipment" />
+              <div className="about-hero-badge about-hero-badge-top">Trusted Products.<br />Stronger Partnerships.</div>
+              <div className="about-hero-badge about-hero-badge-bottom">Building Better Care Together</div>
+            </div>
+          </div>
+          <div className="container about-hero-features">
+            <div className="about-hero-feature"><span className="about-hero-feature-icon tone-pink"><ShieldCheck size={22} /></span><div><h3>Quality Products</h3><p>Carefully selected for your market.</p></div></div>
+            <div className="about-hero-feature"><span className="about-hero-feature-icon tone-blue"><Truck size={22} /></span><div><h3>Reliable Supply</h3><p>Consistent quality and on-time supply.</p></div></div>
+            <div className="about-hero-feature"><span className="about-hero-feature-icon tone-mint"><Users size={22} /></span><div><h3>Long-term Partnerships</h3><p>Focused on your growth.</p></div></div>
+            <div className="about-hero-feature"><span className="about-hero-feature-icon tone-peach"><TrendingUp size={22} /></span><div><h3>A Stronger Tomorrow</h3><p>Everyday essentials for brighter lives.</p></div></div>
           </div>
         </section>
 

@@ -495,3 +495,50 @@
 /* Two-image hero mode: imagery only, with navigation dots retained */
 .hero-carousel-overlay { background: linear-gradient(90deg, rgba(11,38,71,.22), rgba(11,38,71,.04) 58%, rgba(11,38,71,.12)); }
 @media (max-width: 800px) { .hero-carousel-overlay { background: linear-gradient(0deg, rgba(11,38,71,.18), rgba(11,38,71,.03) 62%, rgba(11,38,71,.08)); } }
+
+/* Who We Are — grow-your-business intro */
+.about-hero-section { padding: 90px 0; background: #ffffff; overflow: visible; }
+.about-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+.about-hero-label { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; color: #123f73; font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; }
+.about-hero-label span { width: 30px; height: 1px; background: rgba(18,63,115,.4); }
+.about-hero-copy h2 { font-family: "DM Sans", sans-serif; font-weight: 800; letter-spacing: -.02em; line-height: 1.08; font-size: clamp(32px, 3.6vw, 44px); color: #123f73; }
+.about-hero-subhead { margin-top: 18px; max-width: 480px; color: #2b627f; font-size: 19px; font-weight: 600; line-height: 1.4; }
+.about-hero-copy > p:not(.about-hero-subhead) { margin-top: 16px; max-width: 500px; color: rgba(18,63,115,.72); font-size: 15px; line-height: 1.75; }
+.about-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 32px; }
+.button-whatsapp { background: #ffffff; color: #1f9e57; border: 2px solid #1f9e57; }
+.button-whatsapp:hover, .button-whatsapp:focus-visible { background: #eafbf1; color: #1f9e57; }
+.about-hero-visual { position: relative; }
+.about-hero-blob { position: absolute; z-index: 0; inset: -8% -10%; background: #dcebfa; opacity: .6; border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%; }
+.about-hero-visual img { position: relative; z-index: 1; display: block; width: 100%; height: 460px; object-fit: cover; border-radius: 26px; box-shadow: 0 30px 60px rgba(18,63,115,.18); }
+.about-hero-badge { position: absolute; z-index: 2; display: flex; align-items: center; justify-content: center; text-align: center; color: #123f73; font-family: "DM Serif Display", serif; font-style: italic; line-height: 1.28; }
+.about-hero-badge-top { top: -34px; right: -20px; width: 168px; height: 168px; border-radius: 50%; background: #e2f5eb; padding: 20px; font-size: 16px; box-shadow: 0 18px 30px rgba(18,63,115,.12); }
+.about-hero-badge-bottom { bottom: -28px; right: 26px; max-width: 168px; padding: 20px 22px; border-radius: 26px 26px 26px 4px; background: #dcebfa; font-size: 15px; box-shadow: 0 18px 30px rgba(18,63,115,.12); transform: rotate(-2deg); }
+.about-hero-features { margin-top: 64px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; padding: 34px 38px; border-radius: 28px; background: #f4f8fb; }
+.about-hero-feature { display: flex; align-items: flex-start; gap: 14px; }
+.about-hero-feature-icon { display: grid; place-items: center; flex: 0 0 auto; width: 48px; height: 48px; border-radius: 50%; }
+.about-hero-feature-icon.tone-pink { background: rgba(244,151,143,.18); color: #e8695c; }
+.about-hero-feature-icon.tone-blue { background: #dcebfa; color: #123f73; }
+.about-hero-feature-icon.tone-mint { background: #dcf3e8; color: #1f8a5f; }
+.about-hero-feature-icon.tone-peach { background: #fdead2; color: #c97a1f; }
+.about-hero-feature h3 { font-size: 15px; font-weight: 700; color: #123f73; }
+.about-hero-feature p { margin-top: 4px; color: rgba(18,63,115,.65); font-size: 12.5px; line-height: 1.5; }
+@media (max-width: 1050px) {
+  .about-hero-badge-top { width: 140px; height: 140px; font-size: 14px; }
+  .about-hero-features { grid-template-columns: repeat(2, 1fr); gap: 26px 20px; }
+}
+@media (max-width: 800px) {
+  .about-hero-section { padding: 56px 0; }
+  .about-hero-grid { grid-template-columns: 1fr; gap: 56px; }
+  .about-hero-copy h2 { font-size: clamp(28px, 8vw, 36px); }
+  .about-hero-subhead { font-size: 16px; }
+  .about-hero-visual { margin-top: 8px; order: 2; }
+  .about-hero-visual img { height: 300px; }
+  .about-hero-badge-top { top: -22px; right: -10px; width: 110px; height: 110px; padding: 12px; font-size: 12px; }
+  .about-hero-badge-bottom { bottom: -20px; right: 14px; max-width: 130px; padding: 14px 16px; font-size: 12px; }
+  .about-hero-actions { gap: 12px; }
+  .about-hero-actions .button { flex: 1 1 auto; justify-content: center; }
+  .about-hero-features { margin-top: 44px; grid-template-columns: 1fr 1fr; gap: 22px 16px; padding: 24px; border-radius: 22px; }
+}
+@media (max-width: 460px) {
+  .about-hero-features { grid-template-columns: 1fr; }
+}
