@@ -245,10 +245,11 @@
   .enquire-contact > p { color: rgba(18,63,115,.75); margin-top: 25px; }
   .enquire-page .contact-list a { color: #123f73; }
   .enquire-page .form-card { min-height: 430px; }
-  .page-cta { padding: 48px 0; background: #dcebfa; color: #123f73; }
-  .page-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 35px; }
-  .page-cta h2 { margin-top: 15px; font-size: clamp(38px, 4vw, 58px); }
-  .page-cta .button-dark { background: #123f73; color: #ffffff; }
+  .page-cta { padding: 20px 0 52px; background: transparent; color: #123f73; }
+  .page-cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 35px; padding: 48px 56px; border-radius: 28px; background: #dcebfa; }
+  .page-cta .section-label { color: #e8695c; }
+  .page-cta h2 { margin-top: 15px; font-family: "DM Sans", sans-serif; font-weight: 800; letter-spacing: -.02em; font-size: clamp(30px, 3.6vw, 44px); }
+  .page-cta .button-dark { background: #123f73; color: #ffffff; flex: 0 0 auto; }
   .inner-footer { position: relative; }
   @media (max-width: 800px) {
     .inner-nav .nav-inner { height: 80px; }
@@ -263,7 +264,9 @@
     .inner-product-grid .product-info > a { display: none; }
     .principles-grid, .audience-page-grid { grid-template-columns: 1fr; }
     .audience-page-card { min-height: 300px; }
-    .page-cta-inner { align-items: flex-start; flex-direction: column; }
+    .page-cta { padding: 8px 0 32px; }
+    .page-cta-inner { align-items: flex-start; flex-direction: column; padding: 32px 26px; border-radius: 22px; gap: 22px; }
+    .page-cta .button-dark { width: 100%; justify-content: center; }
   }
   @media (max-width: 430px) { .inner-product-grid { grid-template-columns: 1fr; } .inner-product-grid .product-image { height: 260px; } }
 
