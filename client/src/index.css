@@ -625,9 +625,14 @@
 @media (max-width: 800px) {
   .partner-why-section { padding: 32px 0; }
   .partner-why-heading { margin-bottom: 36px; }
-  .partner-why-grid { grid-template-columns: 1fr; gap: 16px; margin-bottom: 24px; }
-  .partner-why-card { padding: 26px 22px 52px; }
-  .partner-why-stats { grid-template-columns: 1fr; gap: 22px; padding: 24px 22px; }
+  .partner-why-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 24px; }
+  .partner-why-card { padding: 20px 18px 46px; }
+  .partner-why-icon { width: 44px; height: 44px; margin-bottom: 12px; }
+  .partner-why-card h3 { font-size: 14px; }
+  .partner-why-card p { font-size: 12px; }
+  .partner-why-arrow { left: 18px; bottom: 18px; width: 30px; height: 30px; }
+  .partner-why-stats { grid-template-columns: 1fr 1fr; gap: 18px 14px; padding: 22px 18px; }
+  .partner-why-stat { border-left: 0; padding-left: 0; }
 }
 
 /* Our Legacy */
