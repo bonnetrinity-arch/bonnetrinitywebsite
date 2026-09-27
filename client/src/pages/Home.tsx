@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import {
   ArrowRight,
   ArrowUpRight,
+  Award,
   Baby,
   Brush,
   Building2,
@@ -217,6 +218,32 @@ export default function Home() {
               <div className="partner-why-stat"><span className="partner-why-stat-icon tone-mint"><ShieldCheck size={22} strokeWidth={1.75} /></span><div><h4>Quality You Can Trust</h4><p>Safe, durable and market-ready products</p></div></div>
               <div className="partner-why-stat"><span className="partner-why-stat-icon tone-peach"><Users size={22} strokeWidth={1.75} /></span><div><h4>Growing Together</h4><p>Long-term partnerships for a healthier, happier tomorrow</p></div></div>
             </div>
+          </div>
+        </section>
+
+        <section className="legacy-section" id="legacy">
+          <div className="container legacy-grid">
+            <div className="legacy-copy">
+              <div className="about-hero-label"><span /> OUR LEGACY <span /></div>
+              <h2>Decades of Expertise.<br /><i>A Brighter Tomorrow.</i></h2>
+              <p>With a strong family manufacturing legacy since 1963, we continue to build on our experience to develop and supply high-quality baby care products trusted across the Indian market.</p>
+              <div className="legacy-stats">
+                <div className="legacy-stat tone-pink"><span className="legacy-stat-icon"><Award size={22} strokeWidth={1.75} /></span><h4>1963</h4><p>Family Manufacturing Legacy</p></div>
+                <div className="legacy-stat tone-blue"><span className="legacy-stat-icon"><Building2 size={22} strokeWidth={1.75} /></span><h4>Modern Facilities</h4><p>Manufacturing units in Greater Noida</p></div>
+                <div className="legacy-stat tone-peach"><span className="legacy-stat-icon"><Globe2 size={22} strokeWidth={1.75} /></span><h4>Global Expansion</h4><p>Actively exploring opportunities to expand into new markets</p></div>
+                <div className="legacy-stat tone-mint"><span className="legacy-stat-icon"><Users size={22} strokeWidth={1.75} /></span><h4>Trusted by Businesses</h4><p>For consistent quality and reliable supply</p></div>
+              </div>
+            </div>
+            <div className="legacy-visual">
+              <div className="about-hero-blob" aria-hidden="true" />
+              <div className="legacy-visual-frame"><img src="/assets/legacy/legacy-main.jpg" alt="BONNE TRINITY manufacturing equipment" /></div>
+              <div className="about-hero-badge about-hero-badge-top">A Legacy<br />of Care<br />Since 1963</div>
+            </div>
+          </div>
+          <div className="container legacy-strip">
+            <div className="legacy-strip-image"><img src="/assets/legacy/legacy-bottles.jpg" alt="PET bottle production line" /></div>
+            <div className="legacy-strip-image"><img src="/assets/legacy/legacy-molding.jpg" alt="Injection molding machine" /></div>
+            <div className="legacy-strip-image"><img src="/assets/legacy/legacy-packing.jpg" alt="Quality-checked packing" /></div>
           </div>
         </section>
 
