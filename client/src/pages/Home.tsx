@@ -222,8 +222,14 @@ export default function Home() {
         </section>
 
         <section className="legacy-section" id="legacy">
-          <div className="container legacy-grid">
-            <div className="legacy-copy">
+          <div className="container legacy-content">
+            <div className="legacy-media-a legacy-strip-image"><img src="/assets/legacy/legacy-bottles.jpg" alt="PET bottle production line" /></div>
+            <div className="legacy-media-b legacy-visual">
+              <div className="about-hero-blob" aria-hidden="true" />
+              <div className="legacy-visual-frame"><img src="/assets/legacy/legacy-main.jpg" alt="BONNE TRINITY manufacturing equipment" /></div>
+              <div className="about-hero-badge about-hero-badge-top">A Legacy<br />of Care<br />Since 1963</div>
+            </div>
+            <div className="legacy-media-copy legacy-copy">
               <div className="about-hero-label"><span /> OUR LEGACY <span /></div>
               <h2>Decades of Expertise.<br /><i>A Brighter Tomorrow.</i></h2>
               <p>With a strong family manufacturing legacy since 1963, we continue to build on our experience to develop and supply high-quality baby care products trusted across the Indian market.</p>
@@ -234,16 +240,8 @@ export default function Home() {
                 <div className="legacy-stat tone-mint"><span className="legacy-stat-icon"><Users size={22} strokeWidth={1.75} /></span><h4>Trusted by Businesses</h4><p>For consistent quality and reliable supply</p></div>
               </div>
             </div>
-            <div className="legacy-visual">
-              <div className="about-hero-blob" aria-hidden="true" />
-              <div className="legacy-visual-frame"><img src="/assets/legacy/legacy-main.jpg" alt="BONNE TRINITY manufacturing equipment" /></div>
-              <div className="about-hero-badge about-hero-badge-top">A Legacy<br />of Care<br />Since 1963</div>
-            </div>
-          </div>
-          <div className="container legacy-strip">
-            <div className="legacy-strip-image"><img src="/assets/legacy/legacy-bottles.jpg" alt="PET bottle production line" /></div>
-            <div className="legacy-strip-image"><img src="/assets/legacy/legacy-molding.jpg" alt="Injection molding machine" /></div>
-            <div className="legacy-strip-image"><img src="/assets/legacy/legacy-packing.jpg" alt="Quality-checked packing" /></div>
+            <div className="legacy-media-c legacy-strip-image"><img src="/assets/legacy/legacy-molding.jpg" alt="Injection molding machine" /></div>
+            <div className="legacy-media-d legacy-strip-image"><img src="/assets/legacy/legacy-packing.jpg" alt="Quality-checked packing" /></div>
           </div>
         </section>
 
