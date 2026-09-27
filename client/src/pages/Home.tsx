@@ -65,18 +65,6 @@ const categories = [
   },
 ];
 
-const products = [
-  { name: "Orthodontic souther nipple", category: "Baby care", meta: "3+ months · Food-grade silicone", image: "/assets/bonne-nipple_9124056e.jpeg", tone: "coral" },
-  { name: "Baby toothbrush with cover", category: "Baby care", meta: "12+ months · BPA-free", image: "/assets/toothbrush_08840fc6.jpeg", tone: "mint" },
-  { name: "Adult care pad range", category: "Personal hygiene", meta: "Absorbent formats · Private label", image: "/assets/bonne-pad_c54c9b7c.jpeg", tone: "yellow" },
-  { name: "Care pad range · back", category: "Personal hygiene", meta: "Packaging and specification view", image: "/assets/bonne-pad-back_45efe2ce.jpeg", tone: "sky" },
-];
-
-const productDetails = {
-  "Baby care": { spec: "Food-grade silicone / BPA-free formats", moq: "MOQ from 1,000 units", export: "India + export enquiries" },
-  "Personal hygiene": { spec: "Absorbent non-woven and hygiene formats", moq: "MOQ from 5,000 units", export: "Export documentation support" },
-};
-
 const heroSlides = [
   { image: "/assets/hero-carousel/hero-1.webp", alt: "BONNE TRINITY hero image one" },
   { image: "/assets/hero-carousel/hero-2.webp", alt: "BONNE TRINITY hero image two" },
@@ -87,7 +75,6 @@ export default function Home() {
   const [selectedFactory, setSelectedFactory] = useState<{ src: string; alt: string; caption: string } | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
-  const [productFilter, setProductFilter] = useState("All products");
   const [activeHeroSlide, setActiveHeroSlide] = useState(0);
 
   useEffect(() => {
@@ -211,19 +198,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="showcase-section" id="products">
-          <div className="container">
-            <div className="section-heading showcase-heading"><div><div className="section-label">03 / PRODUCT CATALOGUE</div><h2>Made for <i>real life.</i></h2></div><p>Explore a selection of product and packaging formats from the BONNE TRINITY range. Share your brief for specifications, quantities and private-label pathways.</p></div>
-            <div className="showcase-filters" role="tablist" aria-label="Filter products">{["All products", "Baby care", "Personal hygiene"].map((filter) => <button key={filter} className={productFilter === filter ? "active" : ""} onClick={() => setProductFilter(filter)} role="tab" aria-selected={productFilter === filter}>{filter}</button>)}</div>
-            <div className="product-grid">{products.filter((product) => productFilter === "All products" || product.category === productFilter).map((product, index) => { const details = productDetails[product.category as keyof typeof productDetails]; return <article className={`product-card product-${product.tone}`} key={product.name}><div className="product-image"><img src={product.image} alt={product.name} loading={index > 2 ? "lazy" : "eager"} /><span className="product-index">{String(index + 1).padStart(2, "0")}</span></div><div className="product-info"><div><span className="product-category">{product.category}</span><h3>{product.name}</h3><p>{product.meta}</p><div className="product-specs"><span>{details.spec}</span><span>{details.moq}</span><span>{details.export}</span></div></div><a href="#enquire" aria-label={`Enquire about ${product.name}`}><ArrowUpRight size={18} /></a></div></article>; })}</div>
-            <div className="showcase-footer"><span>Need a specific format, volume or customization?</span><a className="text-link" href="#enquire">Start with your brief <span>↗</span></a></div>
-          </div>
-        </section>
-
         <section className="partner-why-section" id="why-partner">
           <div className="container partner-why-heading">
             <div className="about-hero-label"><span /> WHY PARTNER WITH BONNE TRINITY <span /></div>
-            <h2>More Than Products.<br /><i>A Partner for Growth.</i></h2>
+            <h2>Built on Trust.<br /><i>Driven by Growth.</i></h2>
             <p>From quality sourcing to reliable supply, we support your business with products people trust and partnerships built for the long term.</p>
           </div>
           <div className="container partner-why-grid">
