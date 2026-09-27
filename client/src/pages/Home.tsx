@@ -3,10 +3,8 @@ import { Link } from "wouter";
 import {
   ArrowRight,
   ArrowUpRight,
-  Award,
   Baby,
   Brush,
-  Building2,
   Check,
   ChevronLeft,
   ChevronRight,
@@ -23,10 +21,8 @@ import {
   Phone,
   Settings,
   ShieldCheck,
-  TrendingUp,
+  Store,
   Truck,
-  Users,
-  X,
 } from "lucide-react";
 import { toast } from "sonner";
 import { SiteHeader } from "@/components/SiteLayout";
@@ -35,7 +31,7 @@ const categories = [
   {
     number: "01",
     title: "Baby Care",
-    subtitle: "Everyday essentials for little ones.",
+    subtitle: "Feeding and care essentials for little ones.",
     icon: Baby,
     tone: "pink",
     image: "/assets/baby-care-lineup-2_c9f1e6a3.webp",
@@ -52,7 +48,7 @@ const categories = [
   {
     number: "02",
     title: "Personal Hygiene",
-    subtitle: "Comfort and confidence for everyday life.",
+    subtitle: "Everyday comfort and protection.",
     icon: Leaf,
     tone: "blue",
     image: null,
@@ -72,8 +68,6 @@ const heroSlides = [
 ];
 
 export default function Home() {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [selectedFactory, setSelectedFactory] = useState<{ src: string; alt: string; caption: string } | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
   const [activeHeroSlide, setActiveHeroSlide] = useState(0);
@@ -84,17 +78,6 @@ export default function Home() {
     }, 3000);
     return () => window.clearInterval(timer);
   }, []);
-
-  useEffect(() => {
-    if (!selectedFactory) return;
-    const closeOnEscape = (event: KeyboardEvent) => event.key === "Escape" && setSelectedFactory(null);
-    document.addEventListener("keydown", closeOnEscape);
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", closeOnEscape);
-      document.body.style.overflow = "";
-    };
-  }, [selectedFactory]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -149,31 +132,22 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="about-hero-section" id="about">
-          <div className="container about-hero-grid">
-            <div className="about-hero-copy">
-              <div className="about-hero-label"><span /> WHO WE ARE <span /></div>
-              <h2>Grow Your Business<br />with <strong>BONNE TRINITY</strong></h2>
-              <p className="about-hero-subhead">Quality Baby Care &amp; Personal Hygiene Products for Distributors &amp; Retailers</p>
-              <p>BONNE TRINITY is a B2B company focused on sourcing, developing and supplying thoughtfully selected Baby Care and Personal Hygiene products for distributors and retailers.</p>
-              <p>Backed by established family manufacturing experience since 1963, we combine product understanding, reliable sourcing and quality-focused supply to bring practical products to market.</p>
-              <div className="about-hero-actions">
-                <a className="button button-dark" href="#enquire">Enquire for Business <ArrowUpRight size={17} /></a>
-                <a className="button button-whatsapp" href="https://wa.me/918588879611" target="_blank" rel="noreferrer"><MessageCircle size={18} /> Connect on WhatsApp</a>
-              </div>
-            </div>
-            <div className="about-hero-visual">
-              <div className="about-hero-blob" aria-hidden="true" />
-              <img src="/assets/who-we-are-machine_a1b2c3d4.jpg" alt="BONNE TRINITY manufacturing equipment" />
-              <div className="about-hero-badge about-hero-badge-top">Trusted Products.<br />Stronger Partnerships.</div>
-              <div className="about-hero-badge about-hero-badge-bottom">Building Better Care Together</div>
+        <section className="hero-heading-section">
+          <div className="container hero-heading">
+            <h2>Grow Your Business<br />with <strong>BONNE TRINITY</strong></h2>
+            <p className="about-hero-subhead">Baby Care &amp; Personal Hygiene Products for Distributors and Retailers</p>
+            <div className="about-hero-actions">
+              <a className="button button-dark" href="#enquire">Enquire for Business <ArrowUpRight size={17} /></a>
+              <a className="button button-whatsapp" href="https://wa.me/918588879611" target="_blank" rel="noreferrer"><MessageCircle size={18} /> Connect on WhatsApp</a>
             </div>
           </div>
-          <div className="container about-hero-features">
-            <div className="about-hero-feature"><span className="about-hero-feature-icon tone-pink"><ShieldCheck size={22} /></span><div><h3>Quality Products</h3><p>Carefully selected for your market.</p></div></div>
-            <div className="about-hero-feature"><span className="about-hero-feature-icon tone-blue"><Truck size={22} /></span><div><h3>Reliable Supply</h3><p>Consistent quality and on-time supply.</p></div></div>
-            <div className="about-hero-feature"><span className="about-hero-feature-icon tone-mint"><Users size={22} /></span><div><h3>Long-term Partnerships</h3><p>Focused on your growth.</p></div></div>
-            <div className="about-hero-feature"><span className="about-hero-feature-icon tone-peach"><TrendingUp size={22} /></span><div><h3>A Stronger Tomorrow</h3><p>Everyday essentials for brighter lives.</p></div></div>
+        </section>
+
+        <section className="who-we-are-section" id="about">
+          <div className="container who-we-are-inner">
+            <div className="about-hero-label"><span /> WHO WE ARE <span /></div>
+            <h2>Everyday Essentials. <i>Growing Opportunities.</i></h2>
+            <p>BONNE TRINITY is a B2B company focused on sourcing, developing and supplying baby-care and personal-hygiene products. We connect distributors and retailers with a carefully selected product range designed around everyday market needs.</p>
           </div>
         </section>
 
@@ -181,8 +155,8 @@ export default function Home() {
           <div className="container">
             <div className="product-panels-heading">
               <div className="about-hero-label"><span /> OUR PRODUCTS <span /></div>
-              <h2>Essential Products. <i>Growing Opportunities.</i></h2>
-              <p>A focused range of Baby Care and Personal Hygiene products, selected and developed for today’s market needs.</p>
+              <h2>Explore Our <i>Product Range.</i></h2>
+              <p>Discover our collection of baby-care and personal-hygiene essentials.</p>
             </div>
             <div className="product-panels-grid">{categories.map(({ number, title, subtitle, icon: Icon, tone, image, imagePosition, items, cta, href }) => (
               <article className={`product-panel tone-${tone}`} key={title}>
@@ -203,21 +177,13 @@ export default function Home() {
           <div className="container partner-why-heading">
             <div className="about-hero-label"><span /> WHY PARTNER WITH BONNE TRINITY <span /></div>
             <h2>Built on Trust.<br /><i>Driven by Growth.</i></h2>
-            <p>From quality sourcing to reliable supply, we support your business with products people trust and partnerships built for the long term.</p>
+            <p>Discover how BONNE TRINITY supports distributors and retailers through four essential business capabilities.</p>
           </div>
           <div className="container partner-why-grid">
-            <div className="partner-why-card tone-pink"><span className="partner-why-icon"><Package size={26} strokeWidth={1.75} /></span><h3>Product Sourcing</h3><p>Carefully selected products to meet your market needs.</p><Link className="partner-why-arrow" href="/enquire" aria-label="Enquire about product sourcing"><ArrowRight size={18} /></Link></div>
-            <div className="partner-why-card tone-blue"><span className="partner-why-icon"><Settings size={26} strokeWidth={1.75} /></span><h3>Product Development</h3><p>Developed around market requirements and consumer trends.</p><Link className="partner-why-arrow" href="/enquire" aria-label="Enquire about product development"><ArrowRight size={18} /></Link></div>
-            <div className="partner-why-card tone-mint"><span className="partner-why-icon"><Truck size={26} strokeWidth={1.75} /></span><h3>Reliable Supply</h3><p>Consistent quality and on-time supply you can count on.</p><Link className="partner-why-arrow" href="/enquire" aria-label="Enquire about reliable supply"><ArrowRight size={18} /></Link></div>
-            <div className="partner-why-card tone-peach"><span className="partner-why-icon"><Handshake size={26} strokeWidth={1.75} /></span><h3>Long-term Partnerships</h3><p>Focused on your growth, with ongoing support at every step.</p><Link className="partner-why-arrow" href="/enquire" aria-label="Enquire about long-term partnerships"><ArrowRight size={18} /></Link></div>
-          </div>
-          <div className="container">
-            <div className="partner-why-stats">
-              <div className="partner-why-stat"><span className="partner-why-stat-icon tone-pink"><Building2 size={22} strokeWidth={1.75} /></span><div><h4>1963</h4><p>Family manufacturing experience since 1963</p></div></div>
-              <div className="partner-why-stat"><span className="partner-why-stat-icon tone-blue"><Globe2 size={22} strokeWidth={1.75} /></span><div><h4>Pan-Asia Network</h4><p>Supplying to distributors and retailers across Asia and beyond</p></div></div>
-              <div className="partner-why-stat"><span className="partner-why-stat-icon tone-mint"><ShieldCheck size={22} strokeWidth={1.75} /></span><div><h4>Quality You Can Trust</h4><p>Safe, durable and market-ready products</p></div></div>
-              <div className="partner-why-stat"><span className="partner-why-stat-icon tone-peach"><Users size={22} strokeWidth={1.75} /></span><div><h4>Growing Together</h4><p>Long-term partnerships for a healthier, happier tomorrow</p></div></div>
-            </div>
+            <div className="partner-why-card tone-pink"><span className="partner-why-icon"><Package size={26} strokeWidth={1.75} /></span><h3>Product Sourcing</h3><p>Products carefully selected around market requirements.</p><Link className="partner-why-arrow" href="/enquire" aria-label="Enquire about product sourcing"><ArrowRight size={18} /></Link></div>
+            <div className="partner-why-card tone-blue"><span className="partner-why-icon"><Settings size={26} strokeWidth={1.75} /></span><h3>Product Development</h3><p>Developing products for evolving consumer needs.</p><Link className="partner-why-arrow" href="/enquire" aria-label="Enquire about product development"><ArrowRight size={18} /></Link></div>
+            <div className="partner-why-card tone-mint"><span className="partner-why-icon"><Truck size={26} strokeWidth={1.75} /></span><h3>Reliable Supply</h3><p>Supporting consistent product availability through our sourcing and supply network.</p><Link className="partner-why-arrow" href="/enquire" aria-label="Enquire about reliable supply"><ArrowRight size={18} /></Link></div>
+            <div className="partner-why-card tone-peach"><span className="partner-why-icon"><Handshake size={26} strokeWidth={1.75} /></span><h3>Business Partnerships</h3><p>Working closely with distributors and retailers to build lasting relationships.</p><Link className="partner-why-arrow" href="/enquire" aria-label="Enquire about business partnerships"><ArrowRight size={18} /></Link></div>
           </div>
         </section>
 
@@ -232,43 +198,34 @@ export default function Home() {
             <div className="legacy-media-copy legacy-copy">
               <div className="about-hero-label"><span /> OUR LEGACY <span /></div>
               <h2>Decades of Expertise.<br /><i>A Brighter Tomorrow.</i></h2>
-              <p>With a strong family manufacturing legacy since 1963, we continue to build on our experience to develop and supply high-quality baby care products trusted across the Indian market.</p>
-              <div className="legacy-stats">
-                <div className="legacy-stat tone-pink"><span className="legacy-stat-icon"><Award size={22} strokeWidth={1.75} /></span><h4>1963</h4><p>Family Manufacturing Legacy</p></div>
-                <div className="legacy-stat tone-blue"><span className="legacy-stat-icon"><Building2 size={22} strokeWidth={1.75} /></span><h4>Modern Facilities</h4><p>Manufacturing units in Greater Noida</p></div>
-                <div className="legacy-stat tone-peach"><span className="legacy-stat-icon"><Globe2 size={22} strokeWidth={1.75} /></span><h4>Global Expansion</h4><p>Actively exploring opportunities to expand into new markets</p></div>
-                <div className="legacy-stat tone-mint"><span className="legacy-stat-icon"><Users size={22} strokeWidth={1.75} /></span><h4>Trusted by Businesses</h4><p>For consistent quality and reliable supply</p></div>
-              </div>
+              <p>Rooted in a family manufacturing legacy dating back to 1963, BONNE TRINITY builds on generations of experience in the baby-care industry. Our associated family businesses bring established manufacturing knowledge and capabilities, with products trusted across the Indian market.</p>
+              <ul className="legacy-timeline">
+                <li><span className="legacy-timeline-year">1963</span><h4>The Beginning</h4><p>The origins of our family’s manufacturing journey.</p></li>
+                <li><span className="legacy-timeline-year">1998</span><h4>Bonny Baby Care Pvt. Ltd.</h4><p>Expanding the family’s baby-care manufacturing operations.</p></li>
+                <li><span className="legacy-timeline-year">2001</span><h4>Bonny Poly Plast Pvt. Ltd.</h4><p>Further developing our family’s manufacturing capabilities.</p></li>
+                <li><span className="legacy-timeline-year">2026</span><h4>BONNE TRINITY</h4><p>Building on our family’s experience to establish a new B2B sourcing and supply business.</p></li>
+              </ul>
             </div>
             <div className="legacy-media-c legacy-strip-image"><img src="/assets/legacy/legacy-molding.jpg" alt="Injection molding machine" /></div>
             <div className="legacy-media-d legacy-strip-image"><img src="/assets/legacy/legacy-packing.jpg" alt="Quality-checked packing" /></div>
           </div>
         </section>
 
-        <section className="network-section" aria-labelledby="network-title">
-          <div className="container network-grid">
-            <div className="network-lead"><div className="section-label">05 / OUR STORY</div><h2>Experience<br />you can <i>build on.</i></h2><p>Backed by established family manufacturing experience since 1963.</p></div>
-            <div className="network-content"><div className="network-note"><span className="network-note-mark">✳</span><span>ASSOCIATED FAMILY BUSINESSES<br />& MANUFACTURING PARTNERS</span></div><div className="partner-business"><div className="partner-meta"><span>EST. 2001</span><span>NOIDA · UTTAR PRADESH</span></div><h3>Bonny Poly Plast <i>Pvt. Ltd.</i></h3><p>Baby feeding bottles, baby nipples and PET bottles.</p><div className="partner-line"><span>01</span><span>Established manufacturing experience</span></div></div><div className="partner-business"><div className="partner-meta"><span>EST. 1998</span><span>NOIDA · UTTAR PRADESH</span></div><h3>Bonny Baby Care <i>Pvt. Ltd.</i></h3><p>Baby feeding bottles, baby nipples, silicone soothers, baby teethers and other baby-care products.</p><div className="partner-line"><span>02</span><span>Established manufacturing experience</span></div></div><button type="button" className="network-media" onClick={() => setSelectedFactory({ src: "/assets/factory-1_6d60273a.webp", alt: "Bonny Poly Plast factory floor", caption: "Bonny Poly Plast Pvt. Ltd. · C-13, Sector-63, Phase-III, Noida, Uttar Pradesh" })} aria-label="View Bonny Poly Plast factory photo"><img src="/assets/factory-1_6d60273a.webp" alt="Bonny Poly Plast factory floor" /><span>NOIDA · BONNY POLY PLAST PVT. LTD.<small>Click to view full size</small></span></button><div className="network-footnote"><span>Manufacturing partners, not a BONNE TRINITY-owned factory.</span><ArrowUpRight size={16} /></div></div>
+        <section className="serve-section" id="who-we-serve">
+          <div className="container serve-heading">
+            <div className="about-hero-label"><span /> WHO WE SERVE <span /></div>
+            <h2>Who We Work With.</h2>
+          </div>
+          <div className="container serve-grid">
+            <div className="serve-card tone-pink"><span className="serve-card-icon"><Globe2 size={26} strokeWidth={1.75} /></span><h3>Distributors</h3><p>Expand your product portfolio with our baby-care and personal-hygiene range.</p></div>
+            <div className="serve-card tone-blue"><span className="serve-card-icon"><Store size={26} strokeWidth={1.75} /></span><h3>Retailers</h3><p>Discover everyday essentials suited to your customers’ needs.</p></div>
           </div>
         </section>
 
-        <section className="network-section" aria-labelledby="network-2-title">
-          <div className="container network-grid">
-            <div className="network-lead"><div className="section-label">06 / MANUFACTURING & SOURCING NETWORK</div><h2 id="network-2-title">Built on real<br /><i>capability.</i></h2><p>Product development, quality-focused manufacturing and dependable B2B supply, delivered through our network of associated partners.</p></div>
-            <div className="network-content"><button type="button" className="network-media network-media-large" onClick={() => setSelectedFactory({ src: "/assets/factory-3_4f6c7b2a.webp", alt: "Bonny Baby Care factory floor", caption: "Bonny Baby Care Pvt. Ltd. · C-6, Sector-58, Phase-III, Noida, Uttar Pradesh" })} aria-label="View Bonny Baby Care factory photo"><img src="/assets/factory-3_4f6c7b2a.webp" alt="Bonny Baby Care factory floor" /><span>NOIDA · BONNY BABY CARE PVT. LTD.<small>Click to view full size</small></span></button><ul className="network-capability-list"><li>Sourcing and manufacturing partnerships</li><li>Product development and private-label formats</li><li>Quality checks and documentation support</li><li>Ongoing supply for distributors and retailers</li></ul></div>
-          </div>
-        </section>
-
-        <section className="page-cta">
-          <div className="container page-cta-inner"><div><span className="section-label">08 / WORK WITH US</span><h2>Ready to talk<br />business?</h2><p>Bulk orders, private-label requirements or international supply — let's discuss what you need.</p></div><a className="button button-dark" href="#enquire">Start a conversation <ArrowUpRight size={17} /></a></div>
-        </section>
-
-        <section className="enquiry-section" id="enquire"><div className="container enquiry-grid"><div className="enquiry-intro"><div className="section-label">09 / CONTACT</div><h2>Let’s start<br /><i>something useful.</i></h2><p>Share your product, volume or sourcing brief — we’ll come back with a clear next step, not a sales pitch.</p><div className="contact-list"><a href="mailto:care@bonnetrinity.com"><Mail size={18} /> care@bonnetrinity.com</a><a href="tel:+919811643325"><Phone size={18} /> +91 98116 43325</a><a href="https://wa.me/918588879611" target="_blank" rel="noreferrer"><MessageCircle size={18} /> WhatsApp us</a></div></div><div className="form-card">{sent ? <div className="success-state"><div className="success-icon"><Check size={24} /></div><div className="section-label">MESSAGE RECEIVED</div><h3>Thank you for reaching out.</h3><p>Our team will review your enquiry and get back to you soon.</p><button className="button button-dark" onClick={() => setSent(false)}>Send another enquiry</button></div> : <form onSubmit={handleSubmit}><input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "f854a96c-906d-4bd4-8b33-c0be1fc5e4bc"} /><input type="checkbox" name="botcheck" className="hidden-field" tabIndex={-1} autoComplete="off" /><div className="form-row"><label>Full name<input required name="name" placeholder="Your name" /></label><label>Work email<input required type="email" name="email" placeholder="you@company.com" /></label></div><div className="form-row"><label>Phone number<input required type="tel" name="phone" placeholder="+91 00000 00000" /></label><label>Company / organisation<input name="company" placeholder="Company name" /></label></div><label>How can we help?<textarea required name="message" rows={4} placeholder="Tell us about your product, volume or sourcing requirement..." /></label><div className="form-foot"><span>We respect your inbox. No noise, just a thoughtful reply.</span><button className="button button-dark" type="submit" disabled={isSubmitting}>{isSubmitting ? "Sending..." : "Send enquiry"} <ArrowUpRight size={17} /></button></div></form>}</div></div></section>
+        <section className="enquiry-section" id="enquire"><div className="container enquiry-grid"><div className="enquiry-intro"><div className="section-label">CONTACT</div><h2>Let’s Build<br /><i>Something Together.</i></h2><p>Interested in our products or exploring a business opportunity? Tell us what you’re looking for, and our team will get in touch.</p><p className="enquiry-note">We also welcome enquiries about future private-label collaborations and international partnerships.</p><div className="contact-list"><a href="mailto:care@bonnetrinity.com"><Mail size={18} /> care@bonnetrinity.com</a><a href="tel:+919811643325"><Phone size={18} /> +91 98116 43325</a><a href="https://wa.me/918588879611" target="_blank" rel="noreferrer"><MessageCircle size={18} /> WhatsApp us</a></div></div><div className="form-card">{sent ? <div className="success-state"><div className="success-icon"><Check size={24} /></div><div className="section-label">MESSAGE RECEIVED</div><h3>Thank you for reaching out.</h3><p>Our team will review your enquiry and get back to you soon.</p><button className="button button-dark" onClick={() => setSent(false)}>Send another enquiry</button></div> : <form onSubmit={handleSubmit}><input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "f854a96c-906d-4bd4-8b33-c0be1fc5e4bc"} /><input type="checkbox" name="botcheck" className="hidden-field" tabIndex={-1} autoComplete="off" /><div className="form-row"><label>Full name<input required name="name" placeholder="Your name" /></label><label>Work email<input required type="email" name="email" placeholder="you@company.com" /></label></div><div className="form-row"><label>Phone number<input required type="tel" name="phone" placeholder="+91 00000 00000" /></label><label>Company / organisation<input name="company" placeholder="Company name" /></label></div><label>How can we help?<textarea required name="message" rows={4} placeholder="Tell us about your product, volume or sourcing requirement..." /></label><div className="form-foot"><span>We respect your inbox. No noise, just a thoughtful reply.</span><button className="button button-dark" type="submit" disabled={isSubmitting}>{isSubmitting ? "Sending..." : "Send enquiry"} <ArrowUpRight size={17} /></button></div></form>}</div></div></section>
       </main>
 
-      {selectedFactory && <div className="factory-lightbox" role="dialog" aria-modal="true" aria-label={selectedFactory.caption} onClick={() => setSelectedFactory(null)}><div className="factory-lightbox-panel" onClick={(event) => event.stopPropagation()}><button type="button" className="factory-lightbox-close" onClick={() => setSelectedFactory(null)} aria-label="Close factory photo"><X size={22} /></button><img src={selectedFactory.src} alt={selectedFactory.alt} /><p>{selectedFactory.caption}</p></div></div>}
-
-      <footer className="footer"><div className="container footer-top"><div className="brand footer-brand"><span className="brand-mark brand-logo brand-logo-wide"><img src="/assets/bonne-wordmark_7f2a91c3.png" alt="BONNE TRINITY" /></span></div><p>Care · Comfort · Smiles.</p><a href="https://www.linkedin.com/company/bonne-trinity/" target="_blank" rel="noreferrer" aria-label="BONNE TRINITY on LinkedIn"><Linkedin size={18} /></a></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} BONNE TRINITY. All rights reserved.</span><span>53A/11 Rama Road, Kirti Nagar, New Delhi — 110015</span><span>GSTIN 07ABGFB9745E1ZB</span></div></footer>
+      <footer className="footer"><div className="container footer-top"><div className="brand footer-brand"><span className="brand-mark brand-logo brand-logo-wide"><img src="/assets/bonne-wordmark_7f2a91c3.png" alt="BONNE TRINITY" /></span></div><p>B2B sourcing, product development and supply of Baby Care &amp; Personal Hygiene products.</p><a href="https://www.linkedin.com/company/bonne-trinity/" target="_blank" rel="noreferrer" aria-label="BONNE TRINITY on LinkedIn"><Linkedin size={18} /></a></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} BONNE TRINITY. All rights reserved.</span><span>53A/11 Rama Road, Kirti Nagar, New Delhi — 110015</span><span>GSTIN 07ABGFB9745E1ZB</span></div></footer>
       <a className="floating-whatsapp" href="https://wa.me/918588879611" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"><MessageCircle size={22} /></a>
     </div>
   );
