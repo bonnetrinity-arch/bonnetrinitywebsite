@@ -55,7 +55,7 @@ const categories = [
     subtitle: "Comfort and confidence for everyday life.",
     icon: Leaf,
     tone: "blue",
-    image: null,
+    image: "/assets/personal-hygiene-lineup.webp",
     imagePosition: "center",
     items: [
       { label: "Sanitary Pads", icon: Heart },
