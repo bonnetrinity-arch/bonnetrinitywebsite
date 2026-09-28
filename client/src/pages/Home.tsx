@@ -67,9 +67,9 @@ const categories = [
 ];
 
 const heroSlides = [
-  { image: "/assets/hero-carousel/hero-1.webp", alt: "BONNE TRINITY hero image one" },
-  { image: "/assets/hero-carousel/hero-2.webp", alt: "BONNE TRINITY hero image two" },
-  { image: "/assets/hero-carousel/hero-3.webp", alt: "BONNE TRINITY hero image three" },
+  { image: "/assets/hero-carousel/hero-2.webp", alt: "Mother and child with BONNE TRINITY products" },
+  { image: "/assets/hero-carousel/hero-1.webp", alt: "BONNE TRINITY baby care product lineup" },
+  { image: "/assets/hero-carousel/hero-3.webp", alt: "BONNE TRINITY adult diapers and sanitary pads lineup" },
 ];
 
 export default function Home() {
