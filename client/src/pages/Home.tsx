@@ -23,7 +23,6 @@ import {
   Phone,
   Settings,
   ShieldCheck,
-  TrendingUp,
   Truck,
   Users,
   X,
@@ -170,12 +169,6 @@ export default function Home() {
               <div className="about-hero-badge about-hero-badge-bottom">Building Better Care Together</div>
             </div>
           </div>
-          <div className="container about-hero-features">
-            <div className="about-hero-feature"><span className="about-hero-feature-icon tone-pink"><ShieldCheck size={22} /></span><div><h3>Quality Products</h3><p>Carefully selected for your market.</p></div></div>
-            <div className="about-hero-feature"><span className="about-hero-feature-icon tone-blue"><Truck size={22} /></span><div><h3>Reliable Supply</h3><p>Consistent quality and on-time supply.</p></div></div>
-            <div className="about-hero-feature"><span className="about-hero-feature-icon tone-mint"><Users size={22} /></span><div><h3>Long-term Partnerships</h3><p>Focused on your growth.</p></div></div>
-            <div className="about-hero-feature"><span className="about-hero-feature-icon tone-peach"><TrendingUp size={22} /></span><div><h3>A Stronger Tomorrow</h3><p>Everyday essentials for brighter lives.</p></div></div>
-          </div>
         </section>
 
         <section className="product-panels-section" id="what-we-do">
@@ -211,14 +204,6 @@ export default function Home() {
             <div className="partner-why-card tone-blue"><span className="partner-why-icon"><Settings size={26} strokeWidth={1.75} /></span><h3>Product Development</h3><p>Developed around market requirements and consumer trends.</p><Link className="partner-why-arrow" href="/enquire" aria-label="Enquire about product development"><ArrowRight size={18} /></Link></div>
             <div className="partner-why-card tone-mint"><span className="partner-why-icon"><Truck size={26} strokeWidth={1.75} /></span><h3>Reliable Supply</h3><p>Consistent quality and on-time supply you can count on.</p><Link className="partner-why-arrow" href="/enquire" aria-label="Enquire about reliable supply"><ArrowRight size={18} /></Link></div>
             <div className="partner-why-card tone-peach"><span className="partner-why-icon"><Handshake size={26} strokeWidth={1.75} /></span><h3>Long-term Partnerships</h3><p>Focused on your growth, with ongoing support at every step.</p><Link className="partner-why-arrow" href="/enquire" aria-label="Enquire about long-term partnerships"><ArrowRight size={18} /></Link></div>
-          </div>
-          <div className="container">
-            <div className="partner-why-stats">
-              <div className="partner-why-stat"><span className="partner-why-stat-icon tone-pink"><Building2 size={22} strokeWidth={1.75} /></span><div><h4>1963</h4><p>Family manufacturing experience since 1963</p></div></div>
-              <div className="partner-why-stat"><span className="partner-why-stat-icon tone-blue"><Globe2 size={22} strokeWidth={1.75} /></span><div><h4>Pan-Asia Network</h4><p>Supplying to distributors and retailers across Asia and beyond</p></div></div>
-              <div className="partner-why-stat"><span className="partner-why-stat-icon tone-mint"><ShieldCheck size={22} strokeWidth={1.75} /></span><div><h4>Quality You Can Trust</h4><p>Safe, durable and market-ready products</p></div></div>
-              <div className="partner-why-stat"><span className="partner-why-stat-icon tone-peach"><Users size={22} strokeWidth={1.75} /></span><div><h4>Growing Together</h4><p>Long-term partnerships for a healthier, happier tomorrow</p></div></div>
-            </div>
           </div>
         </section>
 
