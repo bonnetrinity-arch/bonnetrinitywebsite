@@ -668,7 +668,7 @@
 }
 @media (max-width: 800px) {
   .legacy-section { padding: 32px 0; }
-  .legacy-content { grid-template-columns: 1fr 1fr; grid-template-areas: "a visual" "copy copy" "c d"; gap: 12px; }
+  .legacy-content { grid-template-columns: 1fr 1fr; grid-template-areas: "copy copy" "a visual" "c d"; gap: 12px; }
   .legacy-copy h2 { font-size: clamp(28px, 8vw, 34px); }
   .legacy-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
   .legacy-visual-frame img { height: 150px; }

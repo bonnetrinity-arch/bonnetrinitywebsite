@@ -16,20 +16,28 @@ export function SiteHeader({ home = false }: { home?: boolean }) {
     // else: let the Link navigate normally to "/", App.tsx's ScrollToTop handles landing at top
   };
 
-  const goToWhatWeDo = (e: React.MouseEvent) => {
+  const goToSection = (id: string) => (e: React.MouseEvent) => {
     close();
     if (location === "/") {
       e.preventDefault();
-      document.getElementById("what-we-do")?.scrollIntoView({ behavior: "smooth" });
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     } else {
       // navigate home, then scroll once the section exists
       e.preventDefault();
       navigate("/");
       requestAnimationFrame(() => {
-        setTimeout(() => document.getElementById("what-we-do")?.scrollIntoView({ behavior: "smooth" }), 60);
+        setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }), 60);
       });
     }
   };
+
+  const sectionLinks = [
+    { id: "about", label: "Who We Are" },
+    { id: "what-we-do", label: "Our Products" },
+    { id: "why-partner", label: "Why Partner With Us" },
+    { id: "legacy", label: "Our Legacy" },
+    { id: "enquire", label: "Contact" },
+  ];
 
   return (
     <header className="nav-wrap hero-pill-nav">
@@ -41,10 +49,9 @@ export function SiteHeader({ home = false }: { home?: boolean }) {
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
         <nav className={mobileOpen ? "nav-links open" : "nav-links"}>
-          <a href="/#what-we-do" onClick={goToWhatWeDo}>What we do</a>
-          <Link href="/products" onClick={close}>Products</Link>
-          <Link href="/who-we-serve" onClick={close}>Who we serve</Link>
-          <Link href="/about" onClick={close}>About us</Link>
+          {sectionLinks.map(({ id, label }) => (
+            <a key={id} href={`/#${id}`} onClick={goToSection(id)}>{label}</a>
+          ))}
           <span className="nav-actions"><a className="nav-call" href="tel:+919811643325">Call Now</a><a className="nav-whatsapp" href="https://wa.me/918588879611" target="_blank" rel="noreferrer">WhatsApp</a></span>
         </nav>
       </div>
