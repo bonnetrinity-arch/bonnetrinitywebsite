@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { ArrowUpRight, Check, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Link } from "wouter";
 import SiteLayout, { CTASection, PageIntro, products } from "@/components/SiteLayout";
@@ -34,7 +35,7 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
     };
   }, [onClose]);
 
-  return (
+  return createPortal(
     <div className="product-modal" role="dialog" aria-modal="true" aria-label={product.name} onClick={onClose}>
       <div className="product-modal-panel" onClick={(event) => event.stopPropagation()}>
         <button type="button" className="product-modal-close" onClick={onClose} aria-label="Close product details"><X size={22} /></button>
@@ -48,7 +49,8 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
           <Link className="button button-dark" href={`/enquire?product=${encodeURIComponent(product.name)}`}>Enquire about this product <ArrowUpRight size={17} /></Link>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 
