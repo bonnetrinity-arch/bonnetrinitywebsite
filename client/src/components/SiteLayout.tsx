@@ -68,10 +68,12 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
 }
 
 export const products = [
-  { name: "Orthodontic soother nipple", category: "Baby care", meta: "3+ months · Food-grade silicone", image: "/assets/bonne-nipple_9124056e.jpeg", tone: "coral", spec: "Food-grade silicone / BPA-free formats", moq: "MOQ from 1,000 units", export: "India + export enquiries" },
-  { name: "Baby toothbrush with cover", category: "Baby care", meta: "12+ months · BPA-free", image: "/assets/toothbrush_08840fc6.jpeg", tone: "mint", spec: "Soft-touch handle / covered brush head", moq: "MOQ from 1,000 units", export: "India + export enquiries" },
-  { name: "Adult care pad range", category: "Personal hygiene", meta: "Absorbent formats · Private label", image: "/assets/bonne-pad_c54c9b7c.jpeg", tone: "yellow", spec: "Absorbent non-woven and hygiene formats", moq: "MOQ from 5,000 units", export: "Export documentation support" },
-  { name: "Care pad range · back", category: "Personal hygiene", meta: "Packaging and specification view", image: "/assets/bonne-pad-back_45efe2ce.jpeg", tone: "sky", spec: "Private-label pack configuration", moq: "MOQ from 5,000 units", export: "Export documentation support" },
+  { name: "BONNE Glass Sipper with Sleeve", category: "Baby care", meta: "120ml (4oz) capacity · Food-grade glass", images: ["/assets/products/glass-sipper-1.jpg", "/assets/products/glass-sipper-2.jpg"], tone: "coral", spec: "BPA, PVC & Lead-free glass", moq: "Boil, steam & dishwasher safe", export: "Available in 5 colours" },
+  { name: "Orthodontic soother nipple", category: "Baby care", meta: "3+ months · Food-grade silicone", images: ["/assets/bonne-nipple_9124056e.jpeg"], tone: "coral", spec: "Food-grade silicone / BPA-free formats", moq: "MOQ from 1,000 units", export: "India + export enquiries" },
+  { name: "BONNE Baby Toothbrush with Cover", category: "Baby care", meta: "12 months+ · BPA-free", images: ["/assets/toothbrush_08840fc6.jpeg"], tone: "mint", spec: "Soft bristles with protective cover", moq: "Easy-grip handle", export: "Jar of 8 unique toothbrushes" },
+  { name: "BONNE Silicone Teething Finger Brush", category: "Baby care", meta: "6 months+ · Food-grade silicone", images: [], tone: "sky", spec: "Soft silicone bristles, BPA-free", moq: "Includes hygienic case", export: "Easy to clean & sterilize" },
+  { name: "Adult care pad range", category: "Personal hygiene", meta: "Absorbent formats · Private label", images: ["/assets/bonne-pad_c54c9b7c.jpeg"], tone: "yellow", spec: "Absorbent non-woven and hygiene formats", moq: "MOQ from 5,000 units", export: "Export documentation support" },
+  { name: "Care pad range · back", category: "Personal hygiene", meta: "Packaging and specification view", images: ["/assets/bonne-pad-back_45efe2ce.jpeg"], tone: "sky", spec: "Private-label pack configuration", moq: "MOQ from 5,000 units", export: "Export documentation support" },
 ];
 
 export const PageIntro = ({ eyebrow, title, text }: { eyebrow: string; title: ReactNode; text: string }) => <section className="page-intro"><div className="container page-intro-grid"><div className="section-label">{eyebrow}</div><div><h1>{title}</h1><p>{text}</p></div></div></section>;
