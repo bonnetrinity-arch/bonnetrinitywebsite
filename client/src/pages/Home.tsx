@@ -5,12 +5,15 @@ import {
   ArrowUpRight,
   Award,
   Baby,
+  BarChart3,
   Brush,
   Building2,
   Check,
   ChevronLeft,
   ChevronRight,
+  ClipboardList,
   CupSoda,
+  Factory,
   Globe2,
   Handshake,
   Heart,
@@ -22,6 +25,7 @@ import {
   Phone,
   Settings,
   ShieldCheck,
+  Star,
   Truck,
   Users,
 } from "lucide-react";
@@ -68,6 +72,16 @@ const heroSlides = [
   { image: "/assets/hero-carousel/hero-1.webp", alt: "BONNE TRINITY baby care product lineup" },
   { image: "/assets/hero-carousel/hero-3.webp", alt: "BONNE TRINITY adult diapers and sanitary pads lineup" },
 ];
+
+const storyMilestones = [
+  { year: "1963", icon: Star, position: "top", text: "BONNE was founded by the late Shri Nand Lal Aneja. Bonne got registered as a brand." },
+  { year: "1970", icon: Users, position: "bottom", text: "Baby Care Marketing was established as a trading firm, initially focused on feeding nipples." },
+  { year: "1998", icon: Settings, position: "top", text: "Bonny Baby Care Pvt. Ltd. was established, with a focus on manufacturing PET bottles." },
+  { year: "2001", icon: Factory, position: "bottom", text: "Bonny Poly Plast Pvt. Ltd. was established by Mr. Anurag Aneja, expanding manufacturing capabilities with modern machinery and a broader focus on baby-care products." },
+  { year: "2012", icon: Globe2, position: "top", text: "International sales and private-label supply began for baby feeding nipples and bottles in the Philippines and Dubai." },
+];
+
+const storyFinal = { year: "2026", icon: BarChart3, text: "BONNE TRINITY was established by Hriday Aneja and Gavish Aneja as a trading and sourcing company focused on new and premium baby-care products, including glass and steel sippers." };
 
 export default function Home() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -215,6 +229,36 @@ export default function Home() {
             </div>
             <div className="legacy-media-c legacy-strip-image"><img src="/assets/legacy/legacy-molding.jpg" alt="Injection molding machine" /></div>
             <div className="legacy-media-d legacy-strip-image"><img src="/assets/legacy/legacy-packing.jpg" alt="Quality-checked packing" /></div>
+          </div>
+        </section>
+
+        <section className="story-section" id="our-story">
+          <div className="container">
+            <div className="story-heading">
+              <div className="about-hero-label"><span /> OUR STORY <span /></div>
+              <h2>Built on Experience. <i>Moving Forward.</i></h2>
+              <p>From a family manufacturing legacy to BONNE TRINITY, our journey has grown through decades of experience, product knowledge and evolving opportunities.</p>
+            </div>
+            <div className="story-groups"><span className="story-group-legacy">Family &amp; Business Legacy</span><span className="story-group-final">BONNE TRINITY</span></div>
+            <div className="story-track">
+              <span className="story-line" />
+              <span className="story-divider" />
+              {storyMilestones.map(({ year, icon: Icon, position, text }, i) => (
+                <div className={`story-block pos-${position}`} style={{ gridColumn: i + 1, gridRow: position === "top" ? 1 : 3 }} key={year}>
+                  <span className="story-icon"><Icon size={20} strokeWidth={1.75} /></span>
+                  <span className="story-year">{year}</span>
+                  <p>{text}</p>
+                </div>
+              ))}
+              {storyMilestones.map((_, i) => <span className="story-dot" style={{ gridColumn: i + 1, gridRow: 2 }} key={i} />)}
+              <div className="story-block pos-top" style={{ gridColumn: 6, gridRow: 1 }}>
+                <span className="story-icon"><storyFinal.icon size={20} strokeWidth={1.75} /></span>
+                <span className="story-year">{storyFinal.year}</span>
+                <p>{storyFinal.text}</p>
+              </div>
+              <span className="story-dot story-dot-final" style={{ gridColumn: 6, gridRow: 2 }} />
+            </div>
+            <div className="story-note"><ClipboardList size={18} /><p><strong>2026</strong> — Personal hygiene products added to the BONNE TRINITY product portfolio, including sanitary pads and adult diapers.</p></div>
           </div>
         </section>
 
