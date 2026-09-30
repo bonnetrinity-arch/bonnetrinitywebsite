@@ -6,8 +6,12 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import About from "./pages/About";
 import Enquire from "./pages/Enquire";
 import Home from "./pages/Home";
+import Instructions from "./pages/Instructions";
 import NotFound from "./pages/NotFound";
+import PrivacyNotice from "./pages/PrivacyNotice";
 import Products from "./pages/Products";
+import SealOfGenuineness from "./pages/SealOfGenuineness";
+import TermsOfUse from "./pages/TermsOfUse";
 import WhoWeServe from "./pages/WhoWeServe";
 
 function ScrollToTop() {
@@ -25,5 +29,5 @@ function ScrollToTop() {
 }
 
 export default function App() {
-  return <ThemeProvider defaultTheme="light"><TooltipProvider><Toaster /><ScrollToTop /><Switch><Route path="/" component={Home} /><Route path="/products" component={Products} /><Route path="/who-we-serve" component={WhoWeServe} /><Route path="/about" component={About} /><Route path="/enquire" component={Enquire} /><Route path="/404" component={NotFound} /><Route component={NotFound} /></Switch></TooltipProvider></ThemeProvider>;
+  return <ThemeProvider defaultTheme="light"><TooltipProvider><Toaster /><ScrollToTop /><Switch><Route path="/" component={Home} /><Route path="/products" component={Products} /><Route path="/who-we-serve" component={WhoWeServe} /><Route path="/about" component={About} /><Route path="/enquire" component={Enquire} /><Route path="/instructions" component={Instructions} /><Route path="/seal-of-genuineness" component={SealOfGenuineness} /><Route path="/privacy-notice" component={PrivacyNotice} /><Route path="/terms-of-use" component={TermsOfUse} /><Route path="/404" component={NotFound} /><Route component={NotFound} /></Switch></TooltipProvider></ThemeProvider>;
 }

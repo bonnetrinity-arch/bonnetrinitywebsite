@@ -74,10 +74,10 @@ export function SiteFooter() {
         <div className="footer-col">
           <h4>Policy Menu</h4>
           <Link href="/enquire">Contact</Link>
-          <a href="#">Instructions</a>
-          <a href="#">Seal of Genuineness</a>
-          <a href="#">Privacy Notice</a>
-          <a href="#">Terms of Use</a>
+          <Link href="/instructions">Instructions</Link>
+          <Link href="/seal-of-genuineness">Seal of Genuineness</Link>
+          <Link href="/privacy-notice">Privacy Notice</Link>
+          <Link href="/terms-of-use">Terms of Use</Link>
         </div>
         <div className="footer-col">
           <h4>Get in touch</h4>

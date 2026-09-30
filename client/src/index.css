@@ -235,6 +235,16 @@
   .about-body p, .enquire-contact > p { max-width: 500px; color: #123f73; font-size: 15px; line-height: 1.75; }
   .about-body p + p { margin-top: 24px; }
   .about-body .text-link { margin-top: 30px; }
+  .legal-page { padding: 20px 0 120px; }
+  .legal-page .container { max-width: 860px; }
+  .legal-updated { color: rgba(18,63,115,.55); font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 44px; }
+  .legal-page section + section { margin-top: 34px; }
+  .legal-page h3 { font-family: "DM Sans", sans-serif; font-size: 18px; font-weight: 700; color: #123f73; margin: 0 0 12px; }
+  .legal-page p { color: #35566c; font-size: 14.5px; line-height: 1.75; margin: 0 0 14px; }
+  .legal-page p:last-child { margin-bottom: 0; }
+  .legal-page ul { margin: 0; padding-left: 20px; color: #35566c; font-size: 14.5px; line-height: 1.75; }
+  .legal-page li { margin-bottom: 8px; }
+  .legal-page a { color: #123f73; text-decoration: underline; }
   .history-section { background: #f8f6f0; }
   .history-grid { margin-top: 60px; }
   .history-list { border-top: 1px solid #dcebfa; }
@@ -276,6 +286,7 @@
     .page-intro-grid, .about-story-grid, .history-grid, .enquire-page-grid, .serve-note-grid { grid-template-columns: 1fr; gap: 35px; }
     .page-intro h1 { font-size: 57px; }
     .inner-products, .about-story, .history-section, .principles-section, .audience-page, .serve-note, .enquire-page { padding: 48px 0; }
+    .legal-page { padding: 8px 0 64px; }
     .inner-product-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
     .product-image-arrow { width: 28px; height: 28px; }
     .inner-product-grid .product-image { height: 205px; }
