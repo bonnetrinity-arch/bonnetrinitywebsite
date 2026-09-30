@@ -1,6 +1,6 @@
 import { ReactNode, useState } from "react";
 import { Link, useLocation } from "wouter";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Facebook, Instagram, Mail, Menu, Phone, X, Youtube } from "lucide-react";
 
 export function SiteHeader({ home = false }: { home?: boolean }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -59,11 +59,48 @@ export function SiteHeader({ home = false }: { home?: boolean }) {
   );
 }
 
+export function SiteFooter() {
+  return (
+    <footer className="footer">
+      <div className="container footer-grid">
+        <div className="footer-col footer-brand-col">
+          <span className="brand-mark brand-logo brand-logo-wide"><img src="/assets/bonne-wordmark_7f2a91c3.png" alt="BONNE TRINITY" /></span>
+          <p>Care · Comfort · Smiles.</p>
+        </div>
+        <div className="footer-col">
+          <h4>Our Address</h4>
+          <p>53A/11 Rama Road, Kirti Nagar,<br />New Delhi — 110015<br />GSTIN 07ABGFB9745E1ZB</p>
+        </div>
+        <div className="footer-col">
+          <h4>Policy Menu</h4>
+          <Link href="/enquire">Contact</Link>
+          <a href="#">Instructions</a>
+          <a href="#">Seal of Genuineness</a>
+          <a href="#">Privacy Notice</a>
+          <a href="#">Terms of Use</a>
+        </div>
+        <div className="footer-col">
+          <h4>Get in touch</h4>
+          <a className="footer-contact-line" href="tel:+919811643325"><Phone size={16} /> +91 98116 43325</a>
+          <a className="footer-contact-line" href="mailto:care@bonnetrinity.com"><Mail size={16} /> Email us</a>
+          <h4>Follow us</h4>
+          <div className="footer-socials">
+            <a href="#" aria-label="Instagram"><Instagram size={18} /></a>
+            <a href="#" aria-label="Facebook"><Facebook size={18} /></a>
+            <a href="#" aria-label="YouTube"><Youtube size={18} /></a>
+          </div>
+        </div>
+      </div>
+      <div className="container footer-bottom"><span>© {new Date().getFullYear()} BONNE TRINITY. All rights reserved.</span></div>
+    </footer>
+  );
+}
+
 export default function SiteLayout({ children }: { children: ReactNode }) {
   return <div className="site-shell inner-page-shell page-transition">
     <SiteHeader />
     {children}
-    <footer className="footer inner-footer"><div className="container footer-top"><div className="brand footer-brand"><span className="brand-mark brand-logo brand-logo-wide"><img src="/assets/bonne-wordmark_7f2a91c3.png" alt="BONNE TRINITY" /></span></div><p>Care · Comfort · Smiles.</p><a href="https://www.linkedin.com/company/bonne-trinity/" target="_blank" rel="noreferrer">LinkedIn <ArrowUpRight size={15} /></a></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} BONNE TRINITY. All rights reserved.</span><span>53A/11 Rama Road, Kirti Nagar, New Delhi — 110015</span><span>GSTIN 07ABGFB9745E1ZB</span></div></footer>
+    <SiteFooter />
   </div>;
 }
 
