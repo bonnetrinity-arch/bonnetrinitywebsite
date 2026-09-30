@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import {
   ArrowRight,
@@ -11,7 +11,6 @@ import {
   Check,
   ChevronLeft,
   ChevronRight,
-  ClipboardList,
   CupSoda,
   Factory,
   Globe2,
@@ -88,6 +87,10 @@ export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
   const [activeHeroSlide, setActiveHeroSlide] = useState(0);
+  const [activeStory, setActiveStory] = useState(0);
+  const storySlides = [...storyMilestones, { ...storyFinal, position: "top" as const }];
+  const storyTouchStart = useRef(0);
+  const goToStory = (dir: number) => setActiveStory((i) => (i + dir + storySlides.length) % storySlides.length);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -235,30 +238,19 @@ export default function Home() {
         <section className="story-section" id="our-story">
           <div className="container">
             <div className="story-heading">
-              <div className="about-hero-label"><span /> OUR STORY <span /></div>
               <h2>Built on Experience. <i>Moving Forward.</i></h2>
               <p>From a family manufacturing legacy to BONNE TRINITY, our journey has grown through decades of experience, product knowledge and evolving opportunities.</p>
             </div>
-            <div className="story-groups"><span className="story-group-legacy">Family &amp; Business Legacy</span><span className="story-group-final">BONNE TRINITY</span></div>
-            <div className="story-track">
-              <span className="story-line" />
-              <span className="story-divider" />
-              {storyMilestones.map(({ year, icon: Icon, position, text }, i) => (
-                <div className={`story-block pos-${position}`} style={{ gridColumn: i + 1, gridRow: position === "top" ? 1 : 3 }} key={year}>
-                  <span className="story-icon"><Icon size={20} strokeWidth={1.75} /></span>
-                  <span className="story-year">{year}</span>
-                  <p>{text}</p>
-                </div>
-              ))}
-              {storyMilestones.map((_, i) => <span className="story-dot" style={{ gridColumn: i + 1, gridRow: 2 }} key={i} />)}
-              <div className="story-block pos-top" style={{ gridColumn: 6, gridRow: 1 }}>
-                <span className="story-icon"><storyFinal.icon size={20} strokeWidth={1.75} /></span>
-                <span className="story-year">{storyFinal.year}</span>
-                <p>{storyFinal.text}</p>
+            <div className="story-slider" onTouchStart={(e) => { storyTouchStart.current = e.touches[0].clientX; }} onTouchEnd={(e) => { const delta = e.changedTouches[0].clientX - storyTouchStart.current; if (delta > 40) goToStory(-1); else if (delta < -40) goToStory(1); }}>
+              <button type="button" className="story-arrow story-arrow-prev" aria-label="Previous milestone" onClick={() => goToStory(-1)}><ChevronLeft size={20} /></button>
+              <div className="story-slide" key={activeStory}>
+                <span className="story-icon">{(() => { const Icon = storySlides[activeStory].icon; return <Icon size={26} strokeWidth={1.75} />; })()}</span>
+                <span className="story-year">{storySlides[activeStory].year}</span>
+                <p>{storySlides[activeStory].text}</p>
               </div>
-              <span className="story-dot story-dot-final" style={{ gridColumn: 6, gridRow: 2 }} />
+              <button type="button" className="story-arrow story-arrow-next" aria-label="Next milestone" onClick={() => goToStory(1)}><ChevronRight size={20} /></button>
             </div>
-            <div className="story-note"><ClipboardList size={18} /><p><strong>2026</strong> — Personal hygiene products added to the BONNE TRINITY product portfolio, including sanitary pads and adult diapers.</p></div>
+            <div className="story-dots">{storySlides.map((slide, i) => <button type="button" key={slide.year} className={i === activeStory ? "active" : ""} aria-label={`Go to ${slide.year}`} onClick={() => setActiveStory(i)} />)}</div>
           </div>
         </section>
 
