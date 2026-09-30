@@ -245,24 +245,23 @@ export default function Home() {
             <div className="story-track">
               <span className="story-line" />
               <span className="story-divider" />
+              <div className="story-mobile-label"><span /> Family &amp; Business Legacy <span /></div>
               {storyMilestones.map(({ year, icon: Icon, position, text }, i) => (
                 <div className={`story-block pos-${position}`} style={{ gridColumn: i + 1, gridRow: position === "top" ? 1 : 3 }} key={year}>
                   <span className="story-icon"><Icon size={20} strokeWidth={1.75} /></span>
-                  <span className="story-year">{year}</span>
-                  <p>{text}</p>
+                  <div className="story-text"><span className="story-year">{year}</span><p>{text}</p></div>
                 </div>
               ))}
               {storyMilestones.map((_, i) => <span className="story-dot" style={{ gridColumn: i + 1, gridRow: 2 }} key={i} />)}
+              <div className="story-mobile-label story-mobile-label-final"><span /> BONNE TRINITY <span /></div>
               <div className="story-block pos-top" style={{ gridColumn: 6, gridRow: 1 }}>
                 <span className="story-icon"><storyFinal.icon size={20} strokeWidth={1.75} /></span>
-                <span className="story-year">{storyFinal.year}</span>
-                <p>{storyFinal.text}</p>
+                <div className="story-text"><span className="story-year">{storyFinal.year}</span><p>{storyFinal.text}</p></div>
               </div>
               <span className="story-dot story-dot-final" style={{ gridColumn: 6, gridRow: 2 }} />
               <div className="story-block pos-bottom" style={{ gridColumn: 7, gridRow: 3 }}>
                 <span className="story-icon"><storyHygiene.icon size={20} strokeWidth={1.75} /></span>
-                <span className="story-year">{storyHygiene.year}</span>
-                <p>{storyHygiene.text}</p>
+                <div className="story-text"><span className="story-year">{storyHygiene.year}</span><p>{storyHygiene.text}</p></div>
               </div>
               <span className="story-dot" style={{ gridColumn: 7, gridRow: 2 }} />
             </div>

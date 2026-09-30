@@ -735,15 +735,22 @@
 .story-icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: #dcebfa; color: #123f73; }
 .story-year { font-family: "DM Serif Display", serif; font-size: 20px; font-weight: 400; color: #123f73; }
 .story-block p { margin: 0; color: rgba(18,63,115,.72); font-size: 12.5px; line-height: 1.55; }
+.story-mobile-label { display: none; }
 @media (max-width: 1000px) {
   .story-groups, .story-line, .story-divider { display: none; }
   .story-track { grid-template-columns: 1fr; grid-template-rows: none; row-gap: 0; padding: 0; }
-  .story-block, .story-block.pos-bottom { grid-column: 1 !important; grid-row: auto !important; flex-direction: row !important; align-items: flex-start; text-align: left; gap: 16px; padding: 0 0 34px 42px; position: relative; }
-  .story-block:before { content: ""; position: absolute; left: 18px; top: 4px; bottom: -4px; width: 1px; background: #c7d7e0; }
+  .story-mobile-label { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 0 0 30px; color: #123f73; font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+  .story-mobile-label span { flex: 1; height: 1px; background: #c7d7e0; }
+  .story-mobile-label-final { margin: 8px 0 30px; }
+  .story-mobile-label-final span { border-top: 1px dashed #c7d7e0; height: 0; background: none; }
+  .story-block, .story-block.pos-bottom { grid-column: 1 !important; grid-row: auto !important; flex-direction: row !important; align-items: flex-start; text-align: left; gap: 18px; padding: 0 0 36px; position: relative; }
+  .story-block:before { content: ""; position: absolute; left: 26px; top: 4px; bottom: -36px; width: 1px; background: #c7d7e0; }
   .story-block:last-of-type:before { display: none; }
   .story-dot, .story-dot-final { display: none; }
-  .story-icon { flex: 0 0 auto; width: 38px; height: 38px; }
-  .story-year { flex: 0 0 auto; min-width: 52px; }
+  .story-icon { flex: 0 0 auto; width: 52px; height: 52px; }
+  .story-text { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+  .story-year { font-size: 20px; font-weight: 800; font-family: "DM Sans", sans-serif; }
+  .story-block p { font-size: 13.5px; }
 }
 @media (max-width: 800px) {
   .story-section { padding: 40px 0 56px; }
