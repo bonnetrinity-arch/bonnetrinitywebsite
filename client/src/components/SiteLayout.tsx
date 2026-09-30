@@ -76,6 +76,7 @@ export const products = [
   { name: "BONNE Amor XL Sanitary Pads with Wings", category: "Personal hygiene", meta: "280mm XL · 6 pads with wings", images: ["/assets/products/amor-pad-1.jpg"], tone: "yellow", spec: "Advanced gel technology, cottony soft cover", moq: "Day & night protection", export: "Ultra-thin with odour control" },
   { name: "BONNE Grace Adult Diapers – Medium", category: "Personal hygiene", meta: "M size · 58–77kg, 28–44 inches", images: [], tone: "sky", spec: "Super absorbent core, up to 10 hrs protection", moq: "Leakage protection, wetness indicator", export: "Pack of 10, unisex design" },
   { name: "BONNE Grace Adult Diapers – Large", category: "Personal hygiene", meta: "L size · 58–77kg, 32–52 inches", images: [], tone: "sky", spec: "Super absorbent core, up to 10 hrs protection", moq: "Leakage protection, wetness indicator", export: "Pack of 10, unisex design" },
+  { name: "BONNE Grace Adult Diapers – Extra Large", category: "Personal hygiene", meta: "XL size · 58–77kg, 35–61 inches", images: ["/assets/products/diaper-xl-1.jpg"], tone: "sky", spec: "Super absorbent core, up to 10 hrs protection", moq: "Leakage protection, wetness indicator", export: "Pack of 10, unisex design" },
 ];
 
 export const PageIntro = ({ eyebrow, title, text }: { eyebrow: string; title: ReactNode; text: string }) => <section className="page-intro"><div className="container page-intro-grid"><div className="section-label">{eyebrow}</div><div><h1>{title}</h1><p>{text}</p></div></div></section>;
