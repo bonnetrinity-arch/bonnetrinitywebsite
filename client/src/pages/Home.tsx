@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useRef, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { Link } from "wouter";
 import {
   ArrowRight,
@@ -11,6 +11,7 @@ import {
   Check,
   ChevronLeft,
   ChevronRight,
+  ClipboardList,
   CupSoda,
   Factory,
   Globe2,
@@ -74,7 +75,7 @@ const heroSlides = [
 
 const storyMilestones = [
   { year: "1963", icon: Star, position: "top", text: "BONNE was founded by the late Shri Nand Lal Aneja. Bonne got registered as a brand." },
-  { year: "1970", icon: Users, position: "bottom", text: "Baby Care Marketing was established as a trading firm, initially focused on feeding nipples." },
+  { year: "1970", icon: Users, position: "bottom", text: "Baby Care Marketing was established by Mr. Subhash Aneja, as a trading firm which initially focused on feeding nipples." },
   { year: "1998", icon: Settings, position: "top", text: "Bonny Baby Care Pvt. Ltd. was established, with a focus on manufacturing PET bottles." },
   { year: "2001", icon: Factory, position: "bottom", text: "Bonny Poly Plast Pvt. Ltd. was established by Mr. Anurag Aneja, expanding manufacturing capabilities with modern machinery and a broader focus on baby-care products." },
   { year: "2012", icon: Globe2, position: "top", text: "International sales and private-label supply began for baby feeding nipples and bottles in the Philippines and Dubai." },
@@ -82,14 +83,13 @@ const storyMilestones = [
 
 const storyFinal = { year: "2026", icon: BarChart3, text: "BONNE TRINITY was established by Hriday Aneja and Gavish Aneja as a trading and sourcing company focused on new and premium baby-care products, including glass and steel sippers." };
 
+const storyHygiene = { year: "2026", icon: ClipboardList, text: "Personal hygiene products added to the BONNE TRINITY product portfolio, including sanitary pads and adult diapers." };
+
 export default function Home() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
   const [activeHeroSlide, setActiveHeroSlide] = useState(0);
-  const [activeStory, setActiveStory] = useState(0);
-  const storySlides = [...storyMilestones, { ...storyFinal, position: "top" as const }];
-  const storyTrackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -237,27 +237,35 @@ export default function Home() {
         <section className="story-section" id="our-story">
           <div className="container">
             <div className="story-heading">
+              <div className="about-hero-label"><span /> OUR STORY <span /></div>
               <h2>Built on Experience. <i>Moving Forward.</i></h2>
               <p>From a family manufacturing legacy to BONNE TRINITY, our journey has grown through decades of experience, product knowledge and evolving opportunities.</p>
             </div>
-            <div
-              className="story-slider"
-              ref={storyTrackRef}
-              onScroll={(e) => {
-                const el = e.currentTarget;
-                const index = Math.round(el.scrollLeft / el.clientWidth);
-                setActiveStory(Math.max(0, Math.min(storySlides.length - 1, index)));
-              }}
-            >
-              {storySlides.map(({ year, icon: Icon, text }) => (
-                <div className="story-slide" key={year}>
-                  <span className="story-icon"><Icon size={26} strokeWidth={1.75} /></span>
+            <div className="story-groups"><span className="story-group-legacy">Family &amp; Business Legacy</span><span className="story-group-final">BONNE TRINITY</span></div>
+            <div className="story-track">
+              <span className="story-line" />
+              <span className="story-divider" />
+              {storyMilestones.map(({ year, icon: Icon, position, text }, i) => (
+                <div className={`story-block pos-${position}`} style={{ gridColumn: i + 1, gridRow: position === "top" ? 1 : 3 }} key={year}>
+                  <span className="story-icon"><Icon size={20} strokeWidth={1.75} /></span>
                   <span className="story-year">{year}</span>
                   <p>{text}</p>
                 </div>
               ))}
+              {storyMilestones.map((_, i) => <span className="story-dot" style={{ gridColumn: i + 1, gridRow: 2 }} key={i} />)}
+              <div className="story-block pos-top" style={{ gridColumn: 6, gridRow: 1 }}>
+                <span className="story-icon"><storyFinal.icon size={20} strokeWidth={1.75} /></span>
+                <span className="story-year">{storyFinal.year}</span>
+                <p>{storyFinal.text}</p>
+              </div>
+              <span className="story-dot story-dot-final" style={{ gridColumn: 6, gridRow: 2 }} />
+              <div className="story-block pos-bottom" style={{ gridColumn: 7, gridRow: 3 }}>
+                <span className="story-icon"><storyHygiene.icon size={20} strokeWidth={1.75} /></span>
+                <span className="story-year">{storyHygiene.year}</span>
+                <p>{storyHygiene.text}</p>
+              </div>
+              <span className="story-dot" style={{ gridColumn: 7, gridRow: 2 }} />
             </div>
-            <div className="story-dots">{storySlides.map((slide, i) => <button type="button" key={slide.year} className={i === activeStory ? "active" : ""} aria-label={`Go to ${slide.year}`} onClick={() => storyTrackRef.current?.scrollTo({ left: i * storyTrackRef.current.clientWidth, behavior: "smooth" })} />)}</div>
           </div>
         </section>
 
