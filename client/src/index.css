@@ -722,20 +722,17 @@
 .story-heading h2 { font-family: "DM Sans", sans-serif; font-weight: 800; letter-spacing: -.02em; line-height: 1.12; font-size: clamp(28px, 3.6vw, 40px); color: #123f73; }
 .story-heading h2 i { font-style: normal; color: #123f73; }
 .story-heading p { margin-top: 16px; color: rgba(18,63,115,.72); font-size: 14.5px; line-height: 1.7; }
-.story-slider { display: flex; align-items: center; gap: 28px; max-width: 640px; margin: 48px auto 0; }
-.story-slide { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; min-height: 190px; animation: story-slide-in .35s cubic-bezier(.23,1,.32,1) both; }
-@keyframes story-slide-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.story-slider { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; max-width: 640px; margin: 48px auto 0; cursor: grab; }
+.story-slider::-webkit-scrollbar { display: none; }
+.story-slide { flex: 0 0 100%; scroll-snap-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; min-height: 190px; padding: 0 8px; }
 .story-icon { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 50%; background: #dcebfa; color: #123f73; }
 .story-year { font-family: "DM Serif Display", serif; font-size: 26px; font-weight: 400; color: #123f73; }
 .story-slide p { margin: 0; max-width: 460px; color: rgba(18,63,115,.72); font-size: 14.5px; line-height: 1.65; }
-.story-arrow { flex: 0 0 auto; display: grid; place-items: center; width: 42px; height: 42px; border: 0; border-radius: 50%; background: #ffffff; color: #123f73; cursor: pointer; box-shadow: 0 3px 12px rgba(18,63,115,.15); transition: background .2s ease, color .2s ease, transform .2s ease; }
-.story-arrow:hover { background: #123f73; color: #ffffff; transform: scale(1.06); }
 .story-dots { display: flex; justify-content: center; gap: 8px; margin-top: 30px; }
 .story-dots button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: #c7d7e0; cursor: pointer; }
 .story-dots button.active { background: #123f73; width: 22px; border-radius: 5px; transition: width .25s ease; }
 @media (max-width: 800px) {
   .story-section { padding: 40px 0 56px; }
-  .story-slider { gap: 14px; margin-top: 34px; }
+  .story-slider { margin-top: 34px; }
   .story-slide { min-height: 220px; }
-  .story-arrow { width: 36px; height: 36px; }
 }

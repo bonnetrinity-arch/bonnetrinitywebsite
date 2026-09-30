@@ -89,8 +89,7 @@ export default function Home() {
   const [activeHeroSlide, setActiveHeroSlide] = useState(0);
   const [activeStory, setActiveStory] = useState(0);
   const storySlides = [...storyMilestones, { ...storyFinal, position: "top" as const }];
-  const storyTouchStart = useRef(0);
-  const goToStory = (dir: number) => setActiveStory((i) => (i + dir + storySlides.length) % storySlides.length);
+  const storyTrackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -241,16 +240,24 @@ export default function Home() {
               <h2>Built on Experience. <i>Moving Forward.</i></h2>
               <p>From a family manufacturing legacy to BONNE TRINITY, our journey has grown through decades of experience, product knowledge and evolving opportunities.</p>
             </div>
-            <div className="story-slider" onTouchStart={(e) => { storyTouchStart.current = e.touches[0].clientX; }} onTouchEnd={(e) => { const delta = e.changedTouches[0].clientX - storyTouchStart.current; if (delta > 40) goToStory(-1); else if (delta < -40) goToStory(1); }}>
-              <button type="button" className="story-arrow story-arrow-prev" aria-label="Previous milestone" onClick={() => goToStory(-1)}><ChevronLeft size={20} /></button>
-              <div className="story-slide" key={activeStory}>
-                <span className="story-icon">{(() => { const Icon = storySlides[activeStory].icon; return <Icon size={26} strokeWidth={1.75} />; })()}</span>
-                <span className="story-year">{storySlides[activeStory].year}</span>
-                <p>{storySlides[activeStory].text}</p>
-              </div>
-              <button type="button" className="story-arrow story-arrow-next" aria-label="Next milestone" onClick={() => goToStory(1)}><ChevronRight size={20} /></button>
+            <div
+              className="story-slider"
+              ref={storyTrackRef}
+              onScroll={(e) => {
+                const el = e.currentTarget;
+                const index = Math.round(el.scrollLeft / el.clientWidth);
+                setActiveStory(Math.max(0, Math.min(storySlides.length - 1, index)));
+              }}
+            >
+              {storySlides.map(({ year, icon: Icon, text }) => (
+                <div className="story-slide" key={year}>
+                  <span className="story-icon"><Icon size={26} strokeWidth={1.75} /></span>
+                  <span className="story-year">{year}</span>
+                  <p>{text}</p>
+                </div>
+              ))}
             </div>
-            <div className="story-dots">{storySlides.map((slide, i) => <button type="button" key={slide.year} className={i === activeStory ? "active" : ""} aria-label={`Go to ${slide.year}`} onClick={() => setActiveStory(i)} />)}</div>
+            <div className="story-dots">{storySlides.map((slide, i) => <button type="button" key={slide.year} className={i === activeStory ? "active" : ""} aria-label={`Go to ${slide.year}`} onClick={() => storyTrackRef.current?.scrollTo({ left: i * storyTrackRef.current.clientWidth, behavior: "smooth" })} />)}</div>
           </div>
         </section>
 
