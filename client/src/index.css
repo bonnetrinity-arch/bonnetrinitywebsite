@@ -400,7 +400,7 @@
 .product-modal-close { position: absolute; top: 18px; right: 18px; z-index: 2; display: grid; place-items: center; width: 40px; height: 40px; border: 0; border-radius: 50%; color: #ffffff; background: #123f73; cursor: pointer; transition: transform 160ms ease, background 160ms ease; }
 .product-modal-close:hover, .product-modal-close:focus-visible { transform: scale(1.06); background: #dcebfa; color: #123f73; outline: none; }
 @keyframes product-modal-in { from { opacity: 0; } to { opacity: 1; } }
-@media (max-width: 800px) { .product-modal { padding: 0; } .product-modal-panel { width: 100%; min-height: 100vh; min-height: 100dvh; max-height: 100vh; max-height: 100dvh; border-radius: 0; grid-template-columns: 1fr; } .product-modal-image { min-height: 260px; } .product-modal-body { padding: 26px 20px 32px; } .product-modal-close { top: 12px; right: 12px; width: 36px; height: 36px; } }
+@media (max-width: 800px) { .product-modal { padding: 0; } .product-modal-panel { width: 100%; min-height: 100vh; min-height: 100dvh; max-height: 100vh; max-height: 100dvh; border-radius: 0; grid-template-columns: 1fr; } .product-modal-image { min-height: 320px; padding: 0; } .product-modal-image img { object-fit: cover; } .product-modal-body { padding: 26px 20px 32px; } .product-modal-close { top: 12px; right: 12px; width: 36px; height: 36px; } }
 
 
 /* Premium 3D product hero */
