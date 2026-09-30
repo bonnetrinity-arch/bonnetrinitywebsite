@@ -11,7 +11,6 @@ import {
   Check,
   ChevronLeft,
   ChevronRight,
-  ClipboardList,
   CupSoda,
   Factory,
   Globe2,
@@ -82,8 +81,6 @@ const storyMilestones = [
 ];
 
 const storyFinal = { year: "2026", icon: BarChart3, text: "BONNE TRINITY was established by Hriday Aneja and Gavish Aneja as a trading and sourcing company focused on new and premium baby-care products, including glass and steel sippers." };
-
-const storyHygiene = { year: "2026", icon: ClipboardList, text: "Personal hygiene products added to the BONNE TRINITY product portfolio, including sanitary pads and adult diapers." };
 
 export default function Home() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -259,11 +256,6 @@ export default function Home() {
                 <div className="story-text"><span className="story-year">{storyFinal.year}</span><p>{storyFinal.text}</p></div>
               </div>
               <span className="story-dot story-dot-final" style={{ gridColumn: 6, gridRow: 2 }} />
-              <div className="story-block pos-bottom" style={{ gridColumn: 7, gridRow: 3 }}>
-                <span className="story-icon"><storyHygiene.icon size={20} strokeWidth={1.75} /></span>
-                <div className="story-text"><span className="story-year">{storyHygiene.year}</span><p>{storyHygiene.text}</p></div>
-              </div>
-              <span className="story-dot" style={{ gridColumn: 7, gridRow: 2 }} />
             </div>
           </div>
         </section>
