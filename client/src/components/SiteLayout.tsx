@@ -121,7 +121,7 @@ export const products = [
   },
   {
     name: "BONNE Baby Toothbrush with Cover", category: "Baby care", meta: "12 months+ · BPA-free",
-    images: ["/assets/toothbrush_08840fc6.jpeg"], tone: "mint",
+    images: ["/assets/products/toothbrush-jar-1.jpg"], tone: "mint",
     spec: "Soft bristles with protective cover", moq: "Easy-grip handle", export: "Jar of 8 unique toothbrushes",
     description: "Designed for gentle and comfortable brushing, the BONNE Baby Toothbrush features soft bristles, an easy-grip handle and a protective cover for everyday oral hygiene.",
     features: ["12 Months+ age recommendation", "BPA-Free material", "Soft Bristles gentle on teeth and gums", "Protective Bristle Cover for clean and hygienic storage", "Easy-Grip Handle for comfortable holding", "Fun & Attractive Design makes brushing enjoyable", "Jar Packaging: Contains 8 unique toothbrushes per jar"],
