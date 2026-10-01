@@ -135,7 +135,7 @@ export default function Home() {
       <SiteHeader home />
 
       <main id="top">
-        <section className="hero-section hero-carousel" aria-label="BONNE TRINITY product highlights">
+        <section className={`hero-section hero-carousel${activeHeroSlide === 0 ? " hero-carousel--has-copy" : ""}`} aria-label="BONNE TRINITY product highlights">
           <div className="hero-carousel-slides" aria-live="polite">
             {heroSlides.map((slide, index) => (
               <div className={`hero-carousel-slide ${index === activeHeroSlide ? "is-active" : ""}`} key={slide.image} aria-hidden={index !== activeHeroSlide}>

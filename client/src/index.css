@@ -523,6 +523,8 @@
 .hero-carousel .hero-scroll-indicator svg { color: #f4978f; }
 @media (prefers-reduced-motion: reduce) { .hero-carousel-slide { transition: none; } }
 @media (max-width: 800px) {
+  .hero-carousel--has-copy { aspect-ratio: auto; min-height: 640px; }
+  .hero-carousel--has-copy .hero-carousel-slide img { object-fit: cover; }
   .hero-carousel-content { min-height: 0; align-items: flex-end; padding-top: 100px; padding-bottom: 60px; }
   .hero-carousel-slide img { object-position: center; }
   .hero-carousel-overlay { background: linear-gradient(0deg, rgba(11,38,71,.92) 0%, rgba(11,38,71,.62) 53%, rgba(11,38,71,.12) 100%); }
@@ -551,8 +553,12 @@
 .button-outline { background: transparent; border: 1px solid rgba(255,253,248,.7); color: #fffdf8; }
 .button-outline:hover { background: #fffdf8; color: #123f73; border-color: #fffdf8; }
 @media (max-width: 800px) {
-  .hero-carousel-copy { left: 5%; right: 5%; top: auto; bottom: 64px; transform: none; max-width: none; }
-  .hero-carousel-copy p { max-width: none; }
+  .hero-carousel-copy { left: 5%; right: 5%; top: auto; bottom: 96px; transform: none; max-width: none; }
+  .hero-carousel-copy h1 { font-size: clamp(30px, 8.5vw, 40px); }
+  .hero-carousel-copy p { max-width: none; font-size: 13.5px; }
+  .hero-carousel-actions { margin-top: 18px; gap: 10px; }
+  .hero-carousel-actions .button { padding: 11px 16px; font-size: 11px; }
+  .hero-carousel-arrow { top: 42%; }
 }
 .hero-carousel-view-products { position: absolute; z-index: 2; right: 22px; bottom: 22px; display: inline-flex; align-items: center; gap: 8px; padding: 11px 16px; border-radius: 100px; background: rgba(255,253,248,.95); color: #123f73; font-size: 11px; font-weight: 700; letter-spacing: .04em; box-shadow: 0 8px 22px rgba(11,38,71,.22); }
 .hero-carousel-view-products:hover { background: #123f73; color: #fffdf8; }
