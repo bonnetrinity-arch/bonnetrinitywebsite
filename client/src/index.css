@@ -523,10 +523,9 @@
 .hero-carousel .hero-scroll-indicator svg { color: #f4978f; }
 @media (prefers-reduced-motion: reduce) { .hero-carousel-slide { transition: none; } }
 @media (max-width: 800px) {
-  .hero-carousel--has-copy { aspect-ratio: auto; min-height: 640px; }
-  .hero-carousel--has-copy .hero-carousel-slide img { object-fit: cover; }
+  .hero-carousel { aspect-ratio: auto; height: 640px; }
+  .hero-carousel-slide img { object-fit: cover; object-position: center; }
   .hero-carousel-content { min-height: 0; align-items: flex-end; padding-top: 100px; padding-bottom: 60px; }
-  .hero-carousel-slide img { object-position: center; }
   .hero-carousel-overlay { background: linear-gradient(0deg, rgba(11,38,71,.92) 0%, rgba(11,38,71,.62) 53%, rgba(11,38,71,.12) 100%); }
   .hero-carousel-kicker { margin-top: 17px; }
   .hero-carousel h1 { font-size: clamp(54px, 15vw, 82px); }
