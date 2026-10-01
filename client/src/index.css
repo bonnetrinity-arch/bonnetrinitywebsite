@@ -566,6 +566,13 @@
 /* Who We Are — grow-your-business intro */
 .about-hero-section { padding: 52px 0; background: #ffffff; overflow: visible; }
 .about-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+.about-hero-section-centered .about-hero-grid { grid-template-columns: 1fr; }
+.about-hero-section-centered .about-hero-copy { max-width: 760px; margin: 0 auto; text-align: center; }
+.about-hero-section-centered .about-hero-label { justify-content: center; }
+.about-hero-section-centered .about-hero-subhead,
+.about-hero-section-centered .about-hero-copy > p:not(.about-hero-subhead) { margin-left: auto; margin-right: auto; }
+.about-hero-section-centered .about-hero-actions,
+.about-hero-section-centered .about-hero-stats { justify-content: center; }
 .about-hero-label { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; color: #123f73; font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; }
 .about-hero-label span { width: 30px; height: 1px; background: rgba(18,63,115,.4); }
 .about-hero-copy h2 { font-family: "Playfair Display", serif; font-weight: 700; letter-spacing: -.02em; line-height: 1.08; font-size: clamp(32px, 3.6vw, 44px); color: #123f73; }

@@ -164,7 +164,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="about-hero-section" id="about">
+        <section className="about-hero-section about-hero-section-centered" id="about">
           <div className="container about-hero-grid">
             <div className="about-hero-copy">
               <div className="about-hero-label"><span /> WHO WE ARE <span /></div>
@@ -181,12 +181,6 @@ export default function Home() {
                 <div className="about-hero-stat tone-pink"><span className="about-hero-stat-icon"><Award size={18} strokeWidth={1.75} /></span><span>Family Experience<br />Since 1963</span></div>
                 <div className="about-hero-stat tone-mint"><span className="about-hero-stat-icon"><Package size={18} strokeWidth={1.75} /></span><span>Baby Care &amp;<br />Personal Hygiene</span></div>
               </div>
-            </div>
-            <div className="about-hero-visual">
-              <div className="about-hero-blob" aria-hidden="true" />
-              <img src="/assets/who-we-are-machine_a1b2c3d4.jpg" alt="BONNE TRINITY manufacturing equipment" />
-              <div className="about-hero-badge about-hero-badge-top">Trusted Products.<br />Stronger Partnerships.</div>
-              <div className="about-hero-badge about-hero-badge-bottom">Building Better Care Together</div>
             </div>
           </div>
         </section>
