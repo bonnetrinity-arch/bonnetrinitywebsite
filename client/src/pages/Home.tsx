@@ -68,8 +68,8 @@ const categories = [
 
 const heroSlides = [
   { image: "/assets/hero-carousel/hero-2.webp", alt: "Mother and child with BONNE TRINITY products" },
-  { image: "/assets/hero-carousel/hero-1.webp", alt: "BONNE TRINITY baby care product lineup" },
-  { image: "/assets/hero-carousel/hero-3.webp", alt: "BONNE TRINITY adult diapers and sanitary pads lineup" },
+  { image: "/assets/hero-carousel/hero-1.webp", alt: "BONNE TRINITY baby care product lineup", productsHref: "/products?category=Baby%20care", productsLabel: "View Products" },
+  { image: "/assets/hero-carousel/hero-3.webp", alt: "BONNE TRINITY adult diapers and sanitary pads lineup", productsHref: "/products?category=Personal%20hygiene", productsLabel: "View Products" },
 ];
 
 const storyMilestones = [
@@ -156,6 +156,9 @@ export default function Home() {
               </div>
             )}
             {activeHeroSlide === 0 && <h1 className="hero-carousel-copy-mobile-line">Care That Fits Every Stage of Life.</h1>}
+            {heroSlides[activeHeroSlide].productsHref && (
+              <Link className="hero-carousel-view-products" href={heroSlides[activeHeroSlide].productsHref!}>{heroSlides[activeHeroSlide].productsLabel} <ArrowUpRight size={14} /></Link>
+            )}
             <button type="button" className="hero-carousel-arrow hero-carousel-arrow-prev" onClick={() => setActiveHeroSlide((current) => (current - 1 + heroSlides.length) % heroSlides.length)} aria-label="Previous hero image"><ChevronLeft size={22} /></button>
             <button type="button" className="hero-carousel-arrow hero-carousel-arrow-next" onClick={() => setActiveHeroSlide((current) => (current + 1) % heroSlides.length)} aria-label="Next hero image"><ChevronRight size={22} /></button>
             <div className="hero-carousel-controls" role="tablist" aria-label="Choose hero slide">

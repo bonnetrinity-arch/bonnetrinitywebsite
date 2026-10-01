@@ -524,6 +524,9 @@
 .hero-carousel-controls button span { display: block; width: 7px; height: 7px; border: 1px solid rgba(255,253,248,.75); border-radius: 50%; transition: transform 180ms ease, background 180ms ease, border-color 180ms ease; }
 .hero-carousel-controls button:hover span, .hero-carousel-controls button:focus-visible span { transform: scale(1.35); border-color: #f4978f; outline: none; }
 .hero-carousel-controls button.is-active span { width: 9px; height: 9px; border-color: #f4978f; background: #f4978f; box-shadow: 0 0 0 4px rgba(244,151,143,.22); }
+.hero-carousel-view-products { position: absolute; z-index: 2; right: 22px; bottom: 22px; display: inline-flex; align-items: center; gap: 8px; padding: 11px 16px; border-radius: 100px; background: rgba(255,253,248,.95); color: #123f73; font-size: 11px; font-weight: 700; letter-spacing: .04em; box-shadow: 0 8px 22px rgba(11,38,71,.22); }
+.hero-carousel-view-products:hover { background: #123f73; color: #fffdf8; }
+@media (max-width: 800px) { .hero-carousel-view-products { right: 14px; bottom: 14px; padding: 9px 13px; font-size: 10px; } }
 .hero-carousel .hero-bottomline { bottom: 24px; color: rgba(255,253,248,.8); }
 .hero-carousel .hero-scroll-indicator svg { color: #f4978f; }
 @media (prefers-reduced-motion: reduce) { .hero-carousel-slide { transition: none; } }
