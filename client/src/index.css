@@ -526,15 +526,16 @@
 @media (max-width: 800px) {
   .hero-carousel { min-height: 0; }
   .hero-carousel-frame { aspect-ratio: auto; height: 420px; }
-  .hero-carousel-slide img { object-fit: contain; object-position: 50% 0; }
+  .hero-carousel-slides, .hero-carousel-slide { top: 0; bottom: auto; height: 198px; }
+  .hero-carousel-slide img { height: 100%; object-fit: cover; object-position: center 30%; }
   .hero-carousel-content { min-height: 0; align-items: flex-end; padding-top: 100px; padding-bottom: 60px; }
-  .hero-carousel-overlay { display: none; }
+  .hero-carousel-overlay { top: 0; bottom: auto; height: 198px; background: linear-gradient(0deg, rgba(11,38,71,.3) 0%, transparent 45%); }
   .hero-carousel-kicker { margin-top: 17px; }
   .hero-carousel h1 { font-size: clamp(54px, 15vw, 82px); }
   .hero-carousel .hero-lede { max-width: 355px; font-size: 14px; }
-  .hero-carousel-controls { top: 180px; bottom: auto; gap: 8px; }
+  .hero-carousel-controls { top: 210px; bottom: auto; gap: 8px; }
   .hero-carousel-controls button { width: 23px; height: 23px; }
-  .hero-carousel-arrow { width: 34px; height: 34px; top: 86px; transform: translateY(-50%); }
+  .hero-carousel-arrow { width: 34px; height: 34px; top: 99px; transform: translateY(-50%); }
   .hero-carousel-arrow-prev { left: 10px; }
   .hero-carousel-arrow-next { right: 10px; }
   .hero-carousel .hero-bottomline { bottom: 21px; }
@@ -564,7 +565,7 @@
 }
 .hero-carousel-view-products { position: absolute; z-index: 2; right: 22px; bottom: 22px; display: inline-flex; align-items: center; gap: 8px; padding: 11px 16px; border-radius: 100px; background: rgba(255,253,248,.95); color: #123f73; font-size: 11px; font-weight: 700; letter-spacing: .04em; box-shadow: 0 8px 22px rgba(11,38,71,.22); }
 .hero-carousel-view-products:hover { background: #123f73; color: #fffdf8; }
-@media (max-width: 800px) { .hero-carousel-view-products { right: 14px; top: 140px; bottom: auto; padding: 9px 13px; font-size: 10px; } }
+@media (max-width: 800px) { .hero-carousel-view-products { right: 14px; top: 154px; bottom: auto; padding: 9px 13px; font-size: 10px; } }
 
 /* Who We Are — grow-your-business intro */
 .about-hero-section { padding: 52px 0; background: #ffffff; overflow: visible; }
