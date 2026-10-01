@@ -292,12 +292,12 @@ export default function Home() {
               ))}
               {storyMilestones.map((_, i) => <span className="story-dot" style={{ gridColumn: i + 1, gridRow: 2 }} key={i} />)}
               <div className="story-mobile-label story-mobile-label-final"><span /> BONNE TRINITY <span /></div>
-              <div className="story-block pos-top" style={{ gridColumn: 6, gridRow: 1 }}>
+              <div className="story-block pos-bottom" style={{ gridColumn: 6, gridRow: 3 }}>
                 <span className="story-icon"><storyFinal.icon size={20} strokeWidth={1.75} /></span>
                 <div className="story-text"><span className="story-year">{storyFinal.year}</span><p>{storyFinal.text}</p></div>
               </div>
               <span className="story-dot" style={{ gridColumn: 6, gridRow: 2 }} />
-              <div className="story-block pos-bottom" style={{ gridColumn: 7, gridRow: 3 }}>
+              <div className="story-block pos-top" style={{ gridColumn: 7, gridRow: 1 }}>
                 <span className="story-icon"><storyHygiene.icon size={20} strokeWidth={1.75} /></span>
                 <div className="story-text"><span className="story-year">{storyHygiene.year}</span><p>{storyHygiene.text}</p></div>
               </div>
