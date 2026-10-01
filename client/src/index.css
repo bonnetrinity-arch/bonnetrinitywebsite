@@ -525,16 +525,16 @@
 @media (prefers-reduced-motion: reduce) { .hero-carousel-slide { transition: none; } }
 @media (max-width: 800px) {
   .hero-carousel { min-height: 0; }
-  .hero-carousel-frame { aspect-ratio: 1.6 / 1; }
-  .hero-carousel-slide img { object-fit: contain; object-position: center; }
+  .hero-carousel-frame { aspect-ratio: auto; height: 420px; }
+  .hero-carousel-slide img { object-fit: contain; object-position: 50% 0; }
   .hero-carousel-content { min-height: 0; align-items: flex-end; padding-top: 100px; padding-bottom: 60px; }
   .hero-carousel-overlay { display: none; }
   .hero-carousel-kicker { margin-top: 17px; }
   .hero-carousel h1 { font-size: clamp(54px, 15vw, 82px); }
   .hero-carousel .hero-lede { max-width: 355px; font-size: 14px; }
-  .hero-carousel-controls { bottom: 10px; gap: 8px; }
+  .hero-carousel-controls { top: 180px; bottom: auto; gap: 8px; }
   .hero-carousel-controls button { width: 23px; height: 23px; }
-  .hero-carousel-arrow { width: 34px; height: 34px; top: 50%; }
+  .hero-carousel-arrow { width: 34px; height: 34px; top: 86px; transform: translateY(-50%); }
   .hero-carousel-arrow-prev { left: 10px; }
   .hero-carousel-arrow-next { right: 10px; }
   .hero-carousel .hero-bottomline { bottom: 21px; }
@@ -556,15 +556,15 @@
 .hero-carousel-copy-mobile { display: none; }
 @media (max-width: 800px) {
   .hero-carousel-copy { display: none; }
-  .hero-carousel-copy-mobile { display: block; padding: 28px 20px 34px; background: #173d70; color: #fffdf8; }
-  .hero-carousel-copy-mobile h1 { font-family: "Playfair Display", serif; font-weight: 700; letter-spacing: -.02em; line-height: 1.14; font-size: clamp(24px, 7.5vw, 32px); color: #fffdf8; }
-  .hero-carousel-copy-mobile p { margin-top: 10px; color: rgba(255,253,248,.85); font-size: 13.5px; line-height: 1.6; }
-  .hero-carousel-copy-mobile .hero-carousel-actions { margin-top: 18px; gap: 10px; }
-  .hero-carousel-copy-mobile .hero-carousel-actions .button { padding: 11px 16px; font-size: 11px; }
+  .hero-carousel-copy-mobile { display: block; position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; padding: 18px 20px 24px; }
+  .hero-carousel-copy-mobile h1 { font-family: "Playfair Display", serif; font-weight: 700; letter-spacing: -.02em; line-height: 1.14; font-size: clamp(22px, 7vw, 29px); color: #fffdf8; }
+  .hero-carousel-copy-mobile p { margin-top: 8px; color: rgba(255,253,248,.85); font-size: 13px; line-height: 1.55; }
+  .hero-carousel-copy-mobile .hero-carousel-actions { margin-top: 14px; gap: 10px; }
+  .hero-carousel-copy-mobile .hero-carousel-actions .button { padding: 10px 15px; font-size: 11px; }
 }
 .hero-carousel-view-products { position: absolute; z-index: 2; right: 22px; bottom: 22px; display: inline-flex; align-items: center; gap: 8px; padding: 11px 16px; border-radius: 100px; background: rgba(255,253,248,.95); color: #123f73; font-size: 11px; font-weight: 700; letter-spacing: .04em; box-shadow: 0 8px 22px rgba(11,38,71,.22); }
 .hero-carousel-view-products:hover { background: #123f73; color: #fffdf8; }
-@media (max-width: 800px) { .hero-carousel-view-products { right: 14px; bottom: 14px; padding: 9px 13px; font-size: 10px; } }
+@media (max-width: 800px) { .hero-carousel-view-products { right: 14px; top: 140px; bottom: auto; padding: 9px 13px; font-size: 10px; } }
 
 /* Who We Are — grow-your-business intro */
 .about-hero-section { padding: 52px 0; background: #ffffff; overflow: visible; }
