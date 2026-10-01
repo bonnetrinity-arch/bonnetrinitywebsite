@@ -525,8 +525,7 @@
 @media (prefers-reduced-motion: reduce) { .hero-carousel-slide { transition: none; } }
 @media (max-width: 800px) {
   .hero-carousel { min-height: 0; }
-  .hero-carousel-frame { aspect-ratio: auto; height: 560px; }
-  .hero-carousel-slide img { object-fit: cover; object-position: center; }
+  .hero-carousel-frame { aspect-ratio: 2.25 / 1; }
   .hero-carousel-content { min-height: 0; align-items: flex-end; padding-top: 100px; padding-bottom: 60px; }
   .hero-carousel-kicker { margin-top: 17px; }
   .hero-carousel h1 { font-size: clamp(54px, 15vw, 82px); }
@@ -542,26 +541,7 @@
 
 /* Two-image hero mode: imagery only, with navigation dots retained */
 .hero-carousel-overlay { background: linear-gradient(90deg, rgba(11,38,71,.22), rgba(11,38,71,.04) 58%, rgba(11,38,71,.12)); }
-@media (max-width: 800px) { .hero-carousel-overlay { background: linear-gradient(0deg, rgba(11,38,71,.32) 0%, rgba(11,38,71,.03) 45%, rgba(11,38,71,.1) 100%); } }
-.hero-carousel-overlay.has-copy { background: linear-gradient(90deg, rgba(11,38,71,.82) 0%, rgba(11,38,71,.56) 38%, rgba(11,38,71,.1) 72%, rgba(11,38,71,.04) 100%), linear-gradient(0deg, rgba(11,38,71,.25), transparent 40%); }
-@media (max-width: 800px) { .hero-carousel-overlay.has-copy { background: linear-gradient(0deg, rgba(11,38,71,.9) 0%, rgba(11,38,71,.6) 45%, rgba(11,38,71,.08) 75%); } }
-.hero-carousel-copy { position: absolute; z-index: 2; left: 7%; top: 50%; transform: translateY(-50%); max-width: 480px; color: #fffdf8; }
-.hero-carousel-copy h1 { font-family: "Playfair Display", serif; font-weight: 700; letter-spacing: -.02em; line-height: 1.06; font-size: clamp(30px, 4vw, 50px); color: #fffdf8; }
-.hero-carousel-copy p { margin-top: 16px; max-width: 400px; color: rgba(255,253,248,.88); font-size: 14.5px; line-height: 1.65; }
-.hero-carousel-actions { margin-top: 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
-.hero-carousel-actions .button { font-size: 12px; }
-.button-outline { background: transparent; border: 1px solid rgba(255,253,248,.7); color: #fffdf8; }
-.button-outline:hover { background: #fffdf8; color: #123f73; border-color: #fffdf8; }
-@media (max-width: 800px) {
-  .hero-carousel-copy { left: 5%; right: 5%; top: auto; bottom: 72px; transform: none; max-width: none; }
-  .hero-carousel-copy h1 { font-size: clamp(26px, 8vw, 34px); }
-  .hero-carousel-copy p { max-width: none; font-size: 13px; }
-  .hero-carousel-actions { margin-top: 16px; gap: 10px; }
-  .hero-carousel-actions .button { padding: 10px 15px; font-size: 11px; }
-}
-.hero-carousel-view-products { position: absolute; z-index: 2; right: 22px; bottom: 22px; display: inline-flex; align-items: center; gap: 8px; padding: 11px 16px; border-radius: 100px; background: rgba(255,253,248,.95); color: #123f73; font-size: 11px; font-weight: 700; letter-spacing: .04em; box-shadow: 0 8px 22px rgba(11,38,71,.22); }
-.hero-carousel-view-products:hover { background: #123f73; color: #fffdf8; }
-@media (max-width: 800px) { .hero-carousel-view-products { right: 14px; bottom: 14px; padding: 9px 13px; font-size: 10px; } }
+@media (max-width: 800px) { .hero-carousel-overlay { background: linear-gradient(0deg, rgba(11,38,71,.18), rgba(11,38,71,.03) 62%, rgba(11,38,71,.08)); } }
 
 /* Who We Are — grow-your-business intro */
 .about-hero-section { position: relative; padding: 52px 0; background: #ffffff; overflow: visible; }
