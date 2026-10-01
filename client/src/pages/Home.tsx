@@ -136,17 +136,35 @@ export default function Home() {
 
       <main id="top">
         <section className="hero-section hero-carousel" aria-label="BONNE TRINITY product highlights">
-          <div className="hero-carousel-slides" aria-live="polite">
-            {heroSlides.map((slide, index) => (
-              <div className={`hero-carousel-slide ${index === activeHeroSlide ? "is-active" : ""}`} key={slide.image} aria-hidden={index !== activeHeroSlide}>
-                <img src={slide.image} alt={slide.alt} />
+          <div className="hero-carousel-frame">
+            <div className="hero-carousel-slides" aria-live="polite">
+              {heroSlides.map((slide, index) => (
+                <div className={`hero-carousel-slide ${index === activeHeroSlide ? "is-active" : ""}`} key={slide.image} aria-hidden={index !== activeHeroSlide}>
+                  <img src={slide.image} alt={slide.alt} />
+                </div>
+              ))}
+            </div>
+            <div className={`hero-carousel-overlay${activeHeroSlide === 0 ? " has-copy" : ""}`} />
+            {activeHeroSlide === 0 && (
+              <div className="hero-carousel-copy">
+                <h1>Care That Fits<br />Every Stage of Life.</h1>
+                <p>Quality baby care and personal hygiene products, thoughtfully sourced for distributors and retailers.</p>
+                <div className="hero-carousel-actions">
+                  <a className="button button-dark" href="/products">Explore Products <ArrowRight size={16} /></a>
+                  <a className="button button-outline" href="/enquire">Enquire Now <ArrowUpRight size={16} /></a>
+                </div>
               </div>
-            ))}
+            )}
+            <Link className="hero-carousel-view-products" href={heroSlides[activeHeroSlide].productsHref}>{heroSlides[activeHeroSlide].productsLabel} <ArrowUpRight size={14} /></Link>
+            <button type="button" className="hero-carousel-arrow hero-carousel-arrow-prev" onClick={() => setActiveHeroSlide((current) => (current - 1 + heroSlides.length) % heroSlides.length)} aria-label="Previous hero image"><ChevronLeft size={22} /></button>
+            <button type="button" className="hero-carousel-arrow hero-carousel-arrow-next" onClick={() => setActiveHeroSlide((current) => (current + 1) % heroSlides.length)} aria-label="Next hero image"><ChevronRight size={22} /></button>
+            <div className="hero-carousel-controls" role="tablist" aria-label="Choose hero slide">
+              {heroSlides.map((slide, index) => <button key={slide.image} type="button" className={index === activeHeroSlide ? "is-active" : ""} onClick={() => setActiveHeroSlide(index)} aria-label={`Show hero image ${index + 1} of ${heroSlides.length}`} aria-selected={index === activeHeroSlide} role="tab"><span /></button>)}
+            </div>
           </div>
-          <div className={`hero-carousel-overlay${activeHeroSlide === 0 ? " has-copy" : ""}`} />
           {activeHeroSlide === 0 && (
-            <div className="hero-carousel-copy">
-              <h1>Care That Fits<br />Every Stage of Life.</h1>
+            <div className="hero-carousel-copy-mobile">
+              <h1>Care That Fits Every Stage of Life.</h1>
               <p>Quality baby care and personal hygiene products, thoughtfully sourced for distributors and retailers.</p>
               <div className="hero-carousel-actions">
                 <a className="button button-dark" href="/products">Explore Products <ArrowRight size={16} /></a>
@@ -154,12 +172,6 @@ export default function Home() {
               </div>
             </div>
           )}
-          <Link className="hero-carousel-view-products" href={heroSlides[activeHeroSlide].productsHref}>{heroSlides[activeHeroSlide].productsLabel} <ArrowUpRight size={14} /></Link>
-          <button type="button" className="hero-carousel-arrow hero-carousel-arrow-prev" onClick={() => setActiveHeroSlide((current) => (current - 1 + heroSlides.length) % heroSlides.length)} aria-label="Previous hero image"><ChevronLeft size={22} /></button>
-          <button type="button" className="hero-carousel-arrow hero-carousel-arrow-next" onClick={() => setActiveHeroSlide((current) => (current + 1) % heroSlides.length)} aria-label="Next hero image"><ChevronRight size={22} /></button>
-          <div className="hero-carousel-controls" role="tablist" aria-label="Choose hero slide">
-            {heroSlides.map((slide, index) => <button key={slide.image} type="button" className={index === activeHeroSlide ? "is-active" : ""} onClick={() => setActiveHeroSlide(index)} aria-label={`Show hero image ${index + 1} of ${heroSlides.length}`} aria-selected={index === activeHeroSlide} role="tab"><span /></button>)}
-          </div>
         </section>
 
         <section className="about-hero-section" id="about">
