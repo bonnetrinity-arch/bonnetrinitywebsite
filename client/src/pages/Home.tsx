@@ -237,7 +237,7 @@ export default function Home() {
             </div>
           </div>
           <div className="container partners-people-media">
-            <div className="partners-people-photo"><img src="/assets/legacy/legacy-main.jpg" alt="BONNE TRINITY partners" /></div>
+            <div className="partners-people-photo"><img src="/assets/legacy/partners-family.jpg" alt="BONNE TRINITY partners: Gavish Aneja, Mr. Anurag Aneja and Hriday Aneja" /></div>
             <div className="partners-people-cards">
               <div className="partners-people-card"><h4>Gavish Aneja</h4><span className="partners-people-role">PARTNER AT BONNE TRINITY</span><p>Focuses on business development, strategic partnerships and expanding BONNE TRINITY&rsquo;s global footprint.</p></div>
               <div className="partners-people-card"><h4>Mr. Anurag Aneja</h4><span className="partners-people-role">DIRECTOR AT BONNY POLY PLAST PVT. LTD.</span><p>Brings decades of experience in the baby-care industry and provides strategic guidance to the business.</p></div>
