@@ -547,6 +547,12 @@
 .hero-carousel-overlay { background: linear-gradient(90deg, rgba(11,38,71,.22), rgba(11,38,71,.04) 58%, rgba(11,38,71,.12)); }
 @media (max-width: 800px) { .hero-carousel-overlay { background: linear-gradient(0deg, rgba(11,38,71,.18), rgba(11,38,71,.03) 62%, rgba(11,38,71,.08)); } }
 
+.hero-carousel-copy-mobile-line { display: none; }
+@media (max-width: 800px) {
+  .hero-carousel-overlay.has-copy { background: linear-gradient(0deg, rgba(11,38,71,.55) 0%, rgba(11,38,71,.03) 55%, rgba(11,38,71,.08) 100%); }
+  .hero-carousel .hero-carousel-copy-mobile-line { display: block; position: absolute; z-index: 2; left: 16px; right: 16px; bottom: 42px; margin: 0; color: #fffdf8; font-family: "DM Serif Display", serif; font-weight: 400; letter-spacing: -.02em; line-height: 1.15; font-size: clamp(17px, 5.5vw, 21px); }
+}
+
 /* Hero copy/CTA — desktop only, shown on the first (mother/baby) slide only */
 .hero-carousel-copy { display: none; }
 @media (min-width: 801px) {

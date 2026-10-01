@@ -155,6 +155,7 @@ export default function Home() {
                 </div>
               </div>
             )}
+            {activeHeroSlide === 0 && <h1 className="hero-carousel-copy-mobile-line">Care That Fits Every Stage of Life.</h1>}
             <button type="button" className="hero-carousel-arrow hero-carousel-arrow-prev" onClick={() => setActiveHeroSlide((current) => (current - 1 + heroSlides.length) % heroSlides.length)} aria-label="Previous hero image"><ChevronLeft size={22} /></button>
             <button type="button" className="hero-carousel-arrow hero-carousel-arrow-next" onClick={() => setActiveHeroSlide((current) => (current + 1) % heroSlides.length)} aria-label="Next hero image"><ChevronRight size={22} /></button>
             <div className="hero-carousel-controls" role="tablist" aria-label="Choose hero slide">
