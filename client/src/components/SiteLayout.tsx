@@ -1,6 +1,6 @@
 import { ReactNode, useState } from "react";
 import { Link, useLocation } from "wouter";
-import { ArrowUpRight, Facebook, Instagram, Mail, Menu, Phone, X, Youtube } from "lucide-react";
+import { ArrowUpRight, Linkedin, Mail, Menu, Phone, X } from "lucide-react";
 
 export function SiteHeader({ home = false }: { home?: boolean }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -52,7 +52,7 @@ export function SiteHeader({ home = false }: { home?: boolean }) {
           {sectionLinks.map(({ id, label }) => (
             <a key={id} href={`/#${id}`} onClick={goToSection(id)}>{label}</a>
           ))}
-          <span className="nav-actions"><a className="nav-call" href="tel:+919811643325">Call Now</a><a className="nav-whatsapp" href="https://wa.me/918588879611" target="_blank" rel="noreferrer">WhatsApp</a></span>
+          <span className="nav-actions"><a className="nav-call" href="tel:+919811643325">Call Now</a><a className="nav-whatsapp" href="https://wa.me/919811643325" target="_blank" rel="noreferrer">WhatsApp</a></span>
         </nav>
       </div>
     </header>
@@ -85,9 +85,7 @@ export function SiteFooter() {
           <a className="footer-contact-line" href="mailto:care@bonnetrinity.com"><Mail size={16} /> Email us</a>
           <h4>Follow us</h4>
           <div className="footer-socials">
-            <a href="#" aria-label="Instagram"><Instagram size={18} /></a>
-            <a href="#" aria-label="Facebook"><Facebook size={18} /></a>
-            <a href="#" aria-label="YouTube"><Youtube size={18} /></a>
+            <a href="https://www.linkedin.com/company/bonne-trinity/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={18} /></a>
           </div>
         </div>
       </div>
@@ -170,6 +168,6 @@ export const products = [
   },
 ];
 
-export const PageIntro = ({ eyebrow, title, text }: { eyebrow: string; title: ReactNode; text: string }) => <section className="page-intro"><div className="container page-intro-grid"><div className="section-label">{eyebrow}</div><div><h1>{title}</h1><p>{text}</p></div></div></section>;
+export const PageIntro = ({ eyebrow, title, text, className }: { eyebrow: string; title: ReactNode; text: string; className?: string }) => <section className={`page-intro${className ? ` ${className}` : ""}`}><div className="container page-intro-grid"><div className="section-label">{eyebrow}</div><div><h1>{title}</h1><p>{text}</p></div></div></section>;
 
 export const CTASection = ({ title = "Have a brief in mind?" }: { title?: string }) => <section className="page-cta"><div className="container page-cta-inner"><div><span className="section-label">LET'S MAKE IT REAL</span><h2>{title}</h2></div><Link className="button button-dark" href="/enquire">Start a conversation <ArrowUpRight size={17} /></Link></div></section>;

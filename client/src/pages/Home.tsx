@@ -67,9 +67,9 @@ const categories = [
 ];
 
 const heroSlides = [
-  { image: "/assets/hero-carousel/hero-2.webp", alt: "Mother and child with BONNE TRINITY products" },
-  { image: "/assets/hero-carousel/hero-1.webp", alt: "BONNE TRINITY baby care product lineup" },
-  { image: "/assets/hero-carousel/hero-3.webp", alt: "BONNE TRINITY adult diapers and sanitary pads lineup" },
+  { image: "/assets/hero-carousel/hero-2.webp", alt: "Mother and child with BONNE TRINITY products", productsHref: "/products?category=Baby%20care", productsLabel: "View Baby Care Products" },
+  { image: "/assets/hero-carousel/hero-1.webp", alt: "BONNE TRINITY baby care product lineup", productsHref: "/products?category=Baby%20care", productsLabel: "View Baby Care Products" },
+  { image: "/assets/hero-carousel/hero-3.webp", alt: "BONNE TRINITY adult diapers and sanitary pads lineup", productsHref: "/products?category=Personal%20hygiene", productsLabel: "View Personal Hygiene Products" },
 ];
 
 const storyMilestones = [
@@ -81,6 +81,8 @@ const storyMilestones = [
 ];
 
 const storyFinal = { year: "2026", icon: BarChart3, text: "BONNE TRINITY was established by Hriday Aneja and Gavish Aneja as a trading and sourcing company focused on new and premium baby-care products, including glass and steel sippers." };
+
+const storyHygiene = { year: "2026", icon: ShieldCheck, text: "Personal hygiene products were added as a product line into BONNE TRINITY, including sanitary pads and adult diapers." };
 
 export default function Home() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -141,7 +143,18 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <div className="hero-carousel-overlay" />
+          <div className={`hero-carousel-overlay${activeHeroSlide === 0 ? " has-copy" : ""}`} />
+          {activeHeroSlide === 0 && (
+            <div className="hero-carousel-copy">
+              <h1>Care That Fits<br />Every Stage of Life.</h1>
+              <p>Quality baby care and personal hygiene products, thoughtfully sourced for distributors and retailers.</p>
+              <div className="hero-carousel-actions">
+                <a className="button button-dark" href="/products">Explore Products <ArrowRight size={16} /></a>
+                <a className="button button-outline" href="/enquire">Enquire Now <ArrowUpRight size={16} /></a>
+              </div>
+            </div>
+          )}
+          <Link className="hero-carousel-view-products" href={heroSlides[activeHeroSlide].productsHref}>{heroSlides[activeHeroSlide].productsLabel} <ArrowUpRight size={14} /></Link>
           <button type="button" className="hero-carousel-arrow hero-carousel-arrow-prev" onClick={() => setActiveHeroSlide((current) => (current - 1 + heroSlides.length) % heroSlides.length)} aria-label="Previous hero image"><ChevronLeft size={22} /></button>
           <button type="button" className="hero-carousel-arrow hero-carousel-arrow-next" onClick={() => setActiveHeroSlide((current) => (current + 1) % heroSlides.length)} aria-label="Next hero image"><ChevronRight size={22} /></button>
           <div className="hero-carousel-controls" role="tablist" aria-label="Choose hero slide">
@@ -159,7 +172,12 @@ export default function Home() {
               <p>Backed by established family manufacturing experience since 1963, we combine product understanding, reliable sourcing and quality-focused supply to bring practical products to market.</p>
               <div className="about-hero-actions">
                 <a className="button button-dark" href="#enquire">Enquire for Business <ArrowUpRight size={17} /></a>
-                <a className="button button-whatsapp" href="https://wa.me/918588879611" target="_blank" rel="noreferrer"><MessageCircle size={18} /> Connect on WhatsApp</a>
+                <a className="button button-whatsapp" href="https://wa.me/919811643325" target="_blank" rel="noreferrer"><MessageCircle size={18} /> Connect on WhatsApp</a>
+              </div>
+              <div className="about-hero-stats">
+                <div className="about-hero-stat tone-blue"><span className="about-hero-stat-icon"><Building2 size={18} strokeWidth={1.75} /></span><span>B2B Focused</span></div>
+                <div className="about-hero-stat tone-pink"><span className="about-hero-stat-icon"><Award size={18} strokeWidth={1.75} /></span><span>Family Experience<br />Since 1963</span></div>
+                <div className="about-hero-stat tone-mint"><span className="about-hero-stat-icon"><Package size={18} strokeWidth={1.75} /></span><span>Baby Care &amp;<br />Personal Hygiene</span></div>
               </div>
             </div>
             <div className="about-hero-visual">
@@ -207,6 +225,27 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="partners-people-section" id="meet-the-partners">
+          <div className="container partners-people-heading">
+            <div className="about-hero-label"><span /> MEET THE PARTNERS <span /></div>
+            <h2>A Shared Vision<br />for <i>Healthier Generations.</i></h2>
+            <p>BONNE TRINITY is led by a family that brings together decades of industry experience with a fresh, forward-looking perspective. Together, we are committed to making quality Baby Care and Personal Hygiene products more accessible to distributors and retailers across India and global markets.</p>
+            <div className="partners-people-stats">
+              <div className="partners-people-stat"><span className="partners-people-stat-icon"><Users size={18} strokeWidth={1.75} /></span><span>Family<br />Leadership</span></div>
+              <div className="partners-people-stat"><span className="partners-people-stat-icon"><BarChart3 size={18} strokeWidth={1.75} /></span><span>Experience<br />Meets Innovation</span></div>
+              <div className="partners-people-stat"><span className="partners-people-stat-icon"><Handshake size={18} strokeWidth={1.75} /></span><span>Long-Term<br />Partnerships</span></div>
+            </div>
+          </div>
+          <div className="container partners-people-media">
+            <div className="partners-people-photo"><img src="/assets/legacy/legacy-main.jpg" alt="BONNE TRINITY partners" /></div>
+            <div className="partners-people-cards">
+              <div className="partners-people-card"><h4>Gavish Aneja</h4><span className="partners-people-role">PARTNER AT BONNE TRINITY</span><p>Focuses on business development, strategic partnerships and expanding BONNE TRINITY&rsquo;s global footprint.</p></div>
+              <div className="partners-people-card"><h4>Mr. Anurag Aneja</h4><span className="partners-people-role">DIRECTOR AT BONNY POLY PLAST PVT. LTD.</span><p>Brings decades of experience in the baby-care industry and provides strategic guidance to the business.</p></div>
+              <div className="partners-people-card"><h4>Hriday Aneja</h4><span className="partners-people-role">PARTNER AT BONNE TRINITY</span><p>Focuses on product development, market research and building long-term relationships with distributors and retailers.</p></div>
+            </div>
+          </div>
+        </section>
+
         <section className="legacy-section" id="legacy">
           <div className="container legacy-content">
             <div className="legacy-media-a legacy-strip-image"><img src="/assets/legacy/legacy-bottles.jpg" alt="PET bottle production line" /></div>
@@ -235,7 +274,7 @@ export default function Home() {
           <div className="container">
             <div className="story-heading">
               <div className="about-hero-label"><span /> OUR STORY <span /></div>
-              <h2>Built on Experience. <i>Moving Forward.</i></h2>
+              <h2>From a Family Legacy to a <i>Growing Tomorrow.</i></h2>
               <p>From a family manufacturing legacy to BONNE TRINITY, our journey has grown through decades of experience, product knowledge and evolving opportunities.</p>
             </div>
             <div className="story-groups"><span className="story-group-legacy">Family &amp; Business Legacy</span><span className="story-group-final">BONNE TRINITY</span></div>
@@ -255,16 +294,21 @@ export default function Home() {
                 <span className="story-icon"><storyFinal.icon size={20} strokeWidth={1.75} /></span>
                 <div className="story-text"><span className="story-year">{storyFinal.year}</span><p>{storyFinal.text}</p></div>
               </div>
-              <span className="story-dot story-dot-final" style={{ gridColumn: 6, gridRow: 2 }} />
+              <span className="story-dot" style={{ gridColumn: 6, gridRow: 2 }} />
+              <div className="story-block pos-bottom" style={{ gridColumn: 7, gridRow: 3 }}>
+                <span className="story-icon"><storyHygiene.icon size={20} strokeWidth={1.75} /></span>
+                <div className="story-text"><span className="story-year">{storyHygiene.year}</span><p>{storyHygiene.text}</p></div>
+              </div>
+              <span className="story-dot story-dot-final" style={{ gridColumn: 7, gridRow: 2 }} />
             </div>
           </div>
         </section>
 
-        <section className="enquiry-section" id="enquire"><div className="container enquiry-grid"><div className="enquiry-intro"><div className="section-label">09 / CONTACT</div><h2>Let’s Work<br /><i>Together.</i></h2><p>Have a question, sourcing requirement or partnership opportunity? We’d be happy to hear from you.</p><div className="contact-list"><a href="mailto:care@bonnetrinity.com"><Mail size={18} /> care@bonnetrinity.com</a><a href="tel:+919811643325"><Phone size={18} /> +91 98116 43325</a><a href="https://wa.me/918588879611" target="_blank" rel="noreferrer"><MessageCircle size={18} /> WhatsApp us</a></div></div><div className="form-card">{sent ? <div className="success-state"><div className="success-icon"><Check size={24} /></div><div className="section-label">MESSAGE RECEIVED</div><h3>Thank you for reaching out.</h3><p>Our team will review your enquiry and get back to you soon.</p><button className="button button-dark" onClick={() => setSent(false)}>Send another enquiry</button></div> : <form onSubmit={handleSubmit}><input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "f854a96c-906d-4bd4-8b33-c0be1fc5e4bc"} /><input type="checkbox" name="botcheck" className="hidden-field" tabIndex={-1} autoComplete="off" /><div className="form-row"><label>Full name<input required name="name" placeholder="Your name" /></label><label>Work email<input required type="email" name="email" placeholder="you@company.com" /></label></div><div className="form-row"><label>Phone number<input required type="tel" name="phone" placeholder="+91 00000 00000" /></label><label>Company / organisation<input required name="company" placeholder="Company name" /></label></div><label>How can we help?<textarea required name="message" rows={4} placeholder="Tell us about your product, volume or sourcing requirement..." /></label><div className="form-foot"><span>We respect your inbox. No noise, just a thoughtful reply.</span><button className="button button-dark" type="submit" disabled={isSubmitting}>{isSubmitting ? "Sending..." : "Send enquiry"} <ArrowUpRight size={17} /></button></div></form>}</div></div></section>
+        <section className="enquiry-section" id="enquire"><div className="container enquiry-grid"><div className="enquiry-intro"><div className="section-label">09 / CONTACT</div><h2>Let’s Work<br /><i>Together.</i></h2><p>Have a question, sourcing requirement or partnership opportunity? We’d be happy to hear from you.</p><div className="contact-list"><a href="mailto:care@bonnetrinity.com"><Mail size={18} /> care@bonnetrinity.com</a><a href="tel:+918588879611"><Phone size={18} /> +91 85888 79611 / +91 98116 43325</a><a href="https://wa.me/919811643325" target="_blank" rel="noreferrer"><MessageCircle size={18} /> WhatsApp us</a></div></div><div className="form-card">{sent ? <div className="success-state"><div className="success-icon"><Check size={24} /></div><div className="section-label">MESSAGE RECEIVED</div><h3>Thank you for reaching out.</h3><p>Our team will review your enquiry and get back to you soon.</p><button className="button button-dark" onClick={() => setSent(false)}>Send another enquiry</button></div> : <form onSubmit={handleSubmit}><input type="hidden" name="access_key" value={import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "f854a96c-906d-4bd4-8b33-c0be1fc5e4bc"} /><input type="checkbox" name="botcheck" className="hidden-field" tabIndex={-1} autoComplete="off" /><div className="form-row"><label>Full name<input required name="name" placeholder="Your name" /></label><label>Work email<input required type="email" name="email" placeholder="you@company.com" /></label></div><div className="form-row"><label>Phone number<input required type="tel" name="phone" placeholder="+91 00000 00000" /></label><label>Company / organisation<input required name="company" placeholder="Company name" /></label></div><label>How can we help?<textarea required name="message" rows={4} placeholder="Tell us about your product, volume or sourcing requirement..." /></label><div className="form-foot"><span>We respect your inbox. No noise, just a thoughtful reply.</span><button className="button button-dark" type="submit" disabled={isSubmitting}>{isSubmitting ? "Sending..." : "Send enquiry"} <ArrowUpRight size={17} /></button></div></form>}</div></div></section>
       </main>
 
       <SiteFooter />
-      <a className="floating-whatsapp" href="https://wa.me/918588879611" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"><MessageCircle size={22} /></a>
+      <a className="floating-whatsapp" href="https://wa.me/919811643325" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"><MessageCircle size={22} /></a>
     </div>
   );
 }
