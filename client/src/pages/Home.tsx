@@ -161,16 +161,6 @@ export default function Home() {
             <div className="hero-carousel-controls" role="tablist" aria-label="Choose hero slide">
               {heroSlides.map((slide, index) => <button key={slide.image} type="button" className={index === activeHeroSlide ? "is-active" : ""} onClick={() => setActiveHeroSlide(index)} aria-label={`Show hero image ${index + 1} of ${heroSlides.length}`} aria-selected={index === activeHeroSlide} role="tab"><span /></button>)}
             </div>
-            {activeHeroSlide === 0 && (
-              <div className="hero-carousel-copy-mobile">
-                <h1>Care That Fits Every Stage of Life.</h1>
-                <p>Quality baby care and personal hygiene products, thoughtfully sourced for distributors and retailers.</p>
-                <div className="hero-carousel-actions">
-                  <a className="button button-dark" href="/products">Explore Products <ArrowRight size={16} /></a>
-                  <a className="button button-outline" href="/enquire">Enquire Now <ArrowUpRight size={16} /></a>
-                </div>
-              </div>
-            )}
           </div>
         </section>
 

@@ -525,17 +525,15 @@
 @media (prefers-reduced-motion: reduce) { .hero-carousel-slide { transition: none; } }
 @media (max-width: 800px) {
   .hero-carousel { min-height: 0; }
-  .hero-carousel-frame { aspect-ratio: auto; height: 420px; }
-  .hero-carousel-slides, .hero-carousel-slide { top: 0; bottom: auto; height: 198px; }
-  .hero-carousel-slide img { height: 100%; object-fit: cover; object-position: center 30%; }
+  .hero-carousel-frame { aspect-ratio: auto; height: 560px; }
+  .hero-carousel-slide img { object-fit: cover; object-position: center; }
   .hero-carousel-content { min-height: 0; align-items: flex-end; padding-top: 100px; padding-bottom: 60px; }
-  .hero-carousel-overlay { top: 0; bottom: auto; height: 198px; background: linear-gradient(0deg, rgba(11,38,71,.3) 0%, transparent 45%); }
   .hero-carousel-kicker { margin-top: 17px; }
   .hero-carousel h1 { font-size: clamp(54px, 15vw, 82px); }
   .hero-carousel .hero-lede { max-width: 355px; font-size: 14px; }
-  .hero-carousel-controls { top: 210px; bottom: auto; gap: 8px; }
+  .hero-carousel-controls { bottom: 14px; gap: 8px; }
   .hero-carousel-controls button { width: 23px; height: 23px; }
-  .hero-carousel-arrow { width: 34px; height: 34px; top: 99px; transform: translateY(-50%); }
+  .hero-carousel-arrow { width: 34px; height: 34px; top: 50%; }
   .hero-carousel-arrow-prev { left: 10px; }
   .hero-carousel-arrow-next { right: 10px; }
   .hero-carousel .hero-bottomline { bottom: 21px; }
@@ -544,9 +542,9 @@
 
 /* Two-image hero mode: imagery only, with navigation dots retained */
 .hero-carousel-overlay { background: linear-gradient(90deg, rgba(11,38,71,.22), rgba(11,38,71,.04) 58%, rgba(11,38,71,.12)); }
-@media (max-width: 800px) { .hero-carousel-overlay { background: linear-gradient(0deg, rgba(11,38,71,.18), rgba(11,38,71,.03) 62%, rgba(11,38,71,.08)); } }
+@media (max-width: 800px) { .hero-carousel-overlay { background: linear-gradient(0deg, rgba(11,38,71,.32) 0%, rgba(11,38,71,.03) 45%, rgba(11,38,71,.1) 100%); } }
 .hero-carousel-overlay.has-copy { background: linear-gradient(90deg, rgba(11,38,71,.82) 0%, rgba(11,38,71,.56) 38%, rgba(11,38,71,.1) 72%, rgba(11,38,71,.04) 100%), linear-gradient(0deg, rgba(11,38,71,.25), transparent 40%); }
-@media (max-width: 800px) { .hero-carousel-overlay.has-copy { background: linear-gradient(0deg, rgba(11,38,71,.88) 0%, rgba(11,38,71,.55) 48%, rgba(11,38,71,.12) 100%); } }
+@media (max-width: 800px) { .hero-carousel-overlay.has-copy { background: linear-gradient(0deg, rgba(11,38,71,.9) 0%, rgba(11,38,71,.6) 45%, rgba(11,38,71,.08) 75%); } }
 .hero-carousel-copy { position: absolute; z-index: 2; left: 7%; top: 50%; transform: translateY(-50%); max-width: 480px; color: #fffdf8; }
 .hero-carousel-copy h1 { font-family: "Playfair Display", serif; font-weight: 700; letter-spacing: -.02em; line-height: 1.06; font-size: clamp(30px, 4vw, 50px); color: #fffdf8; }
 .hero-carousel-copy p { margin-top: 16px; max-width: 400px; color: rgba(255,253,248,.88); font-size: 14.5px; line-height: 1.65; }
@@ -554,18 +552,16 @@
 .hero-carousel-actions .button { font-size: 12px; }
 .button-outline { background: transparent; border: 1px solid rgba(255,253,248,.7); color: #fffdf8; }
 .button-outline:hover { background: #fffdf8; color: #123f73; border-color: #fffdf8; }
-.hero-carousel-copy-mobile { display: none; }
 @media (max-width: 800px) {
-  .hero-carousel-copy { display: none; }
-  .hero-carousel-copy-mobile { display: block; position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; padding: 18px 20px 24px; }
-  .hero-carousel-copy-mobile h1 { font-family: "Playfair Display", serif; font-weight: 700; letter-spacing: -.02em; line-height: 1.14; font-size: clamp(22px, 7vw, 29px); color: #fffdf8; }
-  .hero-carousel-copy-mobile p { margin-top: 8px; color: rgba(255,253,248,.85); font-size: 13px; line-height: 1.55; }
-  .hero-carousel-copy-mobile .hero-carousel-actions { margin-top: 14px; gap: 10px; }
-  .hero-carousel-copy-mobile .hero-carousel-actions .button { padding: 10px 15px; font-size: 11px; }
+  .hero-carousel-copy { left: 5%; right: 5%; top: auto; bottom: 72px; transform: none; max-width: none; }
+  .hero-carousel-copy h1 { font-size: clamp(26px, 8vw, 34px); }
+  .hero-carousel-copy p { max-width: none; font-size: 13px; }
+  .hero-carousel-actions { margin-top: 16px; gap: 10px; }
+  .hero-carousel-actions .button { padding: 10px 15px; font-size: 11px; }
 }
 .hero-carousel-view-products { position: absolute; z-index: 2; right: 22px; bottom: 22px; display: inline-flex; align-items: center; gap: 8px; padding: 11px 16px; border-radius: 100px; background: rgba(255,253,248,.95); color: #123f73; font-size: 11px; font-weight: 700; letter-spacing: .04em; box-shadow: 0 8px 22px rgba(11,38,71,.22); }
 .hero-carousel-view-products:hover { background: #123f73; color: #fffdf8; }
-@media (max-width: 800px) { .hero-carousel-view-products { right: 14px; top: 154px; bottom: auto; padding: 9px 13px; font-size: 10px; } }
+@media (max-width: 800px) { .hero-carousel-view-products { right: 14px; bottom: 14px; padding: 9px 13px; font-size: 10px; } }
 
 /* Who We Are — grow-your-business intro */
 .about-hero-section { padding: 52px 0; background: #ffffff; overflow: visible; }
