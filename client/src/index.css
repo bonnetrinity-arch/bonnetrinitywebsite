@@ -54,6 +54,10 @@
 :root { --background: #ffffff; --foreground: #123f73; --card: #ffffff; --card-foreground: #123f73; --primary: #123f73; --primary-foreground: #ffffff; --border: #dbe3e7; --input: #c9d6df; --ring: #dcebfa; }
   .site-shell { background: #ffffff; color: #123f73; }
   .topline, .footer { background: #123f73; }
+  .footer-col { text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .footer-contact-line { justify-content: center; }
+  .footer-socials { justify-content: center; }
+  .footer-brand-col { align-items: center; }
   .topline { color: #d8e9f4; }
   .topline a:hover, .nav-links > a:not(.nav-cta):hover { color: #dcebfa; }
   .topline-dot, .eyebrow-line { background: #dcebfa; }

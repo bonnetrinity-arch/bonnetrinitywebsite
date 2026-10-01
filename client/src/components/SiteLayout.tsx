@@ -81,7 +81,7 @@ export function SiteFooter() {
         </div>
         <div className="footer-col">
           <h4>Get in touch</h4>
-          <a className="footer-contact-line" href="tel:+919811643325"><Phone size={16} /> +91 98116 43325</a>
+          <a className="footer-contact-line" href="tel:+918588879611"><Phone size={16} /> +91 85888 79611 / +91 98116 43325</a>
           <a className="footer-contact-line" href="mailto:care@bonnetrinity.com"><Mail size={16} /> Email us</a>
           <h4>Follow us</h4>
           <div className="footer-socials">
