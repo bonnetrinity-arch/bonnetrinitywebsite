@@ -547,6 +547,19 @@
 .hero-carousel-overlay { background: linear-gradient(90deg, rgba(11,38,71,.22), rgba(11,38,71,.04) 58%, rgba(11,38,71,.12)); }
 @media (max-width: 800px) { .hero-carousel-overlay { background: linear-gradient(0deg, rgba(11,38,71,.18), rgba(11,38,71,.03) 62%, rgba(11,38,71,.08)); } }
 
+/* Hero copy/CTA — desktop only, shown on the first (mother/baby) slide only */
+.hero-carousel-copy { display: none; }
+@media (min-width: 801px) {
+  .hero-carousel-overlay.has-copy { background: linear-gradient(90deg, rgba(11,38,71,.6) 0%, rgba(11,38,71,.32) 38%, rgba(11,38,71,.03) 62%, rgba(11,38,71,.01) 100%); }
+  .hero-carousel-copy { display: block; position: absolute; z-index: 2; left: 6%; top: 50%; transform: translateY(-50%); max-width: 440px; color: #fffdf8; }
+  .hero-carousel-copy h1 { font-family: "DM Serif Display", serif; font-weight: 400; letter-spacing: -.03em; line-height: 1.04; font-size: clamp(30px, 3.1vw, 44px); color: #fffdf8; }
+  .hero-carousel-copy p { margin-top: 14px; max-width: 380px; color: rgba(255,253,248,.92); font-size: 14px; line-height: 1.6; }
+  .hero-carousel-actions { margin-top: 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+  .hero-carousel-actions .button { font-size: 12px; padding: 13px 18px; }
+  .button-outline { background: transparent; border: 1px solid rgba(255,253,248,.7); color: #fffdf8; }
+  .button-outline:hover { background: #fffdf8; color: #123f73; border-color: #fffdf8; }
+}
+
 /* Who We Are — grow-your-business intro */
 .about-hero-section { position: relative; padding: 52px 0; background: #ffffff; overflow: visible; }
 .about-hero-section-centered { overflow: hidden; }
