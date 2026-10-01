@@ -223,22 +223,24 @@ export default function Home() {
         </section>
 
         <section className="partners-people-section" id="meet-the-partners">
-          <div className="container partners-people-heading">
-            <div className="about-hero-label"><span /> MEET THE PARTNERS <span /></div>
-            <h2>A Shared Vision<br />for <i>Healthier Generations.</i></h2>
-            <p>BONNE TRINITY is led by a family that brings together decades of industry experience with a fresh, forward-looking perspective. Together, we are committed to making quality Baby Care and Personal Hygiene products more accessible to distributors and retailers across India and global markets.</p>
-            <div className="partners-people-stats">
-              <div className="partners-people-stat"><span className="partners-people-stat-icon"><Users size={18} strokeWidth={1.75} /></span><span>Family<br />Leadership</span></div>
-              <div className="partners-people-stat"><span className="partners-people-stat-icon"><BarChart3 size={18} strokeWidth={1.75} /></span><span>Experience<br />Meets Innovation</span></div>
-              <div className="partners-people-stat"><span className="partners-people-stat-icon"><Handshake size={18} strokeWidth={1.75} /></span><span>Long-Term<br />Partnerships</span></div>
+          <div className="container partners-people-grid">
+            <div className="partners-people-copy">
+              <div className="about-hero-label"><span /> MEET THE PARTNERS <span /></div>
+              <h2>A Shared Vision<br />for <i>Healthier Generations.</i></h2>
+              <p>BONNE TRINITY is led by a family that brings together decades of industry experience with a fresh, forward-looking perspective. Together, we are committed to making quality Baby Care and Personal Hygiene products more accessible to distributors and retailers across India and global markets.</p>
+              <div className="partners-people-stats">
+                <div className="partners-people-stat"><span className="partners-people-stat-icon"><Users size={18} strokeWidth={1.75} /></span><span>Family<br />Leadership</span></div>
+                <div className="partners-people-stat"><span className="partners-people-stat-icon"><BarChart3 size={18} strokeWidth={1.75} /></span><span>Experience<br />Meets Innovation</span></div>
+                <div className="partners-people-stat"><span className="partners-people-stat-icon"><Handshake size={18} strokeWidth={1.75} /></span><span>Long-Term<br />Partnerships</span></div>
+              </div>
             </div>
-          </div>
-          <div className="container partners-people-media">
-            <div className="partners-people-photo"><img src="/assets/legacy/partners-family.jpg" alt="BONNE TRINITY partners: Gavish Aneja, Mr. Anurag Aneja and Hriday Aneja" /></div>
-            <div className="partners-people-cards">
-              <div className="partners-people-card"><h4>Gavish Aneja</h4><span className="partners-people-role">PARTNER AT BONNE TRINITY</span><p>Focuses on business development, strategic partnerships and expanding BONNE TRINITY&rsquo;s global footprint.</p></div>
-              <div className="partners-people-card"><h4>Mr. Anurag Aneja</h4><span className="partners-people-role">DIRECTOR AT BONNY POLY PLAST PVT. LTD.</span><p>Brings decades of experience in the baby-care industry and provides strategic guidance to the business.</p></div>
-              <div className="partners-people-card"><h4>Hriday Aneja</h4><span className="partners-people-role">PARTNER AT BONNE TRINITY</span><p>Focuses on product development, market research and building long-term relationships with distributors and retailers.</p></div>
+            <div className="partners-people-media">
+              <div className="partners-people-photo"><img src="/assets/legacy/partners-family.jpg" alt="BONNE TRINITY partners: Gavish Aneja, Mr. Anurag Aneja and Hriday Aneja" /></div>
+              <div className="partners-people-cards">
+                <div className="partners-people-card"><h4>Gavish Aneja</h4><span className="partners-people-role">PARTNER AT BONNE TRINITY</span><p>Focuses on business development, strategic partnerships and expanding BONNE TRINITY&rsquo;s global footprint.</p></div>
+                <div className="partners-people-card"><h4>Mr. Anurag Aneja</h4><span className="partners-people-role">DIRECTOR AT BONNY POLY PLAST PVT. LTD.</span><p>Brings decades of experience in the baby-care industry and provides strategic guidance to the business.</p></div>
+                <div className="partners-people-card"><h4>Hriday Aneja</h4><span className="partners-people-role">PARTNER AT BONNE TRINITY</span><p>Focuses on product development, market research and building long-term relationships with distributors and retailers.</p></div>
+              </div>
             </div>
           </div>
         </section>
