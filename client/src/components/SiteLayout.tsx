@@ -35,7 +35,9 @@ export function SiteHeader({ home = false }: { home?: boolean }) {
     { id: "about", label: "Who We Are" },
     { id: "what-we-do", label: "Our Products" },
     { id: "why-partner", label: "Why Partner With Us" },
+    { id: "meet-the-partners", label: "Meet the Partners" },
     { id: "legacy", label: "Our Legacy" },
+    { id: "our-story", label: "Our Story" },
     { id: "enquire", label: "Contact" },
   ];
 
