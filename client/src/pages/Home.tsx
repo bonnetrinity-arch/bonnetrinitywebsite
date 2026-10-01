@@ -165,6 +165,18 @@ export default function Home() {
         </section>
 
         <section className="about-hero-section about-hero-section-centered" id="about">
+          <div className="about-hero-decor" aria-hidden="true">
+            <span className="about-hero-decor-blob blob-blue-tl" />
+            <span className="about-hero-decor-blob blob-green-tr" />
+            <span className="about-hero-decor-blob blob-pink-bl" />
+            <span className="about-hero-decor-blob blob-blue-br" />
+            <svg className="about-hero-decor-lines" viewBox="0 0 1400 560" preserveAspectRatio="none" fill="none">
+              <path d="M-40 60 C 160 -40, 260 180, 60 220 S -60 420, 140 480" stroke="#b9c9e6" strokeWidth="1.5" />
+              <path d="M1440 40 C 1240 -20, 1180 160, 1360 190 S 1460 360, 1300 420" stroke="#9fd7c2" strokeWidth="1.5" />
+              <path d="M60 540 C 180 480, 120 400, 260 440" stroke="#f3b9b0" strokeWidth="1.5" />
+              <path d="M1340 520 C 1220 470, 1260 400, 1180 430" stroke="#b9c9e6" strokeWidth="1.5" />
+            </svg>
+          </div>
           <div className="container about-hero-grid">
             <div className="about-hero-copy">
               <div className="about-hero-label"><span /> WHO WE ARE <span /></div>
