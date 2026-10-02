@@ -76,7 +76,7 @@ const storyMilestones = [
   { year: "1963", icon: Star, position: "top", text: "BONNE was founded by the late Shri Nand Lal Aneja. Bonne got registered as a brand." },
   { year: "1970", icon: Users, position: "bottom", text: "Baby Care Marketing was established by Mr. Subhash Aneja, as a trading firm which initially focused on feeding nipples." },
   { year: "1998", icon: Settings, position: "top", text: "Bonny Baby Care Pvt. Ltd. was established, with a focus on manufacturing PET bottles." },
-  { year: "2001", icon: Factory, position: "bottom", text: "Bonny Poly Plast Pvt. Ltd. was established by Mr. Anurag Aneja, expanding manufacturing capabilities with modern machinery and a broader focus on baby-care products." },
+  { year: "2001", icon: Factory, position: "bottom", text: "Bonny Poly Plast Pvt. Ltd. was established by Mr. Anurag C Aneja and Mr. Pallav Aneja, expanding manufacturing capabilities with modern machinery and a broader focus on baby-care products." },
   { year: "2012", icon: Globe2, position: "top", text: "International sales and private-label supply began for baby feeding nipples and bottles in the Philippines and Dubai." },
 ];
 
@@ -249,10 +249,10 @@ export default function Home() {
               </div>
             </div>
             <div className="partners-people-media">
-              <div className="partners-people-photo"><img src="/assets/legacy/partners-family.jpg" alt="BONNE TRINITY partners: Gavish Aneja, Mr. Anurag Aneja and Hriday Aneja" /></div>
+              <div className="partners-people-photo"><img src="/assets/legacy/partners-family.jpg" alt="BONNE TRINITY partners: Gavish Aneja, Mr. Anurag C Aneja and Hriday Aneja" /></div>
               <div className="partners-people-cards">
                 <div className="partners-people-card"><h4>Gavish Aneja</h4><span className="partners-people-role">PARTNER AT BONNE TRINITY</span><p>Focuses on business development, strategic partnerships and expanding BONNE TRINITY&rsquo;s global footprint.</p></div>
-                <div className="partners-people-card"><h4>Mr. Anurag Aneja</h4><span className="partners-people-role">DIRECTOR AT BONNY POLY PLAST PVT. LTD.</span><p>Brings decades of experience in the baby-care industry and provides strategic guidance to the business.</p></div>
+                <div className="partners-people-card"><h4>Mr. Anurag C Aneja</h4><span className="partners-people-role">DIRECTOR AT BONNY POLY PLAST PVT. LTD.</span><p>Brings decades of experience in the baby-care industry and provides strategic guidance to the business.</p></div>
                 <div className="partners-people-card"><h4>Hriday Aneja</h4><span className="partners-people-role">PARTNER AT BONNE TRINITY</span><p>Focuses on product development, market research and building long-term relationships with distributors and retailers.</p></div>
               </div>
             </div>
