@@ -152,17 +152,15 @@ export default function Home() {
               ))}
             </div>
             <div className={`hero-carousel-overlay${activeHeroSlide === 0 ? " has-copy" : ""}`} />
-            {activeHeroSlide === 0 && (
-              <div className="hero-carousel-copy">
-                <h1>Care That Fits<br />Every Stage of Life.</h1>
-                <p>Quality baby care and personal hygiene products, thoughtfully sourced for distributors and retailers.</p>
-                <div className="hero-carousel-actions">
-                  <a className="button button-dark" href="/products">Explore Products <ArrowRight size={16} /></a>
-                  <a className="button button-outline" href="/enquire">Enquire Now <ArrowUpRight size={16} /></a>
-                </div>
+            <div className={`hero-carousel-copy${activeHeroSlide === 0 ? " is-active" : ""}`}>
+              <h1>Care That Fits<br />Every Stage of Life.</h1>
+              <p>Quality baby care and personal hygiene products, thoughtfully sourced for distributors and retailers.</p>
+              <div className="hero-carousel-actions">
+                <a className="button button-dark" href="/products">Explore Products <ArrowRight size={16} /></a>
+                <a className="button button-outline" href="/enquire">Enquire Now <ArrowUpRight size={16} /></a>
               </div>
-            )}
-            {activeHeroSlide === 0 && <p className="hero-carousel-copy-mobile-line" aria-hidden="true">Care That Fits Every Stage of Life.</p>}
+            </div>
+            <p className={`hero-carousel-copy-mobile-line${activeHeroSlide === 0 ? " is-active" : ""}`} aria-hidden="true">Care That Fits Every Stage of Life.</p>
             {heroSlides[activeHeroSlide].productsHref && (
               <Link className="hero-carousel-view-products" href={heroSlides[activeHeroSlide].productsHref!}>{heroSlides[activeHeroSlide].productsLabel} <ArrowUpRight size={14} /></Link>
             )}
