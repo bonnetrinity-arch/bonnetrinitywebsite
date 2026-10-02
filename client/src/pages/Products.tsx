@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { ArrowUpRight, Check, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Link } from "wouter";
 import SiteLayout, { CTASection, PageIntro, products } from "@/components/SiteLayout";
+import Seo from "@/components/Seo";
 
 type Product = (typeof products)[number];
 
@@ -63,7 +64,30 @@ export default function Products() {
   const [activeProduct, setActiveProduct] = useState<Product | null>(null);
   const filters = ["All products", "Baby care", "Personal hygiene"];
   const shown = products.filter((p) => filter === "All products" || p.category === filter);
-  return <SiteLayout><main><PageIntro eyebrow="01 / PRODUCT RANGE" title={<>Made for <i>real life.</i></>} text="A focused range of everyday baby care and personal hygiene products, available for distribution, private label and OEM conversations." />
+  const seoTitle = filter === "All products"
+    ? "Baby Care & Personal Hygiene Products — Distributor & Private Label Catalog | BONNE TRINITY"
+    : `${filter} Products — Wholesale & Distributor Catalog | BONNE TRINITY`;
+  const seoDescription = filter === "All products"
+    ? "Browse BONNE TRINITY's baby care and personal hygiene product range — feeding bottles, soothers, sippers, sanitary pads and adult diapers, available for distributors, retailers and private label partners across India."
+    : `Explore BONNE TRINITY's ${filter.toLowerCase()} product range for distributors, retailers and private label partners. Wholesale pricing and MOQs available on enquiry.`;
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: shown.map((p, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "Product",
+        name: p.name,
+        description: p.meta,
+        category: p.category,
+        image: p.images[0] ? `https://bonnetrinity.com${p.images[0]}` : undefined,
+      },
+    })),
+  };
+  return <SiteLayout>
+    <Seo title={seoTitle} description={seoDescription} path="/products" structuredData={itemListSchema} />
+    <main><PageIntro eyebrow="01 / PRODUCT RANGE" title={<>Made for <i>real life.</i></>} text="A focused range of everyday baby care and personal hygiene products, available for distribution, private label and OEM conversations." />
     <section className="inner-products"><div className="container"><div className="inner-filter-bar">{filters.map((item) => <button key={item} className={filter === item ? "active" : ""} onClick={() => setFilter(item)}>{item}</button>)}</div><div className="inner-product-grid">{shown.map((product, i) => <article className={`product-card product-${product.tone}`} key={product.name} onClick={() => setActiveProduct(product)}><div className="product-image"><ProductImage images={product.images} name={product.name} /><span className="product-index">{String(i + 1).padStart(2, "0")}</span></div><div className="product-info"><div><span className="product-category">{product.category}</span><h3>{product.name}</h3><p>{product.meta}</p><div className="product-specs"><span>{product.spec}</span><span>{product.moq}</span><span>{product.export}</span></div></div><Link href={`/enquire?product=${encodeURIComponent(product.name)}`} aria-label={`Enquire about ${product.name}`} onClick={(e) => e.stopPropagation()}><ArrowUpRight size={18} /></Link></div></article>)}</div></div></section><CTASection title="Need a custom range?" /></main>
     {activeProduct && <ProductModal product={activeProduct} onClose={() => setActiveProduct(null)} />}
   </SiteLayout>;

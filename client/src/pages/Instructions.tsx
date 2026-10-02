@@ -2,7 +2,7 @@ import LegalPage from "@/components/LegalPage";
 
 export default function Instructions() {
   return (
-    <LegalPage eyebrow="INSTRUCTIONS" title={<>Using and caring for <i>your BONNE products.</i></>} text="General guidance for the safe use, cleaning and storage of BONNE TRINITY baby care and personal hygiene products." updated="September 2026">
+    <LegalPage eyebrow="INSTRUCTIONS" title={<>Using and caring for <i>your BONNE products.</i></>} text="General guidance for the safe use, cleaning and storage of BONNE TRINITY baby care and personal hygiene products." updated="September 2026" seoTitle="Product Instructions" path="/instructions">
       <section>
         <h3>Before first use</h3>
         <p>Wash and sterilize all feeding items — bottles, sippers, nipples and teethers — before their first use, and inspect every part for damage or wear. Discard and replace any item that shows cracks, tears or discolouration.</p>

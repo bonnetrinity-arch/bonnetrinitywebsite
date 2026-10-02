@@ -30,6 +30,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { SiteFooter, SiteHeader } from "@/components/SiteLayout";
+import Seo, { organizationSchema, localBusinessSchema } from "@/components/Seo";
 
 const categories = [
   {
@@ -132,6 +133,12 @@ export default function Home() {
 
   return (
     <div className="site-shell page-transition">
+      <Seo
+        title="BONNE TRINITY — Baby Care & Personal Hygiene Products for Distributors"
+        description="BONNE TRINITY is a B2B baby care and personal hygiene supplier for distributors, retailers and private label partners in India. Sourcing, product development and wholesale supply of feeding bottles, soothers, sanitary pads and adult diapers."
+        path="/"
+        structuredData={[organizationSchema, localBusinessSchema]}
+      />
       <SiteHeader home />
 
       <main id="top">
@@ -155,7 +162,7 @@ export default function Home() {
                 </div>
               </div>
             )}
-            {activeHeroSlide === 0 && <h1 className="hero-carousel-copy-mobile-line">Care That Fits Every Stage of Life.</h1>}
+            {activeHeroSlide === 0 && <p className="hero-carousel-copy-mobile-line" aria-hidden="true">Care That Fits Every Stage of Life.</p>}
             {heroSlides[activeHeroSlide].productsHref && (
               <Link className="hero-carousel-view-products" href={heroSlides[activeHeroSlide].productsHref!}>{heroSlides[activeHeroSlide].productsLabel} <ArrowUpRight size={14} /></Link>
             )}
@@ -185,7 +192,7 @@ export default function Home() {
               <div className="about-hero-label"><span /> WHO WE ARE <span /></div>
               <h2>Grow Your Business<br />with <strong>BONNE TRINITY</strong></h2>
               <p className="about-hero-subhead">Quality Baby Care &amp; Personal Hygiene Products for Distributors &amp; Retailers</p>
-              <p>BONNE TRINITY is a B2B company focused on sourcing, developing and supplying thoughtfully selected Baby Care and Personal Hygiene products for distributors and retailers.</p>
+              <p>BONNE TRINITY is a B2B company focused on sourcing, developing and supplying thoughtfully selected Baby Care and Personal Hygiene products for distributors, retailers and private label partners across India.</p>
               <p>Backed by established family manufacturing experience since 1963, we combine product understanding, reliable sourcing and quality-focused supply to bring practical products to market.</p>
               <div className="about-hero-actions">
                 <a className="button button-dark" href="#enquire">Enquire for Business <ArrowUpRight size={17} /></a>
@@ -205,7 +212,7 @@ export default function Home() {
             <div className="product-panels-heading">
               <div className="about-hero-label"><span /> OUR PRODUCTS <span /></div>
               <h2>Essential Products. <i>Growing Opportunities.</i></h2>
-              <p>A focused range of Baby Care and Personal Hygiene products, selected and developed for today’s market needs.</p>
+              <p>A focused range of wholesale Baby Care and Personal Hygiene products, selected and developed for distributors, retailers and private label partners.</p>
             </div>
             <div className="product-panels-grid">{categories.map(({ number, title, subtitle, icon: Icon, tone, image, imagePosition, items, cta, href }) => (
               <article className={`product-panel tone-${tone}`} key={title}>
@@ -214,7 +221,7 @@ export default function Home() {
                   <span className="product-panel-icon"><Icon size={24} strokeWidth={1.75} /></span>
                   <div><h3>{title}</h3><p>{subtitle}</p></div>
                 </div>
-                <div className="product-panel-image">{image ? <img src={image} alt={title} style={{ objectPosition: imagePosition }} /> : <span className="product-panel-image-placeholder">Product photo coming soon</span>}</div>
+                <div className="product-panel-image">{image ? <img src={image} alt={title} style={{ objectPosition: imagePosition }} loading="lazy" /> : <span className="product-panel-image-placeholder">Product photo coming soon</span>}</div>
                 <div className="product-panel-chips">{items.map(({ label, icon: ItemIcon }) => <div className="product-panel-chip" key={label}><ItemIcon size={20} strokeWidth={1.75} /><span>{label}</span></div>)}</div>
                 <Link className="button button-dark product-panel-cta" href={href}>{cta} <ArrowUpRight size={17} /></Link>
               </article>
@@ -249,7 +256,7 @@ export default function Home() {
               </div>
             </div>
             <div className="partners-people-media">
-              <div className="partners-people-photo"><img src="/assets/legacy/partners-family.jpg" alt="BONNE TRINITY partners: Gavish Aneja, Mr. Anurag C Aneja and Hriday Aneja" /></div>
+              <div className="partners-people-photo"><img src="/assets/legacy/partners-family.jpg" alt="BONNE TRINITY partners: Gavish Aneja, Mr. Anurag C Aneja and Hriday Aneja" loading="lazy" /></div>
               <div className="partners-people-cards">
                 <div className="partners-people-card"><h4>Gavish Aneja</h4><span className="partners-people-role">PARTNER AT BONNE TRINITY</span><p>Focuses on business development, strategic partnerships and expanding BONNE TRINITY&rsquo;s global footprint.</p></div>
                 <div className="partners-people-card"><h4>Mr. Anurag C Aneja</h4><span className="partners-people-role">DIRECTOR AT BONNY POLY PLAST PVT. LTD.</span><p>Brings decades of experience in the baby-care industry and provides strategic guidance to the business.</p></div>
@@ -261,10 +268,10 @@ export default function Home() {
 
         <section className="legacy-section" id="legacy">
           <div className="container legacy-content">
-            <div className="legacy-media-a legacy-strip-image"><img src="/assets/legacy/legacy-bottles.jpg" alt="PET bottle production line" /></div>
+            <div className="legacy-media-a legacy-strip-image"><img src="/assets/legacy/legacy-bottles.jpg" alt="PET bottle production line" loading="lazy" /></div>
             <div className="legacy-media-b legacy-visual">
               <div className="about-hero-blob" aria-hidden="true" />
-              <div className="legacy-visual-frame"><img src="/assets/legacy/legacy-main.jpg" alt="BONNE TRINITY manufacturing equipment" /></div>
+              <div className="legacy-visual-frame"><img src="/assets/legacy/legacy-main.jpg" alt="BONNE TRINITY manufacturing equipment" loading="lazy" /></div>
               <div className="about-hero-badge about-hero-badge-top">A Legacy<br />of Care<br />Since 1963</div>
             </div>
             <div className="legacy-media-copy legacy-copy">
@@ -278,8 +285,8 @@ export default function Home() {
                 <div className="legacy-stat tone-mint"><span className="legacy-stat-icon"><Users size={22} strokeWidth={1.75} /></span><h4>Trusted by Businesses</h4><p>For consistent quality and reliable supply</p></div>
               </div>
             </div>
-            <div className="legacy-media-c legacy-strip-image"><img src="/assets/legacy/legacy-molding.jpg" alt="Injection molding machine" /></div>
-            <div className="legacy-media-d legacy-strip-image"><img src="/assets/legacy/legacy-packing.jpg" alt="Quality-checked packing" /></div>
+            <div className="legacy-media-c legacy-strip-image"><img src="/assets/legacy/legacy-molding.jpg" alt="Injection molding machine" loading="lazy" /></div>
+            <div className="legacy-media-d legacy-strip-image"><img src="/assets/legacy/legacy-packing.jpg" alt="Quality-checked packing" loading="lazy" /></div>
           </div>
         </section>
 

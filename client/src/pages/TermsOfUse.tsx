@@ -2,7 +2,7 @@ import LegalPage from "@/components/LegalPage";
 
 export default function TermsOfUse() {
   return (
-    <LegalPage eyebrow="TERMS OF USE" title={<>The fine print, <i>kept simple.</i></>} text="These terms govern your use of the BONNE TRINITY website. By using this site, you agree to them." updated="September 2026">
+    <LegalPage eyebrow="TERMS OF USE" title={<>The fine print, <i>kept simple.</i></>} text="These terms govern your use of the BONNE TRINITY website. By using this site, you agree to them." updated="September 2026" seoTitle="Terms of Use" path="/terms-of-use">
       <section>
         <h3>About this website</h3>
         <p>This website is operated by BONNE TRINITY, a B2B company focused on sourcing, developing and supplying Baby Care and Personal Hygiene products for distributors and retailers. Content on this site — including product information, images and descriptions — is provided for general informational purposes for prospective business partners.</p>

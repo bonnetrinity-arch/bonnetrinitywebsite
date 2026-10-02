@@ -2,7 +2,7 @@ import LegalPage from "@/components/LegalPage";
 
 export default function SealOfGenuineness() {
   return (
-    <LegalPage eyebrow="SEAL OF GENUINENESS" title={<>How to know it's <i>genuinely BONNE.</i></>} text="BONNE TRINITY products are manufactured and quality-checked through our trusted network of associated manufacturing partners. Here's how to make sure what you've received is authentic." updated="September 2026">
+    <LegalPage eyebrow="SEAL OF GENUINENESS" title={<>How to know it's <i>genuinely BONNE.</i></>} text="BONNE TRINITY products are manufactured and quality-checked through our trusted network of associated manufacturing partners. Here's how to make sure what you've received is authentic." updated="September 2026" seoTitle="Seal of Genuineness" path="/seal-of-genuineness">
       <section>
         <h3>What to check</h3>
         <ul>

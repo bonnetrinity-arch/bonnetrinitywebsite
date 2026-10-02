@@ -2,7 +2,7 @@ import LegalPage from "@/components/LegalPage";
 
 export default function PrivacyNotice() {
   return (
-    <LegalPage eyebrow="PRIVACY NOTICE" title={<>How we handle <i>your information.</i></>} text="This notice explains what information BONNE TRINITY collects through this website, how we use it, and the choices you have." updated="September 2026">
+    <LegalPage eyebrow="PRIVACY NOTICE" title={<>How we handle <i>your information.</i></>} text="This notice explains what information BONNE TRINITY collects through this website, how we use it, and the choices you have." updated="September 2026" seoTitle="Privacy Notice" path="/privacy-notice">
       <section>
         <h3>Information we collect</h3>
         <p>We collect information you provide directly to us, such as when you submit a business enquiry or contact form on this website. This may include your name, company name, email address, phone number and the details of your enquiry.</p>
